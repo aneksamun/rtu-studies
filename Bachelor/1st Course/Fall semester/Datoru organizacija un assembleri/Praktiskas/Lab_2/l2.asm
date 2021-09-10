@@ -18,21 +18,21 @@ Zero       Equ  0
 ZDiv       dw   0
 
 _Start:
-           Mov   Al, X     ; Ax = ??FE 
-           Imul  X         ; Ax = 0004h = 4dec
+           Mov   Al, x     ; Ax = ??FE 
+           Imul  x         ; Ax = 0004h = 4dec
            MovSx Bx, x     ; Bx = FFFE -> Add FF or 00 sign to Byte		
            Imul  Bx, Ax    ; Bx = FFF8h = -8dec
 
            Imul  Bx, -2    ; Bx = FFF8 * FFFE = 0010h = 16dec
     
 
-           MovSx Ax, y		 ; Ax = FFFF
-           Imul  Bx, Ax     ; Bx = FFF0h = -16dec
+           MovSx Ax, y      ; Ax = FFFF
+           Imul  Bx, A      ; Bx = FFF0h = -16dec
 
-           MovSx Ax, z		 ; Ax = 0002 (Not FF02 ???) or Ax = FFE6 h = -26dec 
+           MovSx Ax, z      ; Ax = 0002 (Not FF02 ???) or Ax = FFE6 h = -26dec 
            Sub   Bx, Ax     ; Bx = FFEEh = -18dec or Ax = 000Ah = 10dec
 
-           Jne   Not_Zero	 ; ZF ? 1:0 
+           Jne   Not_Zero   ; ZF ? 1:0 
 
            Mov   Dx, Zero
            Jmp   Short _Exit
@@ -54,15 +54,15 @@ Not_Zero:
 
            Pop    Ax
 
-           Sub    Ax, Cx	   ; Ax = FFEh - FFCC = 0032h = 50dec
+           Sub    Ax, Cx      ; Ax = FFEh - FFCC = 0032h = 50dec
            
            Jmp   Short Rezult    
 
 Branch_C:  
-            Mov   Al, x		   ; Ax = ??FE 	
-            Imul  X           ; Ax = 0004
-            MovSx Cx, y		   ; Cx = FFFFh = -1dec
-            Imul  Cx, Ax	   ; Cx = FFFCh = -4dec
+            Mov   Al, x       ; Ax = ??FE 	
+            Imul  x           ; Ax = 0004
+            MovSx Cx, y       ; Cx = FFFFh = -1dec
+            Imul  Cx, Ax      ; Cx = FFFCh = -4dec
 
             MovSx Ax, z		   ; Ax = 0002
             Add Ax, Cx        ; Ax = FFFEh = -2dec 
