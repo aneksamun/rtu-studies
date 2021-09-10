@@ -12,11 +12,11 @@ Comment &
 x           db	-2
 y           db	-1
 z           db	2
-; z			db	-26
+; z         db	-26
 Zero        equ 0
 ZDiv       	dw  0
 Two        	db  2
-; MyDWord		dd 	?
+; MyDWord   dd  ?
 
 _Start:
             Mov Al, x		

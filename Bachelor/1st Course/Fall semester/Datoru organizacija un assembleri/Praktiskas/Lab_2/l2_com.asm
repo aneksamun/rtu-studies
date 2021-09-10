@@ -17,7 +17,7 @@ ZDiv       Dw  0
 _Start:
            Mov   Al, X
            Imul  X
-           MovSx Bx, X		;386
+           MovSx Bx, X     ;386
            Imul  Bx, Ax    ;386
            Dec   Bx
            Jne   Not_Zero
@@ -35,8 +35,8 @@ Not_Zero:
 
            Jmp   Short Rezult
 
-Branch_C:  MovSx  Ax, Y       ;386
-           Imul   Ax, Ax, 2	;386
+Branch_C:  MovSx  Ax, Y
+           Imul   Ax, Ax, 2
            Inc    Ax
 Rezult:
            Cmp    Ax, Zero
