@@ -1,4 +1,4 @@
-FormVector  	Macro R, C, Matr, Vect, _S
+FormVector  Macro R, C, Matr, Vect, _S
         	Local Rows, Cols, False, Next
 
         	Push Ax
@@ -8,33 +8,33 @@ FormVector  	Macro R, C, Matr, Vect, _S
         	Push Di
 
         	Mov Cx, C
-		Lea Bx, Matr
-		Lea Di, Vect
+			Lea Bx, Matr
+			Lea Di, Vect
             
 Rows:		Push Cx
-		Mov Cx, R
-		Xor Si, Si
-		Xor Ax, Ax
-		Xor Dx, Dx
+			Mov Cx, R
+			Xor Si, Si
+			Xor Ax, Ax
+			Xor Dx, Dx
             
 Cols:		Test [Bx][Si], Word Ptr 00000001B
-		Jnz False
-		Add Ax, [Bx][Si]
-		Inc Dl
+			Jnz False
+			Add Ax, [Bx][Si]
+			Inc Dl
             
 False:		Add Si, _S*C
-		Loop Cols
-		
-		Cmp Ax, 0
-		Jz Next
-		Idiv Dl
-		Cbw
+			Loop Cols
+			
+			Cmp Ax, 0
+			Jz Next
+			Idiv Dl
+			Cbw
 	
 Next:		Mov [Di], Ax
-		Add Bx, _S
-		Add Di, _S
-		Pop Cx
-		Loop Rows          
+			Add Bx, _S
+			Add Di, _S
+			Pop Cx
+			Loop Rows          
 
         	Pop  Di
         	Pop  Dx

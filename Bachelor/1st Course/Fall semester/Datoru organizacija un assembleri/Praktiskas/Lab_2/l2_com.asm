@@ -18,7 +18,7 @@ _Start:
            Mov   Al, X
            Imul  X
            MovSx Bx, X		;386
-           Imul  Bx, Ax         ;386
+           Imul  Bx, Ax    ;386
            Dec   Bx
            Jne   Not_Zero
 
@@ -35,7 +35,7 @@ Not_Zero:
 
            Jmp   Short Rezult
 
-Branch_C:  MovSx  Ax, Y         ;386
+Branch_C:  MovSx  Ax, Y       ;386
            Imul   Ax, Ax, 2	;386
            Inc    Ax
 Rezult:
@@ -47,10 +47,10 @@ Rezult:
 
 _Div:
            Xchg   Ax, Bx
-           MovSx  EBx, Bx      	;386
-           Cwde			;386
-           Cdq 			;386
-           IDiv   EBx		;386
+           MovSx  EBx, Bx
+           Cwde
+           Cdq
+           IDiv   EBx
 _Exit:
 
 .exit 0

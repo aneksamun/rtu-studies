@@ -3,11 +3,11 @@
 .startup
 			Org 100h
 			Jmp Short Start
-Vector     		Label  Word
-Array      		Label  Word
+Vector     	Label  Word
+Array      	Label  Word
 			Dw  2, 7, -1, 16, 15
-N          		Equ 5
-Step       		Equ 2
+N          	Equ 5
+Step       	Equ 2
 .386
 Start:
 			Xor  EBx, EBx  

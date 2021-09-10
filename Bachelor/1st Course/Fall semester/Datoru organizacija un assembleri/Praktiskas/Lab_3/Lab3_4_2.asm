@@ -3,8 +3,8 @@
 .startup
 			Org 100h
 			Jmp Short Start
-Vector     		Dw  2, 7, -1, 16, 15
-N          		Equ 5
+Vector     	Dw  2, 7, -1, 16, 15
+N          	Equ 5
 Max			Dw	6
 
 Start:
