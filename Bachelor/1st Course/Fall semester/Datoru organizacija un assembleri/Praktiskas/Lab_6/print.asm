@@ -1,7 +1,7 @@
 Print	Macro C, V, S
         Local Pr
 
-		Push Ax
+	Push Ax
         Push Bx
         Push Cx
 
@@ -11,7 +11,7 @@ Pr:     Mov Ax, [Bx]
         Add Bx, S
         Loop Pr
 
-		Pop Cx
+	Pop Cx
         Pop Bx
         Pop Ax
 

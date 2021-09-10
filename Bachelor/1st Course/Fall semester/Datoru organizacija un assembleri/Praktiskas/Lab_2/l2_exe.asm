@@ -19,8 +19,8 @@ Zero       Equ 0
 _Start:
            Mov   Al, X
            Imul  X
-           MovSx Bx, X		;386
-           Imul  Bx, Ax         ;386
+           MovSx Bx, X	
+           Imul  Bx, Ax       
            Dec   Bx
            Jne   Not_Zero
 
@@ -35,12 +35,12 @@ Not_Zero:
            Neg   Ax 
            Sub   Ax, 4
 
-           Jmp   Short Rezult
+           Jmp   Short Result
 
-Branch_C:  MovSx Ax, Y         ;386
-           Imul  Ax, Ax, 2	;386
+Branch_C:  MovSx Ax, Y
+           Imul  Ax, Ax, 2
            Inc   Ax
-Rezult:
+Result:
            Cmp   Ax, Zero
            Jne   _Div
 
@@ -49,10 +49,10 @@ Rezult:
 
 _Div:
            Xchg  Ax, Bx
-           MovSx EBx, Bx      	;386
-           Cwde			;386
-           Cdq 			;386
-           IDiv EBx		;386
+           MovSx EBx, Bx
+           Cwde
+           Cdq
+           IDiv EBx
 _Exit:
 
 .exit 0

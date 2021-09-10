@@ -2,7 +2,7 @@
 .code
 .startup
         Org     100h
-        Jmp Short Start
+        Jmp 	Short Start
 N	Equ 	2
 M 	Equ	3
 Matrix	DW	1, 2, 3

@@ -3,8 +3,8 @@
 .startup
 			Org 100h
 			Jmp Short Start
-Vector     	Dw  2, 7, -1, 16, 15
-N          	Equ 5
+Vector     		Dw  2, 7, -1, 16, 15
+N          		Equ 5
 Start:
 			Xor  Bx, Bx
 			Xor  Si, Si
