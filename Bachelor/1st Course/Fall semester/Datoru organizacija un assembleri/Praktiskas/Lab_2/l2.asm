@@ -56,7 +56,7 @@ Not_Zero:
 
            Sub    Ax, Cx      ; Ax = FFEh - FFCC = 0032h = 50dec
            
-           Jmp   Short Rezult    
+           Jmp    Short Result    
 
 Branch_C:  
             Mov   Al, x       ; Ax = ??FE 	
@@ -65,11 +65,11 @@ Branch_C:
             Imul  Cx, Ax      ; Cx = FFFCh = -4dec
 
             MovSx Ax, z		   ; Ax = 0002
-            Add Ax, Cx        ; Ax = FFFEh = -2dec 
+            Add   Ax, Cx      ; Ax = FFFEh = -2dec 
 
-            Inc Ax            ; Ax = FFFFh = -1dec
+            Inc   Ax          ; Ax = FFFFh = -1dec
             
-Rezult:
+Result:
            Cmp    Ax, Zero
            Jne    _Div
 

@@ -13,9 +13,9 @@
         S   Equ Type Matrix
 
 Start:
-        Xor	Bx, Bx
-        Mov	Cx, N
-        Lea	Di, Vector
+        Xor Bx, Bx
+        Mov Cx, N
+        Lea Di, Vector
 
 Rows:	Push Cx
         Mov  Cx, M
@@ -24,23 +24,23 @@ Rows:	Push Cx
 
 Cols:	Cmp Matrix[Bx][Si], Min
         Jl  False
-        Cmp	Matrix[Bx][Si], Max
+        Cmp Matrix[Bx][Si], Max
         Jg  False
         Inc Ax
 False:
-        Add	Si, S
+        Add  Si, S
         Loop Cols
 
-        Mov [Di], Ax
-        Add Bx, S*M
-        Add Di, S  
-        Pop Cx
+        Mov  [Di], Ax
+        Add  Bx, S*M
+        Add  Di, S  
+        Pop  Cx
         Loop Rows   
 
-        Xor	Bx, Bx
-        Mov	Cx, N
-Print:	Mov	Ax, Vector[Bx]
-        Add	Bx, S
+        Xor  Bx, Bx
+        Mov  Cx, N
+Print:	Mov  Ax, Vector[Bx]
+        Add  Bx, S
         Loop Print
         
 .exit 0

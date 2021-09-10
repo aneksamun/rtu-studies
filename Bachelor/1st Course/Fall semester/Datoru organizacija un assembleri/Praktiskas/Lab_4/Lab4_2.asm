@@ -5,9 +5,9 @@
         Jmp Short Start
 N       Equ 2
 M       Equ 3
-Vector  DW	M Dup (?)
-Matrix  DW	1, 2, 8
-        DW	4, 5, 6
+Vector  DW M Dup (?)
+Matrix  DW 1, 2, 8
+        DW 4, 5, 6
 S       Equ Type Matrix
 
 Start:

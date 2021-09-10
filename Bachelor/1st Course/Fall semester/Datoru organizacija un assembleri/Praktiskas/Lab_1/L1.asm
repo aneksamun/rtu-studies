@@ -9,25 +9,25 @@ Comment &
 .startup
             Org 100h
             Jmp short _Start
-x           db	-2
-y           db	-1
-z           db	2
-; z         db	-26
+x           db -2
+y           db -1
+z           db 2
+; z         db 26
 Zero        equ 0
-ZDiv       	dw  0
-Two        	db  2
+ZDiv        dw  0
+Two         db  2
 ; MyDWord   dd  ?
 
 _Start:
-            Mov Al, x		
+            Mov  Al, x
             Imul Al
-            Mov Bx, Ax
-            Mov Al,x
+            Mov  Bx, Ax
+            Mov  Al,x
             Cbw
             Imul Bx         ; Ax = x^3 = FFF8h = -8 dec
 
-            Mov Bx, Ax      ; Bx = Ax
-            Mov Ax, -2
+            Mov  Bx, Ax     ; Bx = Ax
+            Mov  Ax, -2
             Imul Bx         ; Ax = Ax * Bx = FFFE * FFF8 = 0010h = 16dec
             
             Mov Bx, Ax
@@ -40,10 +40,10 @@ _Start:
             Cbw
             Sub Bx, Ax      ; Bx = Bx - Ax = FFF0 - 0002h= FFEEh = -18dec
                             ; Bx = Bx - Ax = FFF0 - FFE6 = Ah = 10dec
-            Jne  Not_Zero   ; ZF ? 1:0
+            Jne Not_Zero    ; ZF ? 1:0
             
-            Mov   Dx, Zero
-            Jmp   Short _Exit
+            Mov Dx, Zero
+            Jmp Short _Exit
             
 Not_Zero:
             Cmp Bx, Zero
@@ -58,8 +58,8 @@ Not_Zero:
             
             Push Ax
             
-            Mov Cl, Two     ; byte * byte = word
-            Mov Al, z       ; what's why we needn't Cbw
+            Mov  Cl, Two    ; byte * byte = word
+            Mov  Al, z      ; what's why we needn't Cbw
             Imul Cl         ; Ax = Cx * Ax = 0002 * FFE6 = FFCCh = -52dec
             
             Pop Cx
@@ -67,15 +67,15 @@ Not_Zero:
             Sub Cx, Ax      ; Cx = FFFE - FFCC = 32h = 50dec
             Mov Ax, Cx
             
-            Jmp  Short Rezult
+            Jmp Short Rezult
             
 Branch_C:
-            Mov Al, x
+            Mov  Al, x
             Imul x
-            Mov Cx, Ax
-            Mov Al, y
+            Mov  Cx, Ax
+            Mov  Al, y
             Cbw
-            Imul Cx         ; Ax = 0004 * FFFF = FFFCh = -4dec
+            Imul  Cx        ; Ax = 0004 * FFFF = FFFCh = -4dec
             
             Mov Cx, Ax
             Mov Al, z

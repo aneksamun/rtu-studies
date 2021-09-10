@@ -20,8 +20,8 @@ S:
             Jng  Next
             Mov  Dx, Ax
 Next:
-            Inc Bx
-            Inc Si 
+            Inc  Bx
+            Inc  Si 
             Loop S
 
             Mov Ax, Dx

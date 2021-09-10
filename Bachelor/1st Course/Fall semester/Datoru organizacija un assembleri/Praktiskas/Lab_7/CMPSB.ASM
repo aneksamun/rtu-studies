@@ -29,8 +29,8 @@ Not_Equals:
         	Lea Dx, Not_OK
 
 Print:
-        	Mov   Ah, 9
-        	Int   21h
+        	Mov Ah, 9
+        	Int 21h
 
         Pop Es
 .exit 0
