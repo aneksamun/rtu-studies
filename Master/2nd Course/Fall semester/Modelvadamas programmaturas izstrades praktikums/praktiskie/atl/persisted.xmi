@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="Repository">
+  <Darbinieks darbiniekaId="1" vards="Homer" uzvards="Simpson" nodala="4" irVaditajs="true"/>
+  <Darbinieks darbiniekaId="2" vards="Bart" uzvards="Simpson" nodala="3" irVaditajs="false" vaditajaId="1"/>
+  <Darbinieks darbiniekaId="3" vards="Lisa" uzvards="Simpson" nodala="2" irVaditajs="false" vaditajaId="1"/>
+  <Darbinieks darbiniekaId="4" vards="Jack" uzvards="Sparrow" nodala="4" irVaditajs="true"/>
+  <Darbinieks darbiniekaId="5" vards="Elizabeth" uzvards="Swann" nodala="1" irVaditajs="false" vaditajaId="4"/>
+  <Darbinieks darbiniekaId="6" vards="Santa" uzvards="Claus" nodala="4" irVaditajs="true"/>
+  <Pasutijums pasutijumaId="1" numurs="7309909" status="2" akceptesanasDatums="2015-05-27T00:00:00.000+0300" pasutisanasDatums="2015-05-27T00:00:00.000+0300" darbiniekaId="2"/>
+  <Pasutijums pasutijumaId="2" numurs="1770313" status="5" pasutisanasDatums="2015-05-29T00:00:00.000+0300" darbiniekaId="2"/>
+  <Pasutijums pasutijumaId="3" numurs="6740736" status="3" pasutisanasDatums="2015-06-01T00:00:00.000+0300" darbiniekaId="3"/>
+  <Pasutijums pasutijumaId="4" numurs="814640" status="4" akceptesanasDatums="2015-05-02T00:00:00.000+0300" pasutisanasDatums="2015-05-01T00:00:00.000+0300" darbiniekaId="5" sanemsanasDatums="2015-05-09T00:00:00.000+0300"/>
+  <Pasutijums pasutijumaId="5" numurs="4156674" status="2" akceptesanasDatums="2015-05-31T00:00:00.000+0300" pasutisanasDatums="2015-05-31T00:00:00.000+0300" darbiniekaId="6"/>
+  <Prece nosaukums="Cool kattle" vienibasCena="48" kategorija="2" precesId="1"/>
+  <Prece nosaukums="Mobile charger" vienibasCena="3.99" kategorija="1" precesId="2"/>
+  <Prece nosaukums="Pen" vienibasCena="0.78" kategorija="4" precesId="3"/>
+  <Prece nosaukums="Pencil" vienibasCena="0.55" kategorija="4" precesId="4"/>
+  <Prece nosaukums="Lamp" vienibasCena="10.09" kategorija="3" precesId="5"/>
+  <Prece nosaukums="Santa suite" vienibasCena="20.99" kategorija="1" precesId="6"/>
+  <PrecesVieniba precesVienibasId="1" daudzums="1" pasutijumaId="1" precesId="1"/>
+  <PrecesVieniba precesVienibasId="2" daudzums="1" pasutijumaId="2" precesId="2"/>
+  <PrecesVieniba precesVienibasId="3" daudzums="3" pasutijumaId="3" precesId="3"/>
+  <PrecesVieniba precesVienibasId="4" daudzums="5" pasutijumaId="3" precesId="4"/>
+  <PrecesVieniba precesVienibasId="5" daudzums="1" pasutijumaId="4" precesId="5"/>
+  <PrecesVieniba precesVienibasId="6" daudzums="1" pasutijumaId="5" precesId="6"/>
+</xmi:XMI>

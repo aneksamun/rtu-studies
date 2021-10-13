@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="Bookings">
+	<NodalasVaditajs vards="Homer" uzvards="Simpson" nodala="Parvaldibas">
+		<darbinieki vards="Bart" uzvards="Simpson" nodala="Razosanas">
+			<pasutijumi numurs="7309909" status="Akceptets" akceptesanasDatums="2015-05-27 15:33" pasutisanasDatums="2015-05-27 16:00">
+				<precesVieniba daudzums="1">
+					<prece nosaukums="Cool kattle" kategorija="BirojaPreces" vienibasCena="48"/>
+				</precesVieniba>
+			</pasutijumi>
+			<pasutijumi numurs="1770313" status="Atcelts" pasutisanasDatums="2015-05-29 12:03">
+				<precesVieniba daudzums="1">
+					<prece nosaukums="Mobile charger" kategorija="Aksesuari" vienibasCena="3.99"/>
+				</precesVieniba>
+			</pasutijumi>
+		</darbinieki>
+		<darbinieki vards="Lisa" uzvards="Simpson" nodala="Tirzniecibas">
+			<pasutijumi numurs="6740736" status="Pasutits" pasutisanasDatums="2015-06-1 10:00">
+				<precesVieniba daudzums="3">
+					<prece nosaukums="Pen" kategorija="Rakstampiederumi" vienibasCena="0.78"/>
+				</precesVieniba>
+				<precesVieniba daudzums="5">
+					<prece nosaukums="Pencil" kategorija="Rakstampiederumi" vienibasCena="0.55"/>
+				</precesVieniba>
+			</pasutijumi>
+		</darbinieki>
+	</NodalasVaditajs>
+	<NodalasVaditajs vards="Jack" uzvards="Sparrow" nodala="Parvaldibas">
+		<darbinieki vards="Elizabeth" uzvards="Swann" nodala="Administrativa">
+			<pasutijumi numurs="0814640" status="Sanemts" pasutisanasDatums="2015-05-01 17:46" akceptesanasDatums="2015-05-02 11:15" sanemsanasDatums="2015-05-09 10:00">
+				<precesVieniba daudzums="1">
+					<prece nosaukums="Lamp" kategorija="GaldaPiederumi" vienibasCena="10.09"/>
+				</precesVieniba>
+			</pasutijumi>
+		</darbinieki>
+	</NodalasVaditajs>
+	<NodalasVaditajs vards="Santa" uzvards="Claus" nodala="Parvaldibas">
+		<pasutijumi numurs="4156674" status="Akceptets" pasutisanasDatums="2015-05-31 13:46" akceptesanasDatums="2015-05-31 13:48">
+			<precesVieniba daudzums="1">
+				<prece nosaukums="Santa suite" kategorija="Aksesuari" vienibasCena="20.99"/>	
+			</precesVieniba>
+		</pasutijumi>
+	</NodalasVaditajs>
+</xmi:XMI>

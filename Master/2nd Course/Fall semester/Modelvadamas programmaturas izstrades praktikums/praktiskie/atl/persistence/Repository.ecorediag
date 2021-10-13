@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_1s-hQAO6EeWxV_TbNOyXPA" type="EcoreTools" name="Repository.ecorediag" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_NVHMwD2KEeGBX_2jqe4YYw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_NVJpAD2KEeGBX_2jqe4YYw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_NVK3ID2KEeGBX_2jqe4YYw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_QBTtQD2KEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/pasutijumaId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QBTtQT2KEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_cK4uMD2KEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/numurs"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cK4uMT2KEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_SVHjEAewEeW-4MApJgrQ8A" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/status"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SVHjEQewEeW-4MApJgrQ8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_XLA7AAewEeW-4MApJgrQ8A" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/akceptesanasDatums"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XLA7AQewEeW-4MApJgrQ8A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_tKJEoD2KEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/pasutisanasDatums"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tKJEoT2KEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_b_NCwAewEeW-4MApJgrQ8A" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Pasutijums/sanemsanasDatums"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_b_NCwQewEeW-4MApJgrQ8A"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_NVK3IT2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_NVK3Ij2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_NVK3Iz2KEeGBX_2jqe4YYw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_NVLeMD2KEeGBX_2jqe4YYw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_NVLeMT2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_NVLeMj2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_NVLeMz2KEeGBX_2jqe4YYw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_NVHMwT2KEeGBX_2jqe4YYw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Repository.ecore#//Pasutijums"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NVHMwj2KEeGBX_2jqe4YYw" x="378" y="270" width="219" height="129"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_12l3YD2KEeGBX_2jqe4YYw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_12nFgD2KEeGBX_2jqe4YYw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_12nFgT2KEeGBX_2jqe4YYw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_7sdekD2KEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//PrecesVieniba/precesVienibasId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7sdekT2KEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_GTxbgD2LEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//PrecesVieniba/daudzums"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GTxbgT2LEeGBX_2jqe4YYw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_12nFgj2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_12nFgz2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_12nFhD2KEeGBX_2jqe4YYw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_12nskD2KEeGBX_2jqe4YYw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_12nskT2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_12nskj2KEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_12nskz2KEeGBX_2jqe4YYw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_12l3YT2KEeGBX_2jqe4YYw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Repository.ecore#//PrecesVieniba"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_12l3Yj2KEeGBX_2jqe4YYw" x="384" y="144" width="219"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_fWvwwD2LEeGBX_2jqe4YYw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_fWyNAD2LEeGBX_2jqe4YYw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_fWyNAT2LEeGBX_2jqe4YYw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_kUiHID2QEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Prece/precesId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kUiHIT2QEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_CiEusD2PEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Prece/nosaukums"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CiEusT2PEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_wrOzgD2PEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Prece/kategorija"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wrOzgT2PEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kAxTED2PEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Prece/vienibasCena"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kAxTET2PEeGBX_2jqe4YYw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fWyNAj2LEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fWyNAz2LEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fWyNBD2LEeGBX_2jqe4YYw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fWy0ED2LEeGBX_2jqe4YYw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fWy0ET2LEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fWy0Ej2LEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fWy0Ez2LEeGBX_2jqe4YYw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_fWwX0D2LEeGBX_2jqe4YYw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Repository.ecore#//Prece"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fWwX0T2LEeGBX_2jqe4YYw" x="684" y="144" width="207"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g-VnYD2QEeGBX_2jqe4YYw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g-W1gD2QEeGBX_2jqe4YYw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g-W1gT2QEeGBX_2jqe4YYw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_tEx0wD2QEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Darbinieks/darbiniekaId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tEx0wT2QEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_1seDUD2QEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Darbinieks/vards"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1seDUT2QEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_5mVQ0D2QEeGBX_2jqe4YYw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Darbinieks/uzvards"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_5mVQ0T2QEeGBX_2jqe4YYw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_FYnkwEBSEeGUrNPwvUqlTQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Darbinieks/nodala"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FYnkwUBSEeGUrNPwvUqlTQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_j12wgAhhEeWvJf0y6hvttw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Repository.ecore#//Darbinieks/irVaditajs"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_j12wgQhhEeWvJf0y6hvttw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g-W1gj2QEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g-W1gz2QEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g-W1hD2QEeGBX_2jqe4YYw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g-XckD2QEeGBX_2jqe4YYw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g-XckT2QEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g-Xckj2QEeGBX_2jqe4YYw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g-Xckz2QEeGBX_2jqe4YYw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g-VnYT2QEeGBX_2jqe4YYw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Repository.ecore#//Darbinieks"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-VnYj2QEeGBX_2jqe4YYw" x="81" y="270" width="195"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_xS6tUj2JEeGBX_2jqe4YYw"/>
+  <element xmi:type="ecore:EPackage" href="Repository.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_GhNvEEBTEeGUrNPwvUqlTQ" type="3002" source="_NVHMwD2KEeGBX_2jqe4YYw" target="_g-VnYD2QEeGBX_2jqe4YYw">
+    <children xmi:type="notation:Node" xmi:id="_GhNvFEBTEeGUrNPwvUqlTQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GhNvFUBTEeGUrNPwvUqlTQ" x="-27" y="19"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_GhNvFkBTEeGUrNPwvUqlTQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GhNvF0BTEeGUrNPwvUqlTQ" x="1" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_GhNvEUBTEeGUrNPwvUqlTQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GhNvEkBTEeGUrNPwvUqlTQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Repository.ecore#//Pasutijums/darbiniekaId"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GhNvE0BTEeGUrNPwvUqlTQ" points="[-4, 1, 121, -4]$[-64, 11, 61, 6]$[-123, 11, 2, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8_vk4AhHEeWQu7YkqKJ2AQ" id="(0.0045662100456621,0.4728682170542636)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8_vk4QhHEeWQu7YkqKJ2AQ" id="(0.9794871794871794,0.5463917525773195)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_CR4LYEBUEeGUrNPwvUqlTQ" type="3002" source="_12l3YD2KEeGBX_2jqe4YYw" target="_NVHMwD2KEeGBX_2jqe4YYw">
+    <children xmi:type="notation:Node" xmi:id="_CR4LZEBUEeGUrNPwvUqlTQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CR4LZUBUEeGUrNPwvUqlTQ" x="-12" y="-41"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_CR4LZkBUEeGUrNPwvUqlTQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CR4LZ0BUEeGUrNPwvUqlTQ" x="-3" y="-12"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_CR4LYUBUEeGUrNPwvUqlTQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CR4LYkBUEeGUrNPwvUqlTQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Repository.ecore#//PrecesVieniba/pasutijumaId"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CR4LY0BUEeGUrNPwvUqlTQ" points="[0, 1, -6, -61]$[0, 32, -6, -30]$[0, 62, -6, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sqg_MAIuEeWGHtCr4iPluA" id="(0.5296803652968036,0.9896907216494846)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sqg_MQIuEeWGHtCr4iPluA" id="(0.5570776255707762,0.006535947712418301)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ON5RcEBUEeGUrNPwvUqlTQ" type="3002" source="_12l3YD2KEeGBX_2jqe4YYw" target="_fWvwwD2LEeGBX_2jqe4YYw">
+    <children xmi:type="notation:Node" xmi:id="_ON5RdEBUEeGUrNPwvUqlTQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ON5RdUBUEeGUrNPwvUqlTQ" x="-13" y="-21"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ON5RdkBUEeGUrNPwvUqlTQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ON5Rd0BUEeGUrNPwvUqlTQ" x="4" y="-9"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ON5RcUBUEeGUrNPwvUqlTQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ON5RckBUEeGUrNPwvUqlTQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Repository.ecore#//PrecesVieniba/precesId"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ON5Rc0BUEeGUrNPwvUqlTQ" points="[1, 8, -107, 0]$[57, 8, -51, 0]$[108, 8, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DrdA0gCmEeWHG4V1U24SaA" id="(0.9680365296803652,0.5076923076923077)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DrdA0wCmEeWHG4V1U24SaA" id="(0.0,0.35051546391752575)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_z2lzwAhiEeWvJf0y6hvttw" type="3002" source="_g-VnYD2QEeGBX_2jqe4YYw" target="_g-VnYD2QEeGBX_2jqe4YYw">
+    <children xmi:type="notation:Node" xmi:id="_z2ma0AhiEeWvJf0y6hvttw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_z2ma0QhiEeWvJf0y6hvttw" x="1" y="33"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_z2ma0ghiEeWvJf0y6hvttw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_z2ma0whiEeWvJf0y6hvttw" x="10" y="20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_z2lzwQhiEeWvJf0y6hvttw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_z2lzwghiEeWvJf0y6hvttw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Repository.ecore#//Darbinieks/vaditajaId"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_z2lzwwhiEeWvJf0y6hvttw" points="[9, -7, 79, -16]$[9, -70, 79, -79]$[-70, -70, 0, -79]$[-70, -7, 0, -16]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z2oQAAhiEeWvJf0y6hvttw" id="(0.7025641025641025,0.07079646017699115)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z2oQAQhiEeWvJf0y6hvttw" id="(0.3384615384615385,0.1504424778761062)"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,98 @@
+-- @path Bookings=/OrdersBookings/model/Bookings.ecore
+-- @path Repository=/OrdersBookings/persistence/Repository.ecore
+
+module Bookings2Repository;
+create OUT : Repository from IN : Bookings;
+
+helper def: lastUnitIdentity : Integer = 0;
+helper def: lastOrderIdentity : Integer = 0;
+helper def: lastProductIdentity : Integer = 0;
+helper def: lastEmployeeIdentity : Integer = 0;
+
+helper context Bookings!Darbinieks def: isManager(): Boolean =
+	if self.oclIsTypeOf(Bookings!NodalasVaditajs) then
+		true
+	else
+		false
+	endif;
+
+helper def: getDepartmentValue(department: Bookings!Nodala): Integer =
+	let departments: Sequence(Bookings!Nodala) = 
+		Sequence { #Administrativa, #Tirzniecibas, #Razosanas, #Parvaldibas }
+	in departments.indexOf(department);
+
+helper def: getCategoryValue(category: Bookings!Kategorija): Integer =
+	let categories: Sequence(Bookings!Kategorija) = 
+		Sequence { #Aksesuari, #BirojaPreces, #GaldaPiederumi, #Rakstampiederumi }
+	in categories.indexOf(category);
+	
+helper def: getStatusValue(status: Bookings!PasutijumaStatus): Integer = 
+	let statuses: Sequence(Bookings!PasutijumaStatus) = 
+		Sequence { #Jauns, #Akceptets, #Pasutits, #Sanemts, #Atcelts }
+	in statuses.indexOf(status);
+	
+
+rule LinkEmployee {
+	from
+		s: Bookings!Darbinieks
+	to
+		t: Repository!Darbinieks (
+			vards <- s.vards,
+			uzvards <- s.uzvards,
+			vaditajaId <- s.vaditajs,
+			irVaditajs <- s.isManager(),
+			nodala <- thisModule.getDepartmentValue(s.nodala)
+		)
+	do {
+		thisModule.lastEmployeeIdentity <- thisModule.lastEmployeeIdentity + 1;
+		t.darbiniekaId <- thisModule.lastEmployeeIdentity;
+	}
+}
+
+rule LinkOrder {
+	from
+		s: Bookings!Pasutijums
+	to
+		t: Repository!Pasutijums (
+			numurs <- s.numurs,
+			darbiniekaId <- s.darbinieks,
+			sanemsanasDatums <- s.sanemsanasDatums,
+			pasutisanasDatums <- s.pasutisanasDatums,
+			akceptesanasDatums <- s.akceptesanasDatums,
+			status <- thisModule.getStatusValue(s.status)
+		)
+	do {
+		thisModule.lastOrderIdentity <- thisModule.lastOrderIdentity + 1;
+		t.pasutijumaId <- thisModule.lastOrderIdentity;
+	}
+}
+
+rule LinkProduct {
+	from
+		s: Bookings!Prece
+	to
+		t: Repository!Prece (
+			nosaukums <- s.nosaukums,
+			vienibasCena <- s.vienibasCena,
+			kategorija <- thisModule.getCategoryValue(s.kategorija)
+		)
+	do {
+		thisModule.lastProductIdentity <- thisModule.lastProductIdentity + 1;
+		t.precesId <- thisModule.lastProductIdentity;
+	}
+}
+
+rule LinkUnit {
+	from
+		s: Bookings!PrecesVieniba
+	to
+		t: Repository!PrecesVieniba (
+			daudzums <- s.daudzums,
+			precesId <- s.prece,
+			pasutijumaId <- s.pasutijums
+		)
+	do {
+		thisModule.lastUnitIdentity <- thisModule.lastUnitIdentity + 1;
+		t.precesVienibasId <- thisModule.lastUnitIdentity;
+	}
+}

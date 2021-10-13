@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Bookings">
+  <eClassifiers xsi:type="ecore:EClass" name="Darbinieks">
+    <eOperations name="parceltUzNodalu"/>
+    <eOperations name="atlaist"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vards" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uzvards" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodala" eType="#//Nodala"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pasutijumi" upperBound="-1"
+        eType="#//Pasutijums" containment="true" eOpposite="#//Pasutijums/darbinieks"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vaditajs" eType="#//NodalasVaditajs"
+        eOpposite="#//NodalasVaditajs/darbinieki"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodalasVaditajs" eSuperTypes="#//Darbinieks">
+    <eOperations name="iegutAkceptetosPasutijumus">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Pasutijums"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="iegutPasutijumusAkceptam">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Pasutijums"/>
+      </eGenericType>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="darbinieki" upperBound="-1"
+        eType="#//Darbinieks" containment="true" eOpposite="#//Darbinieks/vaditajs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrecuKatalogs">
+    <eOperations name="atlasit">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Prece"/>
+      </eGenericType>
+      <eParameters name="kategorija" eType="#//Kategorija"/>
+    </eOperations>
+    <eOperations name="pievienotPreci" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="prece" eType="#//Prece"/>
+    </eOperations>
+    <eOperations name="dzestPreci" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="prece" eType="#//Prece"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preces" upperBound="-1"
+        eType="#//Prece"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Prece">
+    <eOperations name="atjaunot"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nosaukums" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kategorija" eType="#//Kategorija"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vienibasCena" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precesVieniba" eType="#//PrecesVieniba"
+        eOpposite="#//PrecesVieniba/prece"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrecesVieniba">
+    <eOperations name="sarekinatKopejoCenu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eOperations name="noteiktCenuBezPVN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="daudzums" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pasutijums" lowerBound="1"
+        eType="#//Pasutijums" eOpposite="#//Pasutijums/precesVieniba"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prece" lowerBound="1" eType="#//Prece"
+        containment="true" eOpposite="#//Prece/precesVieniba"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Kategorija">
+    <eLiterals name="Aksesuari" value="1" literal="Aksesuari"/>
+    <eLiterals name="BirojaPreces" value="2"/>
+    <eLiterals name="GaldaPiederumi" value="3"/>
+    <eLiterals name="Rakstampiederumi" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pasutijums">
+    <eOperations name="akceptet"/>
+    <eOperations name="pasutit"/>
+    <eOperations name="sanemt"/>
+    <eOperations name="atcelt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numurs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pasutisanasDatums" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="darbinieks" lowerBound="1"
+        eType="#//Darbinieks" eOpposite="#//Darbinieks/pasutijumi"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precesVieniba" lowerBound="1"
+        upperBound="-1" eType="#//PrecesVieniba" containment="true" eOpposite="#//PrecesVieniba/pasutijums"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sanemsanasDatums" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="akceptesanasDatums" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//PasutijumaStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Nodala">
+    <eLiterals name="Administrativa" value="1"/>
+    <eLiterals name="Tirzniecibas" value="2"/>
+    <eLiterals name="Razosanas" value="3"/>
+    <eLiterals name="Parvaldibas" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PasutijumaStatus">
+    <eLiterals name="Pasutits" value="1"/>
+    <eLiterals name="Akceptets" value="2"/>
+    <eLiterals name="Sanemts" value="3"/>
+    <eLiterals name="Atcelts" value="4"/>
+  </eClassifiers>
+</ecore:EPackage>

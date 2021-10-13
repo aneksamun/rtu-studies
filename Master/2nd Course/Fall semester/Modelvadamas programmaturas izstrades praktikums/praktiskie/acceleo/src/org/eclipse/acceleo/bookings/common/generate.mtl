@@ -1,0 +1,166 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/emf/2002/Ecore')]
+
+[comment Ecore metamodelis tiek parveidots uz Java valodas parskaitijumiem /]
+[template public generateElement(anEnum : EEnum)]
+
+[let enumUpperFirstName: String = anEnum.name.toUpperFirst()]
+[let ordinalVariableName: String = 'value']
+
+[comment Tiek definets parskatijuma tips /]
+[comment @main /]
+[file (enumUpperFirstName.concat('.java'), false, 'UTF-8')]
+public enum [enumUpperFirstName/] {
+
+[comment Tiek sastadits literalu saraksts /]
+[for (literal : EEnumLiteral | anEnum.eLiterals) separator(',\n') after(';\n')]
+	[literal.name.toUpper()/]([literal.value/])[/for]
+
+	[comment Tiek veidots literala vertibas tips /]
+	private int [ordinalVariableName/];
+
+	[enumUpperFirstName/](int [ordinalVariableName/]) {
+		this.[ordinalVariableName/] = [ordinalVariableName/];
+	}
+
+	public int get[ordinalVariableName.toUpperFirst()/]() {
+		return [ordinalVariableName/];
+	}
+}
+[/file]
+[/let]
+[/let]
+[/template]
+
+[comment Ecore metamodelis tiek parveidots uz Java valodas klasem /]
+[template public generateElement(anClass : EClass)]
+
+[let classUpperFirstName: String = anClass.name.toUpperFirst()]
+
+[comment Tiek defineta klase, ieverojot mantosanas konstrukcijas /]
+[comment @main /]
+[file (classUpperFirstName.concat('.java'), false, 'UTF-8')]
+public [if (anClass.abstract)]abstract [/if]class [classUpperFirstName/][anClass.collectSuperTypes()/] {
+
+[comment Tiek veidots atributu saraksts /]
+[if (anClass.eAttributes->size() > 0)]
+[for (attribute : EAttribute | anClass.eAttributes)]
+	private [attribute.getObjectType()/] [attribute.name.toLowerFirst()/]; 
+[/for]
+[/if]
+[comment Tiek veidots atsaucu saraksts /]
+[for (reference : EReference | anClass.eReferences) after('\n')]
+	private [reference.getReferenceTypes()/] [reference.name.toLowerFirst()/];
+[/for]
+	[comment Tiek veidots nokluseja konstruktors bez parametriem /]
+	public [classUpperFirstName/]() {}
+[comment Tiek veidots konstruktors super klases atributu inicializacijai /]
+[if (anClass.eAllSuperTypes->size() > 0)]
+
+	public [classUpperFirstName/]([anClass.collectAllParams()/]) {
+		super([anClass.collectAllParamNames()/]);
+	}
+[/if]
+[comment Tiek veidots konstruktors klases atributu inicializacijai /]
+[if (anClass.eAttributes->size() > 0)]
+
+	public [classUpperFirstName/]([anClass.collectParams()/]) {
+	[for (attribute : EAttribute | anClass.eAttributes)]
+		[let lowerFirstName: String = attribute.name.toLowerFirst()]
+		this.[lowerFirstName/] = [lowerFirstName/];
+		[/let]
+	[/for]
+	}
+
+[comment Tiek veidotas atributu piekluves metodes /]
+[for (attribute : EAttribute | anClass.eAttributes) separator('\n')]
+	[let attributeType: String = attribute.getObjectType()]
+	[let lowerFirstName: String = attribute.name.toLowerFirst()]
+	[let upperFirstName: String = attribute.name.toUpperFirst()]
+	public void set[upperFirstName/]([attributeType/] [lowerFirstName/]) {
+		this.[lowerFirstName/] = [lowerFirstName/];
+	}
+
+	public [attributeType/] get[upperFirstName/]() {
+		return [lowerFirstName/];
+	}
+	[/let]
+	[/let]
+	[/let]
+[/for]
+[/if]
+[comment Tiek veidotas atsaucu tipu piekluves metodes /]
+[if (anClass.eReferences->size() > 0)]
+[for (reference : EReference | anClass.eReferences) after('\n')]
+	[let referenceTypes: String = reference.getReferenceTypes()]
+	[let lowerFirstName: String = reference.name.toLowerFirst()]
+	[let upperFirstName: String = reference.name.toUpperFirst()]
+
+	public void set[upperFirstName/]([referenceTypes/] [lowerFirstName/]) {
+		this.[lowerFirstName/] = [lowerFirstName/]; 
+	}
+
+	public [referenceTypes/] get[upperFirstName/]() {
+		return [lowerFirstName/];
+	}
+	[/let]
+	[/let]
+	[/let]
+[/for]
+[/if]
+[comment Tiek veidotas metodes /]
+[for (operation : EOperation | anClass.eAllOperations) separator('\n') after('')]
+	[if (operation.eType.oclIsUndefined())]
+	public void [operation.name.toLowerFirst()/]() {
+
+	}
+	[else]
+	public [operation.eType.instanceTypeName/][operation.checkForGenericType()/] [operation.name.toLowerFirst()/]([operation.collectParams()/]) {
+		throw new UnsupportedOperationException();
+	}
+	[/if]
+[/for]
+}
+[/file]
+[/let]
+[/template]
+
+[comment Apkopo super klases, izpildes piem. - 'extends Darbinieks' /]
+[template private collectSuperTypes(clazz: EClass)]
+[clazz.eAllSuperTypes->collect(' extends ' + name.toUpperFirst())/]
+[/template]
+
+[comment Iegust attributa datu tipu, izpildes piem. - java.math.BigInteger /]
+[template private getObjectType(attribute: EAttribute)]
+[if (attribute.eAttributeType.instanceTypeName.oclIsUndefined())][eAttributeType.name/][else][eAttributeType.instanceTypeName/][/if]
+[/template]
+
+[comment Apkopo atributus signaturas veida, izpildes piem. - String vards, String uzvards /]
+[template private collectParams(clazz: EClass)]
+[clazz.eAttributes->collect(getObjectType() + ' ' + name.toLowerFirst())->sep(', ')/]
+[/template]
+
+[comment Megina iegut visparinatu tipu, izpildes piem. - <T> /]
+[template private checkForGenericType(operation: EOperation)]
+[if (not operation.eGenericType.eTypeArguments->isEmpty())]<[operation.eGenericType.eTypeArguments.eClassifier.name/]>[/if]
+[/template]
+
+[comment Apkopo metodes parametrus signaturas veida, izpildes piem. - Prece prece /]
+[template private collectParams(operation: EOperation)]
+[operation.eParameters->collect(eType.name + ' ' + name.toLowerFirst())->sep(', ')/]
+[/template]
+
+[comment Apkopo gan super klases, gan pasas klases atributus signaturas veida, izpildes piem. - Nodala nodala /]
+[template private collectAllParams(clazz: EClass)]
+[clazz.eAllAttributes->collect(getObjectType() + ' ' + name)->sep(', ')/]
+[/template]
+
+[comment Apkopo gan super klases, gan pasas klases atributu nosaukums, izpildes piem. - vards, uzvards /]
+[template private collectAllParamNames(clazz: EClass)]
+[clazz.eAllAttributes->collect(name.toLowerFirst())->sep(', ')/]
+[/template]
+
+[comment Iegust atsauces objekta tipu, izpildes piem., Set<T> /]
+[template private getReferenceTypes(reference: EReference)]
+[if (reference.many)]java.util.Set<[reference.eType.name/]>[else][reference.eType.name/][/if]
+[/template]
