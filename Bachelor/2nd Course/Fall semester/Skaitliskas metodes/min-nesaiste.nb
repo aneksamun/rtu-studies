@@ -1,0 +1,381 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     11006,        312]*)
+(*NotebookOutlinePosition[     11677,        335]*)
+(*  CellTagsIndexPosition[     11633,        331]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    RowBox[{"(*", 
+      StyleBox[\(Minim\[ABar]l\[ABar]s\ nesaistes\ \(\(metode\)\(.\)\)\),
+        FontSize->36], 
+      StyleBox["*)",
+        FontSize->36]}]], "Input"],
+
+Cell[BoxData[
+    \(\(Clear[A, B, X, \[Tau], NN];\)\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"10", "2", "1"},
+              {"2", "10", "2"},
+              {"1", "2", "10"}
+              }], ")"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"B", "=", 
+        RowBox[{"(", GridBox[{
+              {"9"},
+              {\(-13\)},
+              {"30"}
+              }], ")"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(X[0]\), "=", 
+        RowBox[{"(", GridBox[{
+              {"0"},
+              {"0"},
+              {"0"}
+              }], ")"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+    \(\(NN = 10;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(eps = 0.001;\)\(\[IndentingNewLine]\)
+    \)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(k = 0;\)\(\[IndentingNewLine]\)
+    \)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(While[Norm[B - A . X[k]] > eps \[And] k \[LessEqual] NN, 
+      r[k] = A . X[k] - B // N; \[Tau][k + 1] = 
+        Dot[Transpose[A . r[k]], r[k]]\/Norm[A . r[k]]\^2 // N; 
+      Y[k] = \[Tau][k + 1] . Transpose[r[k]]; 
+      X[k + 1] = X[k] - Transpose[Y[k]] // N; 
+      Print["\<X=\>", \(X[k + 1] // N\) // MatrixForm, "\<   r[X]=\>", 
+        Norm[B - A . X[k + 1]] // N, "\<   \[Tau]=\>", \[Tau][k + 1] // 
+          N]; \(k++\)]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9834004518220212`"},
+                {\(-1.420467319298475`\)},
+                {"3.278001506073404`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "7.484759896378491`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.10926671686911346`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.98340045182202118}, {-1.4204673192984749}, {
+          3.2780015060734038}}], "   r[X]=", 7.4847598963784909, 
+        "   \[Tau]=", {{.10926671686911346}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.8764307747897757`"},
+                {\(-2.0363399514003024`\)},
+                {"3.2003681943127544`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "1.8095034724352295`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.08415709631730575`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.87643077478977571}, {-2.0363399514003024}, {
+          3.2003681943127544}}], "   r[X]=", 1.8095034724352295, 
+        "   \[Tau]=", {{.084157096317305752}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.997924525725967`"},
+                {\(-2.122986004983941`\)},
+                {"3.3311343880163586`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.4376751093405957`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.10965100781001456`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.99792452572596702}, {-2.1229860049839409}, {
+          3.3311343880163586}}], "   r[X]=", .43767510934059572, 
+        "   \[Tau]=", {{.10965100781001456}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9925031384054696`"},
+                {\(-2.1590337697329853`\)},
+                {"3.3258065371079812`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.10591473974133152`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.08417305331207682`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.99250313840546955}, {-2.1590337697329853}, {
+          3.3258065371079812}}], "   r[X]=", .10591473974133152, 
+        "   \[Tau]=", {{.08417305331207682}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9998750330593017`"},
+                {\(-2.164108668030349`\)},
+                {"3.3332079734214926`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.025630765885608413`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.10965248412649378`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.9998750330593017}, {-2.164108668030349}, {
+          3.3332079734214926}}], "   r[X]=", .025630765885608413, 
+        "   \[Tau]=", {{.10965248412649378}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9995601441872204`"},
+                {\(-2.166219673222258`\)},
+                {"3.332893382247807`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.006202508845859778`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.08417310064377737`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.99956014418722039}, {-2.1662196732222578}, {
+          3.3328933822478071}}], "   r[X]=", .0062025088458597779, 
+        "   \[Tau]=", {{.084173100643777365}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9999926708760144`"},
+                {\(-2.166516866625865`\)},
+                {"3.333326002958645`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.0015009741151858131`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.10965248849196148`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.9999926708760144}, {-2.166516866625865}, {
+          3.3333260029586449}}], "   r[X]=", .0015009741151858131, 
+        "   \[Tau]=", {{.10965248849196148}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"X=\"\>", "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"0.9999742387794373`"},
+                {\(-2.166640490094264`\)},
+                {"3.3333075718095473`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", "\<\"   r[X]=\"\>", "\[InvisibleSpace]", 
+        "0.0003632277454298988`", "\[InvisibleSpace]", "\<\"   \[Tau]=\"\>", 
+        "\[InvisibleSpace]", \({{0.0841731007835581`}}\)}],
+      SequenceForm[ "X=", 
+        MatrixForm[ {{.99997423877943725}, {-2.166640490094264}, {
+          3.3333075718095473}}], "   r[X]=", .00036322774542989878, 
+        "   \[Tau]=", {{.084173100783558094}}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(LinearSolve[A, B] // N\)], "Input"],
+
+Cell[BoxData[
+    \({{1.`}, {\(-2.1666666666666665`\)}, {3.3333333333333335`}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Y[0] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-0.9834004518220212`\), 
+              "1.420467319298475`", \(-3.278001506073404`\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X[1] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0.9834004518220212`"},
+            {\(-1.420467319298475`\)},
+            {"3.278001506073404`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowToolbars->"EditBar",
+WindowSize->{815, 593},
+WindowMargins->{{-1, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 186, 5, 44, "Input"],
+Cell[1943, 58, 64, 1, 30, "Input"],
+Cell[2010, 61, 221, 7, 57, "Input"],
+Cell[2234, 70, 193, 7, 57, "Input"],
+Cell[2430, 79, 193, 7, 57, "Input"],
+Cell[2626, 88, 45, 1, 30, "Input"],
+Cell[2674, 91, 81, 2, 50, "Input"],
+Cell[2758, 95, 75, 2, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[2858, 101, 466, 8, 106, "Input"],
+Cell[3327, 111, 834, 18, 53, "Print"],
+Cell[4164, 131, 838, 18, 53, "Print"],
+Cell[5005, 151, 835, 18, 53, "Print"],
+Cell[5843, 171, 838, 18, 53, "Print"],
+Cell[6684, 191, 837, 18, 53, "Print"],
+Cell[7524, 211, 840, 18, 53, "Print"],
+Cell[8367, 231, 838, 18, 53, "Print"],
+Cell[9208, 251, 841, 18, 53, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10086, 274, 55, 1, 30, "Input"],
+Cell[10144, 277, 92, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10273, 283, 51, 1, 30, "Input"],
+Cell[10327, 286, 281, 7, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10645, 298, 51, 1, 30, "Input"],
+Cell[10699, 301, 291, 8, 57, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

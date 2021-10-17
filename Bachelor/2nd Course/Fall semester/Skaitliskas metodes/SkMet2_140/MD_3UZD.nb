@@ -1,0 +1,225 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5694,        165]*)
+(*NotebookOutlinePosition[      6357,        188]*)
+(*  CellTagsIndexPosition[      6313,        184]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Clear[a, b, c, f, x, h, k]\)], "Input"],
+
+Cell[BoxData[
+    \(\(a1 = 1;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(b1 = 4;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(c1 = 10;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(g[x_] = \@\(a1*x\) - \@\(b1*x\)\%3;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(h = 0.1;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(d = Table[\((g[1 + h\^k] - g[1])\)/h\^k, {k, 1, 10}];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TableForm[d, TableHeadings \[Rule] {None, {"\<\>"}}, 
+      TableSpacing \[Rule] {0.3, 2}]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {\(-0.024326410629407214`\)},
+          {\(-0.02862342775600268`\)},
+          {\(-0.029082341556074802`\)},
+          {\(-0.029128546554790795`\)},
+          {\(-0.029133170209583163`\)},
+          {\(-0.02913363239542831`\)},
+          {\(-0.029133679912973765`\)},
+          {\(-0.029133695456096106`\)},
+          {\(-0.029133584433793644`\)},
+          {\(-0.02913447261221334`\)}
+          },
+        RowSpacings->0.3,
+        ColumnSpacings->2,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {-.024326410629407214, -.02862342775600268, \
+-.029082341556074802, -.029128546554790795, -.029133170209583163, \
+-.029133632395428311, -.029133679912973765, -.029133695456096106, \
+-.029133584433793644, -.029134472612213341}, TableHeadings -> {None, {""}}, 
+        TableSpacing -> {.29999999999999999, 2}]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(Clear[f, x, a, b, c, d, e, d1, h, df, t1];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(atv[f_, x_, a_, 
+          h_] := \((N[f /. x \[Rule] a + h] - N[f /. x \[Rule] a])\)/
+          h;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(f = x*g[x];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({atv[f, x, 1, 10\^\(-4\)], df = D[f, x] /. x \[Rule] 1. }\)], "Input"],
+
+Cell[BoxData[
+    \({\(-0.6165325113793862`\), \(-0.6165347359575994`\)}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(t1 = 
+        Table[{h = 10. \^\(-n\), d = atv[f, x, 1, h], Abs[d - df]}, {n, 1, 
+            15}];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TableForm[t1, 
+      TableHeadings \[Rule] {None, {"\<h\>", "\<aproksim\[ABar]cija\>", "\<k\
+\:013c\:016bda\>"}}, TableSpacing \[Rule] {0.3, 2}]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"\<\"h\"\>", "\<\"aproksim\[ABar]cija\"\>", "\<\"k\:013c\:016bda\"\
+\>"},
+          {"0.1`", \(-0.6141601036605482`\), "0.00237463229705126`"},
+          {"0.01`", \(-0.6163107140017665`\), "0.0002240219558329315`"},
+          {"0.001`", \(-0.6165124758658047`\), "0.00002226009179473465`"},
+          {"0.0001`", \(-0.6165325113771658`\), "2.2245804336407105`*^-6"},
+          {"0.00001`", \(-0.6165345135089594`\), "2.2244864006371046`*^-7"},
+          {"1.`*^-6", \(-0.6165347133935128`\), "2.256408659917497`*^-8"},
+          {"1.`*^-7", \(-0.616534735486951`\), "4.706484091343555`*^-10"},
+          {"1.`*^-8", \(-0.6165347454789583`\), "9.521358812492053`*^-9"},
+          {"1.`*^-9", \(-0.6165347121722674`\), "2.3785332037284945`*^-8"},
+          {"1.`*^-10", \(-0.6165357113729897`\), "9.754153902363782`*^-7"},
+          {"1.`*^-11", \(-0.6165290500348419`\), "5.685922757514561`*^-6"},
+          {"1.`*^-12", \(-0.6165068455743494`\), "0.000027890383250017692`"},
+          {"1.`*^-13", \(-0.6161737786669619`\), "0.00036095729063756465`"},
+          {"1.`*^-14", \(-0.6328271240363392`\), "0.016292388078739783`"},
+          {"1.`*^-15", \(-0.8881784197001251`\), "0.2716436837425257`"}
+          },
+        RowSpacings->0.3,
+        ColumnSpacings->2,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ 
+        BoxForm`e$, TableHeadings -> {None, {"h", "aproksim\[ABar]cija", 
+          "k\:013c\:016bda"}}, TableSpacing -> {.29999999999999999, 
+          2}]]]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 941}},
+WindowSize->{660, 740},
+WindowMargins->{{43, Automatic}, {Automatic, 62}},
+Magnification->1
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 59, 1, 30, "Input"],
+Cell[1816, 54, 44, 1, 30, "Input"],
+Cell[1863, 57, 44, 1, 30, "Input"],
+Cell[1910, 60, 45, 1, 30, "Input"],
+Cell[1958, 63, 72, 1, 34, "Input"],
+Cell[2033, 66, 45, 1, 30, "Input"],
+Cell[2081, 69, 90, 1, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[2196, 74, 123, 2, 30, "Input"],
+Cell[2322, 78, 913, 21, 147, "Output"]
+}, Open  ]],
+Cell[3250, 102, 79, 1, 30, "Input"],
+Cell[3332, 105, 136, 3, 30, "Input"],
+Cell[3471, 110, 48, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3544, 115, 90, 1, 31, "Input"],
+Cell[3637, 118, 86, 1, 29, "Output"]
+}, Open  ]],
+Cell[3738, 122, 136, 3, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3899, 129, 177, 3, 50, "Input"],
+Cell[4079, 134, 1599, 28, 257, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

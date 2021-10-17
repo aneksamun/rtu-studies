@@ -1,0 +1,416 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9588,        297]*)
+(*NotebookOutlinePosition[     10258,        320]*)
+(*  CellTagsIndexPosition[     10214,        316]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    StyleBox[\( (*\ Interpol\[ABar]cija\ simbolisk\[ABar]\ veid\[ABar]*) \),
+      FontFamily->"Arial CYR",
+      FontSize->24]], "Input"],
+
+Cell[BoxData[
+    \(Clear[a, b, c, f, g, h, x, f1, g1]\)], "Input"],
+
+Cell[BoxData[
+    \( (*\ Atrod\ taisnes\ vien\[ABar]dojumu\ caur\ punktiem\ \((1, 
+          f)\), \((2, g)\)*) \)], "Input",
+  FontSize->16],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InterpolatingPolynomial[{f, g}, x]\)], "Input"],
+
+Cell[BoxData[
+    \(f + \((\(-f\) + g)\)\ \((\(-1\) + x)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[%]\)], "Input"],
+
+Cell[BoxData[
+    \(2\ f - g - f\ x + g\ x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[%, x]\)], "Input"],
+
+Cell[BoxData[
+    \(2\ f - g + \((\(-f\) + g)\)\ x\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*\ Atrod\ parabolas\ vien\[ABar]dojumu\ caur\ punktiem\ \((a, 
+          f)\), \((b, g)\), \((c, h)\)*) \)], "Input",
+  FontSize->16],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InterpolatingPolynomial[{{a, f}, {b, g}, {c, h}}, x]\)], "Input"],
+
+Cell[BoxData[
+    \(f + \((\(-a\) + 
+            x)\)\ \((\(\(-f\) + g\)\/\(\(-a\) + b\) + \(\((\(-\(\(\(-f\) + \
+g\)\/\(\(-a\) + b\)\)\) + \(\(-g\) + h\)\/\(\(-b\) + c\))\)\ \((\(-b\) + x)\)\
+\)\/\(\(-a\) + c\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[%]\)], "Input"],
+
+Cell[BoxData[
+    \(f + \(a\ f\)\/\(\(-a\) + b\) + \(a\ b\ f\)\/\(\((\(-a\) + b)\)\ \((\(-a\
+\) + c)\)\) - \(a\ g\)\/\(\(-a\) + b\) - \(a\ b\ g\)\/\(\((\(-a\) + b)\)\ \((\
+\(-a\) + c)\)\) - \(a\ b\ g\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + c)\)\) + \(a\ \
+b\ h\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + c)\)\) - \(f\ x\)\/\(\(-a\) + b\) - \
+\(a\ f\ x\)\/\(\((\(-a\) + b)\)\ \((\(-a\) + c)\)\) - \(b\ f\ \
+x\)\/\(\((\(-a\) + b)\)\ \((\(-a\) + c)\)\) + \(g\ x\)\/\(\(-a\) + b\) + \(a\ \
+g\ x\)\/\(\((\(-a\) + b)\)\ \((\(-a\) + c)\)\) + \(b\ g\ x\)\/\(\((\(-a\) + \
+b)\)\ \((\(-a\) + c)\)\) + \(a\ g\ x\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + \
+c)\)\) + \(b\ g\ x\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + c)\)\) - \(a\ h\ \
+x\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + c)\)\) - \(b\ h\ x\)\/\(\((\(-a\) + c)\)\
+\ \((\(-b\) + c)\)\) + \(f\ x\^2\)\/\(\((\(-a\) + b)\)\ \((\(-a\) + c)\)\) - \
+\(g\ x\^2\)\/\(\((\(-a\) + b)\)\ \((\(-a\) + c)\)\) - \(g\ \
+x\^2\)\/\(\((\(-a\) + c)\)\ \((\(-b\) + c)\)\) + \(h\ x\^2\)\/\(\((\(-a\) + \
+c)\)\ \((\(-b\) + c)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[%]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(1\/\(\((a - b)\)\ \((a - c)\)\ \((b - c)\)\)\)\((c\ \((f - 
+              g)\)\ \((c - x)\)\ x + 
+        b\^2\ \((c\ f - a\ h + \((\(-f\) + h)\)\ x)\) - 
+        a\^2\ \((c\ g + \((\(-g\) + h)\)\ x)\) + 
+        b\ \((\(-c\^2\)\ f + a\^2\ h + \((f - h)\)\ x\^2)\) + 
+        a\ \((c\^2\ g + \((\(-g\) + h)\)\ x\^2)\))\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[%, x]\)], "Input"],
+
+Cell[BoxData[
+    \(\(b\^2\ c\ f - b\ c\^2\ f - a\^2\ c\ g + a\ c\^2\ g + a\^2\ b\ h - a\ b\
+\^2\ h\)\/\(\((a - b)\)\ \((a - c)\)\ \((b - c)\)\) + \(\((c\^2\ \((f - g)\) \
++ b\^2\ \((\(-f\) + h)\) - a\^2\ \((\(-g\) + h)\))\)\ x\)\/\(\((a - b)\)\ \
+\((a - c)\)\ \((b - c)\)\) + \(\((\(-c\)\ \((f - g)\) + b\ \((f - h)\) + a\ \
+\((\(-g\) + h)\))\)\ x\^2\)\/\(\((a - b)\)\ \((a - c)\)\ \((b - c)\)\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*\ Expand, \ Simplify, \ 
+      Collect\ atrod\ \[SHacek]\[ABar]di\ Built\ in\ Functions \[Rule] \ \
+\(Algebraic\ Computation \[Rule] \(\(Formula\ Manipulation\)\(\[Rule]\)\)\)*) \
+\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[\( (*\ Ermita\ polinoms\ simbolisk\[ABar]\ veid\[ABar]*) \),
+      FontSize->18]], "Input",
+  FontSize->16],
+
+Cell[BoxData[
+    \( (*\ 
+      Punkt\[ABar]\ x = \(a\ funkcijas\ v\[EBar]rt\:012bba\ ir\ f\ un\ \
+atvasin\[ABar]juma\ v\[ABar]rt\:012bba\ f1 . \ Punkt\[ABar]\ x = 
+          b\ funkcijas\ v\[EBar]rt\:012bba\ ir\ g\ un\ atvasin\[ABar]juma\ v\
+\[EBar]rt\:012bba\ \(\(g1\)\(.\)\)\)*) \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InterpolatingPolynomial[{{a, {f, f1}}, {b, {g, g1}}}, x]\)], "Input"],
+
+Cell[BoxData[
+    \(f + \((\(-a\) + 
+            x)\)\ \((f1 + \((\(-a\) + 
+                  x)\)\ \((\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\/\(\(-a\) + b\) + \(\((\(-\(\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + b\)\)\) + \
+g1\)\/\(\(-a\) + b\))\)\ \((\(-b\) + x)\)\)\/\(\(-a\) + b\))\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(d[x_, a_, f_, f1_, b_, g_, g1_] = %\)], "Input"],
+
+Cell[BoxData[
+    \(f + \((\(-a\) + 
+            x)\)\ \((f1 + \((\(-a\) + 
+                  x)\)\ \((\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\/\(\(-a\) + b\) + \(\((\(-\(\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + b\)\)\) + \
+g1\)\/\(\(-a\) + b\))\)\ \((\(-b\) + x)\)\)\/\(\(-a\) + b\))\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[%, x]\)], "Input"],
+
+Cell[BoxData[
+    \(f - 
+      a\ f1 + \(a\^2\ \((\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\))\)\)\/\(\(-a\) + b\) - \(a\^2\ b\ \((\(-\(\(\(-f1\) + \(\(-f\) + \
+g\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\) + g1\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) + b\) + \((f1 - \(2\ a\ \
+\((\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) + b\) + \(a\^2\ \
+\((\(-\(\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\)\)\) + \(\
+\(-\(\(\(-f\) + g\)\/\(\(-a\) + b\)\)\) + g1\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) \
++ b\) + \(2\ a\ b\ \((\(-\(\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + b\)\)\) + \
+g1\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) + b\))\)\ x + \((\(\(-f1\) + \(\(-f\) + g\
+\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\) - \(2\ a\ \((\(-\(\(\(-f1\) + \(\(-f\) + \
+g\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + \
+b\)\)\) + g1\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) + b\) - \(b\ \((\(-\(\(\(-f1\) \
++ \(\(-f\) + g\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\)\)\) + \(\(-\(\(\(-f\) + \
+g\)\/\(\(-a\) + b\)\)\) + g1\)\/\(\(-a\) + b\))\)\)\/\(\(-a\) + b\))\)\ x\^2 \
++ \(\((\(-\(\(\(-f1\) + \(\(-f\) + g\)\/\(\(-a\) + b\)\)\/\(\(-a\) + b\)\)\) \
++ \(\(-\(\(\(-f\) + g\)\/\(\(-a\) + b\)\)\) + g1\)\/\(\(-a\) + b\))\)\ x\^3\)\
+\/\(\(-a\) + b\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*\ 
+      Iepriek\[SHacek]\[EBar]jais\ rezult\[ABar]ts\ skaitliski*) \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InterpolatingPolynomial[{{0, {1, 2}}, {2, {0, \(-1\)}}}, x]\)], "Input"],
+
+Cell[BoxData[
+    \(1 + 
+      x\ \((2 + \((\(-\(5\/4\)\) + 
+                  1\/2\ \((\(-2\) + x)\))\)\ x)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[%, x]\)], "Input"],
+
+Cell[BoxData[
+    \(1 + 2\ x - \(9\ x\^2\)\/4 + x\^3\/2\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(f = 1;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(f1 = 2;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(g = 0;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(g1 = \(-1\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(a = 0;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(b = 2;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(d[x, 0, 1, 2, 2, 0, \(-1\)] // N\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(1.`\)\(\[InvisibleSpace]\)\) + 
+      x\ \((\(\(2.`\)\(\[InvisibleSpace]\)\) + \((\(-1.25`\) + 
+                  0.5`\ \((\(-2.`\) + x)\))\)\ x)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[%, x]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(1.`\)\(\[InvisibleSpace]\)\) + 2.`\ x - 2.25`\ x\^2 + 
+      0.5`\ x\^3\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[a, b, c, f, g, h, x, f1, g1]\)], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowToolbars->"EditBar",
+WindowSize->{784, 527},
+WindowMargins->{{6, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 152, 3, 43, "Input"],
+Cell[1909, 56, 67, 1, 30, "Input"],
+Cell[1979, 59, 141, 3, 32, "Input"],
+
+Cell[CellGroupData[{
+Cell[2145, 66, 67, 1, 30, "Input"],
+Cell[2215, 69, 72, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2324, 75, 42, 1, 30, "Input"],
+Cell[2369, 78, 56, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2462, 84, 46, 1, 30, "Input"],
+Cell[2511, 87, 64, 1, 29, "Output"]
+}, Open  ]],
+Cell[2590, 91, 155, 3, 55, "Input"],
+
+Cell[CellGroupData[{
+Cell[2770, 98, 85, 1, 30, "Input"],
+Cell[2858, 101, 228, 4, 60, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3123, 110, 42, 1, 30, "Input"],
+Cell[3168, 113, 1033, 14, 155, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4238, 132, 44, 1, 30, "Input"],
+Cell[4285, 135, 360, 6, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4682, 146, 46, 1, 30, "Input"],
+Cell[4731, 149, 412, 6, 87, "Output"]
+}, Open  ]],
+Cell[5158, 158, 216, 4, 50, "Input"],
+Cell[5377, 164, 134, 3, 35, "Input"],
+Cell[5514, 169, 295, 5, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[5834, 178, 89, 1, 30, "Input"],
+Cell[5926, 181, 372, 6, 95, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6335, 192, 68, 1, 30, "Input"],
+Cell[6406, 195, 372, 6, 95, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6815, 206, 46, 1, 30, "Input"],
+Cell[6864, 209, 1352, 19, 268, "Output"]
+}, Open  ]],
+Cell[8231, 231, 104, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[8360, 237, 92, 1, 30, "Input"],
+Cell[8455, 240, 124, 3, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8616, 248, 46, 1, 30, "Input"],
+Cell[8665, 251, 69, 1, 45, "Output"]
+}, Open  ]],
+Cell[8749, 255, 43, 1, 30, "Input"],
+Cell[8795, 258, 44, 1, 30, "Input"],
+Cell[8842, 261, 43, 1, 30, "Input"],
+Cell[8888, 264, 49, 1, 30, "Input"],
+Cell[8940, 267, 43, 1, 30, "Input"],
+Cell[8986, 270, 43, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[9054, 275, 65, 1, 30, "Input"],
+Cell[9122, 278, 185, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9344, 286, 46, 1, 30, "Input"],
+Cell[9393, 289, 109, 2, 29, "Output"]
+}, Open  ]],
+Cell[9517, 294, 67, 1, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

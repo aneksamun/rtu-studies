@@ -1,0 +1,2108 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     41014,       1572]*)
+(*NotebookOutlinePosition[     42114,       1609]*)
+(*  CellTagsIndexPosition[     42032,       1603]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+\tMathematica  5.0 pielietojumi  uzdevumos, kuri saistiti ar \
+skaitlisk\[ABar]m metod\[EBar]m.\
+\>", "Title",
+  FontFamily->"Arial Baltic",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+1.1.  Matricas sadal\:012b\[SHacek]ana  divos reizin\[ABar]t\[ABar]jos. \
+Pirmais ir apak\[SHacek]\[EBar]j\[ABar] trijst\:016brveida matrica ar 1 uz \
+galven\[ABar]s diagon\[ABar]les, otrais aug\[SHacek]\[EBar]j\[ABar] trijst\
+\:016brveida matrica.\
+\>", "Section",
+  TextJustification->1,
+  CellTags->"LUDecomposition"],
+
+Cell["\<\
+Ievad\[ABar]m matricu.Input/Create Table/matrix/Palette. Lai risin\[ABar]jums \
+netiktu ieg\:016bts simbolisk\[ABar] veid\[ABar], vismaz vienu matricas \
+elementu vajag uzdot ar decim\[ABar]lo komatu.\
+\>", "ExampleText",
+  FontSize->14,
+  CellTags->"LUDecomposition"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"1.", "2", "3"},
+              {"6", "5", "4"},
+              {"7", "8", "8"}
+              }], ")"}]}], ";"}]], "Input",
+  FontSize->14],
+
+Cell["\<\
+Tagad matrica tiks sadal\:012bta reizin\[ABar]t\[ABar]jos. Rezult\[ABar]ts ir \
+saraksts no 3 elementiem. Pirmais elements ir matrica, kur\[ABar] ieiet abas \
+matricas L un U, otrais - permut\[ABar]ciju saraksts, kas izdar\:012btas ar \
+dot\[ABar]s matricas rind\[ABar]m ar m\[EBar]r\:0137i paaugstin\[ABar]t \
+precizit\[ABar]ti, tre\[SHacek]ais - determin\[EBar]t\:012bbas koeficients \
+matricai p\[EBar]c permut\[ABar]ciju izdar\:012b\[SHacek]anas. \
+Rezult\[ABar]ts tiek par\[ABar]d\:012bts matricu form\[ABar].\
+\>", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Map[MatrixForm, {LU, perm, detkoef} = LUDecomposition[A]]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"7.`", "0.8571428571428571`", "0.14285714285714285`"},
+                {"8.`", \(-1.8571428571428568`\), \(-0.4615384615384616`\)},
+                {"8.`", \(-2.8571428571428568`\), "0.5384615384615384`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], ",", 
+        InterpretationBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"3"},
+                {"2"},
+                {"1"}
+                }], "\[NoBreak]", ")"}],
+          MatrixForm[ {3, 2, 1}]], ",", 
+        TagBox["154.42857142857144`",
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "Redzam, ka tre\[SHacek]\[ABar] rinda un pirm\[ABar] rinda tiek \
+apmain\:012bta viet\[ABar]m. Tie\[SHacek]i \[SHacek]\[ABar]da matrica tiks \
+dal\:012bta reizin\[ABar]t\[ABar]jos. Tagad tiek izr\[EBar]\:0137in\[ABar]ta \
+vien\[ABar]dojumu sist\[EBar]ma AX=B, kur B=(",
+  Cell[BoxData[GridBox[{
+          {"1"},
+          {"2"},
+          {"3"}
+          }]]],
+  ")."
+}], "Text",
+  FontSize->14,
+  CellTags->"LUDecomposition"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X = LUBackSubstitution[{LU, perm, detkoef}, {1, 2, 3}]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({0.42857142857142855`, \(-0.5714285714285715`\), 
+      0.5714285714285715`}\)], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaud\[ABar]m ieg\:016bto rezult\[ABar]tu:", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A . X - {1, 2, 3} // Chop\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({0, 0, 0}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Lai ieg\:016btu matricas L un U, nepiecie\[SHacek]ams iel\[ABar]d\[EBar]t \
+sekojo\[SHacek]o paketi.\
+\>", "Text",
+  FontSize->14],
+
+Cell[BoxData[
+    \(<< LinearAlgebra`MatrixManipulation`\)], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Map[MatrixForm, {L, U} = LUMatrices[LU]]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"1.`", "0.`", "0.`"},
+                {"0.8571428571428571`", "1.`", "0.`"},
+                {"0.14285714285714285`", \(-0.4615384615384616`\), "1.`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], ",", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"7.`", "8.`", "8.`"},
+                {"0", \(-1.8571428571428568`\), \(-2.8571428571428568`\)},
+                {"0", "0", "0.5384615384615384`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+P\[ABar]rbaude. Vispirms ieg\:016bstam doto matricu p\[EBar]c \
+permut\[ABar]ciju izdar\:012b\[SHacek]anas.\
+\>", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[\([perm]\)] // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"7", "8", "8"},
+            {"6", "5", "4"},
+            {"1.`", "2", "3"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Tie\[SHacek]i \[SHacek]\:012b matrica tika dal\:012bta \
+reizin\[ABar]t\[ABar]jos.\
+\>", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[\([perm]\)] - L . U // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0.`", "0.`", "0.`"},
+            {"0.`", "0.`", "0.`"},
+            {"0.`", "0.`", "0.`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.2. QR faktoriz\[ABar]cija.", "Section"],
+
+Cell[BoxData[
+    \(Sadala\ matricu\ divos\ reizin\[ABar]t\[ABar]jos\ A = Q\^T . R, \ 
+    kur\ Q\  - \ ortogon\[ABar]la\ matrica, \ 
+    R\  - \ aug\[SHacek]\[EBar]j\[ABar]\ trijst\:016brveida\ \(\(matrica\)\(.\
+\)\)\)], "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({q, r} = QRDecomposition[A] // N\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{{\(-0.10783277320343831`\), \(-0.6469966392206304`\), \
+\(-0.754829412424069`\)}, {0.568346516057409`, \(-0.66307093540031`\), 
+          0.48715415662063577`}, {\(-0.8156925466796058`\), \
+\(-0.37647348308289547`\), 
+          0.43921906359671126`}}, {{\(-9.273618495495704`\), \
+\(-9.48928404190258`\), \(-8.950120175885388`\)}, {0.`, 1.7185716080783553`, 
+          2.9499890595360743`}, {0.`, 
+          0.`, \(-0.4392190635967101`\)}}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(q // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-0.10783277320343831`\), \(-0.6469966392206304`\), \
+\(-0.754829412424069`\)},
+            {"0.568346516057409`", \(-0.66307093540031`\), 
+              "0.48715415662063577`"},
+            {\(-0.8156925466796058`\), \(-0.37647348308289547`\), 
+              "0.43921906359671126`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(r // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-9.273618495495704`\), \(-9.48928404190258`\), \
+\(-8.950120175885388`\)},
+            {"0.`", "1.7185716080783553`", "2.9499890595360743`"},
+            {"0.`", "0.`", \(-0.4392190635967101`\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude.", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Transpose[q] . r - A // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-8.881784197001252`*^-16\), \(-4.440892098500626`*^-16\), \
+\(-8.881784197001252`*^-16\)},
+            {"0.`", "0.`", \(-4.440892098500626`*^-16\)},
+            {"8.881784197001252`*^-16", "0.`", "0.`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Par to, ka matrica q tie\[SHacek]\[ABar]m ir ortogon\[ABar]la, var \
+p\[ABar]rliecin\[ABar]ties \[SHacek]\[ABar]di. Komanda Chop rezult\[ABar]t\
+\[ABar] skait\:013cus, kuri ir tuvi nullei, aizst\[ABar]j ar nulli.\
+\>", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Inverse[q] - Transpose[q] // Chop\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.3. Ho\:013cecka faktoriz\[ABar]cija.", "Section"],
+
+Cell[BoxData[
+    \(Dot\[ABar]\ matrica\ A\ tiek\ sadal\:012bta\ \ \[SHacek]\[ABar]dos\ \
+reizin\[ABar]t\[ABar]jos\ A = \(U\^T\) 
+        U . \ \ Rezult\[ABar]ts\ ir\ aug\[SHacek]\[EBar]j\[ABar]\ \
+trijst\:016brveida\ matrica\ U . \ 
+          Matricai\ A\ ir\ j\[ABar]b\:016bt\ simetriskai\ un\ \
+pozit\:012bvi\ \ defin\[EBar]tai . 
+          Atrad\:012bsim\ matricas\ A\ \
+\(\(\:012bpa\[SHacek]v\[EBar]rt\:012bbas\)\(.\)\)\)], "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Eigenvalues[A]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({14.840388113932935`, \(-0.4201940569664704`\) + 
+        0.5432519963985396`\ \[ImaginaryI], \(-0.4201940569664704`\) - 
+        0.5432519963985396`\ \[ImaginaryI]}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Pozit\:012bvi defin\[EBar]tas matricas \:012bpa\[SHacek]v\[EBar]rt\:012bbas \
+ir pozit\:012bvas. T\[ABar]tad dot\[ABar] matrica A nav pozit\:012bvi defin\
+\[EBar]ta. Uzdodam citu matricu.\
+\>", "Text",
+  FontSize->14],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"10", "1", "2"},
+              {"1", "9", "3"},
+              {"2", "3", "8"}
+              }], ")"}]}], ";"}]], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(u = CholeskyDecomposition[A] // N\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{3.1622776601683795`, 0.31622776601683794`, 
+        0.6324555320336759`}, {0.`, 2.9832867780352594`, 
+        0.9385621324155873`}, {0.`, 0.`, 2.592122899014533`}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(u // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"3.1622776601683795`", "0.31622776601683794`", 
+              "0.6324555320336759`"},
+            {"0.`", "2.9832867780352594`", "0.9385621324155873`"},
+            {"0.`", "0.`", "2.592122899014533`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude.", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Transpose[u] . u - A // Chop\) // MatrixForm\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "0"},
+            {"0", "0", "0"},
+            {"0", "0", "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.4. \[CapitalSHacek]ura faktoriz\[ABar]cija.", "Section"],
+
+Cell[BoxData[
+    \(Matrica\ A\ tiek\ sadal\:012bta\ \ \[SHacek]\[ABar]dos\ reizin\[ABar]t\
+\[ABar]jos\ A = Q . T . Q\^T, \ kur\ Q\  - \ ortogon\[ABar]la\ matrica, \ 
+    T\  - \ aug\[SHacek]\[EBar]j\[ABar]\ trijst\:016brveida\ matrica . \ 
+          Rezult\[ABar]ts\ ir\ matricas\ Q\ un\ \(\(T\)\(.\)\)\)], "Text",
+  FontSize->14],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"9.", "1.", "2."},
+              {"1.", "9.", "3."},
+              {"2.", "3.", "8."}
+              }], ")"}]}], ";"}]], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Map[MatrixForm, {q, t} = SchurDecomposition[A]]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(-0.4943211608125119`\), \(-0.8262251073182645`\), \
+\(-0.27018264564899963`\)},
+                {\(-0.6229553387285647`\), 
+                  "0.553477794839872`", \(-0.5528010280098722`\)},
+                {\(-0.6062781836109143`\), "0.10494952432533752`", 
+                  "0.7882971276246892`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], ",", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {
+                  "12.713196705828604`", \(-6.245004513516506`*^-17\), \
+\(-4.4416661599732444`*^-18\)},
+                {"0.`", "8.076066756227858`", \(-1.675057238703179`*^-16\)},
+                {"0.`", "0.`", "5.210736537943523`"}
+                }], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixForm[q]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-0.4943211608125119`\), \(-0.8262251073182645`\), \
+\(-0.27018264564899963`\)},
+            {\(-0.6229553387285647`\), 
+              "0.553477794839872`", \(-0.5528010280098722`\)},
+            {\(-0.6062781836109143`\), "0.10494952432533752`", 
+              "0.7882971276246892`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixForm[t]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {
+              "12.713196705828604`", \(-6.245004513516506`*^-17\), \
+\(-4.4416661599732444`*^-18\)},
+            {"0.`", "8.076066756227858`", \(-1.675057238703179`*^-16\)},
+            {"0.`", "0.`", "5.210736537943523`"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude.", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(q . t . Transpose[q] - A // MatrixForm\) // Chop\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "0"},
+            {"0", "0", "0"},
+            {"0", "0", "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Matricas \:012bpa\[SHacek]\:012bbas.", "Title",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+2.1. \:012apa\[SHacek]v\[EBar]rt\:012bbas un \:012bpa\[SHacek]vektori.\
+\>", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({\[Lambda]1, \[Lambda]2, \[Lambda]3} = Eigenvalues[A]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({12.713196705828617`, 8.076066756227862`, 
+      5.210736537943526`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({x1, x2, x3} = Eigenvectors[A]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{\(-0.49432116081251154`\), \(-0.6229553387285655`\), \
+\(-0.6062781836109146`\)}, {0.8262251073182647`, \(-0.5534777948398718`\), \
+\(-0.10494952432533713`\)}, {\(-0.2701826456489997`\), \(-0.5528010280098722`\
+\), 0.7882971276246894`}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+\:012apa\[SHacek]v\[EBar]rt\:012bbas un \:012bpa\[SHacek]vektorus vienlaic\
+\:012bgi var ieg\:016bt \[SHacek]\[ABar]di. Pirmaj\[ABar] sarakst\[ABar] ir \
+\:012bpa\[SHacek]v\[EBar]rt\:012bbas, otraj\[ABar] t\[ABar]m \
+atbilsto\[SHacek]\:012be \:012bpa\[SHacek]vektori.\
+\>", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Eigensystem[A]\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{12.713196705828617`, 8.076066756227862`, 
+        5.210736537943526`}, {{\(-0.49432116081251154`\), \
+\(-0.6229553387285655`\), \(-0.6062781836109146`\)}, {0.8262251073182647`, \
+\(-0.5534777948398718`\), \(-0.10494952432533713`\)}, {\(-0.2701826456489997`\
+\), \(-0.5528010280098722`\), 0.7882971276246894`}}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Pirmaj\[ABar] sarakst\[ABar] ir \:012bpa\[SHacek]v\[EBar]rt\:012bbas. Tam \
+seko 3 saraksti, kuros ir \[SHacek]\:012bm \:012bpa\[SHacek]v\[EBar]rt\:012bb\
+\[ABar]m   atbilsto\[SHacek]ie \:012bpa\[SHacek]vektori. \
+\>", "Text",
+  FontSize->14],
+
+Cell["\<\
+Matricas rakstur\:012bgais polinoms.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(CharacteristicPolynomial[A, x] // Chop\) // Expand\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(534.9999999999995`\)\(\[InvisibleSpace]\)\) - 
+      210.99999999999986`\ x + 25.999999999999993`\ x\^2 - x\^3\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input",
+  FontSize->14]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.2. Darb\:012bbas ar vektoriem.", "Section"],
+
+Cell["\<\
+Vektoru no formulas var izveidot \[SHacek]\[ABar]di.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X = Table[1\/n\^2, {n, 5}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1\/4, 1\/9, 1\/16, 1\/25}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Array[f, {5}]\)], "Input"],
+
+Cell[BoxData[
+    \({f[1], f[2], f[3], f[4], f[5]}\)], "Output"]
+}, Open  ]],
+
+Cell["Saraksta elementu summa.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Total[X] // N\)], "Input"],
+
+Cell[BoxData[
+    \(1.4636111111111112`\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(v1 = {a, b, c};\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(v2 = {A, B, C};\)\)], "Input"],
+
+Cell["\<\
+Var sareizin\[ABar]t vektorus pa elementiem.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(v1\ v2\)], "Input"],
+
+Cell[BoxData[
+    \({a\ A, b\ B, c\ C}\)], "Output"]
+}, Open  ]],
+
+Cell["Skal\[ABar]rais reizin\[ABar]jums", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(v1 . v2\)], "Input"],
+
+Cell[BoxData[
+    \(a\ A + b\ B + c\ C\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dot[v1, v2]\)], "Input"],
+
+Cell[BoxData[
+    \(a\ A + b\ B + c\ C\)], "Output"]
+}, Open  ]],
+
+Cell["Vektori\[ABar]lais reizin\[ABar]jums", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(v1\)\(\[Cross]\)\(v2\)\(\ \)\( (*\ 
+        reizin\[ABar]\[SHacek]anas\ z\:012bme\ j\[ABar]\:0146em\ no\ Basic\ \
+Input\ paletes\ maz\[ABar]kais\ krusts\ \((\ 
+            atrodas\ zem\ \[ImaginaryI])\)\ *) \)\)\)], "Input"],
+
+Cell[BoxData[
+    \({\(-B\)\ c + b\ C, A\ c - a\ C, \(-A\)\ b + a\ B}\)], "Output"]
+}, Open  ]],
+
+Cell["Modulis", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Norm[v1]\)], "Input"],
+
+Cell[BoxData[
+    \(\@\(Abs[a]\^2 + Abs[b]\^2 + Abs[c]\^2\)\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.3. Darb\:012bbas ar matric\[ABar]m.", "Section"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"3", "4", "9"},
+              {"9", "7", "6"},
+              {"5", "2", "1"}
+              }], ")"}]}], ";"}]], "Input"],
+
+Cell["Transpon\[EBar]\[SHacek]ana.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Transpose[A] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"3", "9", "5"},
+            {"4", "7", "2"},
+            {"9", "6", "1"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["Diagon\[ABar]les elementu summa.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Tr[A]\)], "Input"],
+
+Cell[BoxData[
+    \(11\)], "Output"]
+}, Open  ]],
+
+Cell["Determinants.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[A]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-84\)\)], "Output"]
+}, Open  ]],
+
+Cell["Matricu reizin\[ABar]\[SHacek]ana.", "Text"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"B", "=", 
+        RowBox[{"(", GridBox[{
+              {"3", "6", "7"},
+              {"2", "1", "8"},
+              {"9", "0", "4"}
+              }], ")"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A . B // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"98", "22", "89"},
+            {"95", "61", "143"},
+            {"28", "32", "55"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["Matricas cel\[SHacek]ana 3. pak\[ABar]p\[EBar].", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixPower[A, 3] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1092", "886", "1218"},
+            {"1878", "1417", "1791"},
+            {"728", "520", "616"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["Invers\[ABar] matrica.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Inverse[A] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(5\/84\), \(-\(1\/6\)\), \(13\/28\)},
+            {\(-\(1\/4\)\), \(1\/2\), \(-\(3\/4\)\)},
+            {\(17\/84\), \(-\(1\/6\)\), \(5\/28\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["Matricas rangs.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixRank[A]\)], "Input"],
+
+Cell[BoxData[
+    \(3\)], "Output"]
+}, Open  ]],
+
+Cell["Matricas norma.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({Norm[A, 1], Norm[A, 2], Norm[A, \[Infinity]]} // N\)], "Input"],
+
+Cell[BoxData[
+    \({17.`, 16.436801385381514`, 22.`}\)], "Output"]
+}, Open  ]],
+
+Cell["Matricas kolonnu summa.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Total[A]\)], "Input"],
+
+Cell[BoxData[
+    \({17, 13, 16}\)], "Output"]
+}, Open  ]],
+
+Cell["Matricas rindu summa.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Map[Total, A]\)], "Input"],
+
+Cell[BoxData[
+    \({16, 22, 8}\)], "Output"]
+}, Open  ]],
+
+Cell["Visu matricas elementu summa.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Total[A, 2]\)], "Input"],
+
+Cell[BoxData[
+    \(46\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Matricas rindas var ieg\:016bt \[SHacek]\[ABar]di.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({r1, r2, r3} = {A[\([1]\)], A[\([2]\)], A[\([3]\)]}\)], "Input"],
+
+Cell[BoxData[
+    \({{3, 4, 9}, {9, 7, 6}, {5, 2, 1}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Matricas kolonnas var ieg\:016bt \[SHacek]\[ABar]di.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({k1, k2, 
+        k3} = {\(Transpose[A]\)[\([1]\)], \(Transpose[
+            A]\)[\([2]\)], \(Transpose[A]\)[\([3]\)]}\)], "Input"],
+
+Cell[BoxData[
+    \({{3, 9, 5}, {4, 7, 2}, {9, 6, 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(<< LinearAlgebra`MatrixManipulation`\)], "Input"],
+
+Cell["\<\
+Apvieno vair\[ABar]kas matricas vien\[ABar], novietojot t\[ABar]s vienu aiz \
+otras.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(AppendRows[A, B] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"3", "4", "9", "3", "6", "7"},
+            {"9", "7", "6", "2", "1", "8"},
+            {"5", "2", "1", "9", "0", "4"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Apvieno vair\[ABar]kas matricas vien\[ABar], novietojot t\[ABar]s vienu zem \
+otras.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(AppendColumns[A, B] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"3", "4", "9"},
+            {"9", "7", "6"},
+            {"5", "2", "1"},
+            {"3", "6", "7"},
+            {"2", "1", "8"},
+            {"9", "0", "4"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input",
+  FontSize->14]
+}, Open  ]],
+
+Cell["\<\
+3. Sist\[EBar]mas ar tr\:012bsdiagon\[ABar]lu matricu. \
+\>", "Section",
+  TextJustification->1],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+3.1. Risin\[ABar]jums ar programmu TridiagonalSolve.\
+\>", "Subtitle",
+  TextJustification->1,
+  FontSize->14],
+
+Cell["\<\
+J\[ABar]mekl\[EBar] \[SHacek]\[ABar]di: Add-ons&Links\[Rule]Standard Packages\
+\[Rule]Linear Algebra.\
+\>", "Text",
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14],
+
+Cell["\<\
+Vispirms j\[ABar]iel\[ABar]d\[EBar] speci\[ABar]l\[ABar] pakete.\
+\>", "Text",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(<< LinearAlgebra`Tridiagonal`\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell["\<\
+T\[ABar]l\[ABar]k tiek ievad\:012btas matricas diagon\[ABar]les.\
+\>", "Text",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(d1 = {1, 2, 3}\) \)\(;\)\(\ \ \)\( (*\ 
+      apak\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \)\)\)], "Input",\
+
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(d2 = {7, 8, 9, 10}\) \)\(;\)\(\ \ \)\( (*\ 
+      galven\[ABar]\ diagon\[ABar]le\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(d3 = {3, 2, 1}\) \)\(;\)\(\ \ \)\( (*\ 
+      aug\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \)\)\)], "Input",\
+
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(B = {6, 4, 7, 1}\) \)\(;\)\(\ \ \)\( (*\ 
+      lab\[ABar]\ puse\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X = TridiagonalSolve[d1, d2, d3, B]\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({3306\/4331, 948\/4331, 3217\/4331, \(-\(532\/4331\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% // N\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({0.7633341029785269`, 0.2188870930501039`, 
+      0.7427845763103209`, \(-0.12283537289309628`\)}\)], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude.", "Text",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"A", "=", 
+      RowBox[{"(", GridBox[{
+            {\(d2[\([1]\)]\), \(d3[\([1]\)]\), "0", "0"},
+            {\(d1[\([1]\)]\), \(d2[\([2]\)]\), \(d3[\([2]\)]\), "0"},
+            {"0", \(d1[\([2]\)]\), \(d2[\([3]\)]\), \(d3[\([3]\)]\)},
+            {"0", "0", \(d1[\([3]\)]\), \(d2[\([4]\)]\)}
+            }], ")"}]}]], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({{7, 3, 0, 0}, {1, 8, 2, 0}, {0, 2, 9, 1}, {0, 0, 3, 10}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% // MatrixForm\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"7", "3", "0", "0"},
+            {"1", "8", "2", "0"},
+            {"0", "2", "9", "1"},
+            {"0", "0", "3", "10"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(A . X - B // N\) // Chop\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({0, 0, 0, 0}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(Clear[X]\)\(\[IndentingNewLine]\)
+    \)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell["3.2. Faktoriz\[ABar]cijas metode.", "Section",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[{
+    \(Vien\[ABar]dojumu\ sist\[EBar]ma\ ar\ tr\:012bsdiagon\[ABar]lu\ matricu\
+\ \), "\[IndentingNewLine]", 
+    \(\(a\_i\) x\_\(i - 1\) - \(b\_i\) x\_i + \(c\_i\) x\_\(i + 1\) = d\_i, \ 
+    i = 1, 2, \(\(...\) \(n\)\), \ \(\(a\_1\)\(=\)\(c\_n = 
+        0\)\(\ \)\)\), "\[IndentingNewLine]", 
+    \(tiek\ risin\[ABar]ta\ p\[EBar]c\ \[SHacek]\[ABar]das\ \(metodes : \
+\[IndentingNewLine]\[Xi]\_\(i + 1\)\) = 
+      c\_i\/\(b\_i - \(a\_i\) \[Xi]\_i\), \ \[Eta]\_\(i + 1\) = \(\(a\_i\) \
+\[Eta]\_i - d\_i\)\/\(b\_i - \(a\_i\) \[Xi]\_i\), i = 1, 2,  ... , 
+    n\), "\[IndentingNewLine]", 
+    \(x\_i = \(\[Xi]\_\(i + 1\)\) x\_\(i + 1\) + \[Eta]\_\(i + 1\), \ 
+    x\_n = \(\(\[Eta]\_\(\(n + 1\)\(,\)\(\ \)\)\) i = n - 1\), n - 1,  ... , 
+    2, 1. \), "\[IndentingNewLine]", 
+    \(\)}], "Text",
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(NN = 4\) \)\(;\)\(\ \)\( (*\ 
+      NN\  - \ nezin\[ABar]mo\ skaits\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(a = Table[A[\([i, i - 1]\)], {i, 2, NN}];\)\( (*\ 
+      a\  - \ apak\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \
+\)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(a\)\(=\)\(Prepend[a, 0]\)\(\ \)\( (*\ 
+        saraksta\ a\ priek\[SHacek]\[ABar]\ tiek\ pievienota\ 0\ *) \)\)\)], \
+"Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({0, 1, 2, 3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(b\)\(=\)\(Table[\(-A[\([i, i]\)]\), {i, 1, NN}]\)\(\ \)\( (*\ 
+        b\  - \ galven\[ABar]\ diagon\[ABar]le\ ar\ pret\[EBar]ju\ z\:012bmi\ \
+*) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({\(-7\), \(-8\), \(-9\), \(-10\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(c\)\(=\)\(Table[A[\([i, i + 1]\)], {i, 1, NN - 1}]\)\(\ \)\( (*\ 
+        c\  - \ aug\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \
+\)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({3, 2, 1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(c\)\(=\)\(Append[c, 0]\)\(\ \)\( (*\ 
+        saraksta\ c\ beig\[ABar]s\ tiek\ pievienota\ 0\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({3, 2, 1, 0}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(\(\[Zeta][1] = 0\) \)\(;\)\(\ \)\( (*\ 
+      tiek\ uzdots\ \[Xi]\_1 . \ 
+          Tas\ var\ b\:016bt\ patva\:013c\:012bgs\ skaitlis, \ 
+      jo\ tiek\ reizin\[ABar]ts\ ar\ a\_1 = 0\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(For[k = 1, 
+      k <= NN, \[Zeta][k + 1] = 
+        c[\([k]\)]\/\(b[\([k]\)] - a[\([k]\)]\ \[Zeta][k]\); 
+      Print[\[Zeta][k + 1] // N]; \(k++\)]\)\(\ \)\( (*\ 
+      tiek\ apr\[EBar]\:0137in\[ABar]tas\ \[Xi]\_\(k + 1\)\ \
+v\[EBar]rt\:012bbas . \(k++\)\ nodro\[SHacek]ina\ cikla\ main\:012bg\[ABar]\ \
+k\ palielin\[ABar]\[SHacek]anos\ par\ 1, \ s\[ABar]kot\ ar\ k = 1, 
+      kam\[EBar]r\ izpild\[ABar]s\ nevien\[ABar]d\:012bba\ k \[LessEqual] \
+\(\(n\)\(.\)\)\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(-0.42857142857142855`\)\)], "Print"],
+
+Cell[BoxData[
+    \(\(-0.2641509433962264`\)\)], "Print"],
+
+Cell[BoxData[
+    \(\(-0.11804008908685969`\)\)], "Print"],
+
+Cell[BoxData[
+    \(0.`\)], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(\(\[Eta][1] = 0\) \)\(;\)\(\ \)\( (*\ 
+      tiek\ uzdots\ \[Eta]\_1 . \ 
+          Tas\ var\ b\:016bt\ patva\:013c\:012bgs\ skaitlis, \ 
+      jo\ tiek\ reizin\[ABar]ts\ ar\ a\_1 = 0\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(For[k = 1, 
+      k <= NN, \[Eta][
+          k + 1] = \(a[\([k]\)]\ \[Eta][k] - B[\([k]\)]\)\/\(b[\([k]\)] - \
+a[\([k]\)]\ \[Zeta][k]\); Print[\[Eta][k + 1] // N]; \(k++\)]\)\(\ \)\( (*\ 
+      tiek\ apr\[EBar]\:0137in\[ABar]tas\ \[Eta]\_\(k + 1\)\ \(\(v\[EBar]rt\
+\:012bbas\)\(.\)\)*) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(0.8571428571428571`\)], "Print"],
+
+Cell[BoxData[
+    \(0.41509433962264153`\)], "Print"],
+
+Cell[BoxData[
+    \(0.7282850779510023`\)], "Print"],
+
+Cell[BoxData[
+    \(\(-0.12283537289309628`\)\)], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(\(X[NN] = \[Eta][NN + 1] // N\) \)\(;\)\(\ \)\( (*\ 
+      x\_n = \[Eta]\_\(n + 1\), \ 
+      jo\ c\_n = 0\ p\[EBar]c\ dot\[ABar]\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(For[k = 1, k < NN, 
+      X[NN - k] = \[Zeta][NN - k + 1]\ X[NN - k + 1] + \[Eta][
+            NN - k + 1]; \(k++\)]\)\(\ \)\( (*\ 
+      Tiek\ apr\[EBar]\:0137in\[ABar]tas\ nezin\[ABar]mo\ v\[EBar]rt\:012bbas\
+\ apgriezt\[ABar]\ sec\:012bb\[ABar]\ *) \)\)\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(For[k = 1, k \[LessEqual] NN, 
+      Print["\<X(\>", k, "\<)=\>", X[k] // N]; \(k++\)]\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]1\[InvisibleSpace]")="\
+\[InvisibleSpace]0.7633341029785269`\),
+      SequenceForm[ "X(", 1, ")=", .76333410297852688],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]2\[InvisibleSpace]")="\
+\[InvisibleSpace]0.2188870930501039`\),
+      SequenceForm[ "X(", 2, ")=", .2188870930501039],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]3\[InvisibleSpace]")="\
+\[InvisibleSpace]0.742784576310321`\),
+      SequenceForm[ "X(", 3, ")=", .74278457631032102],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("X("\[InvisibleSpace]4\[InvisibleSpace]")="\
+\[InvisibleSpace]\(-0.12283537289309628`\)\),
+      SequenceForm[ "X(", 4, ")=", -.12283537289309628],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude:", "Text",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A . {X[1], X[2], X[3], X[4]} - B // Chop\)], "Input",
+  TextJustification->1,
+  FontSize->14],
+
+Cell[BoxData[
+    \({0, 0, 0, 0}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input",
+  FontSize->14]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4. Iter\[ABar]ciju metodes line\[ABar]r\[ABar]m vien\[ABar]dojumu \
+sist\[EBar]m\[ABar]m.\
+\>", "Title",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4.1. Jakobi metode ar fiks\[EBar]tu iter\[ABar]ciju skaitu..\
+\>", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"A", "=", 
+      RowBox[{"(", GridBox[{
+            {"4", "1", \(-2\)},
+            {\(-1\), "4", "3"},
+            {"2", "1", \(-3\)}
+            }], ")"}]}]], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({{4, 1, \(-2\)}, {\(-1\), 4, 3}, {2, 1, \(-3\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(B = {5, 2, 2};\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(n = 3;\)\)], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(y\)\(=\)\(Array[x, n]\)\(\ \)\( (*\ 
+        veido\ sarakstu\ ar\ garumu\ n, \ kura\ elementi\ ir\ x[i], \ i = 1, 
+        2,  ... , \(\(n\)\(.\)\)\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({x[1], x[2], x[3]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(v\)\(=\)\(Thread[A . y \[Equal] B]\)\(\ \)\( (*\ 
+        Izveido\ risin\[ABar]mo\ vien\[ABar]dojumu\ sist\[EBar]mu\ *) \
+\)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({4\ x[1] + x[2] - 2\ x[3] \[Equal] 
+        5, \(-x[1]\) + 4\ x[2] + 3\ x[3] \[Equal] 2, 
+      2\ x[1] + x[2] - 3\ x[3] \[Equal] 2}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(v1 = \(\(y\)\(/.\)\(Table[\(Solve[v[\([i]\)], x[i]]\)[\([1, 1]\)], {i, 
+            n}]\)\(\ \ \)\( (*\ 
+          No\ i\  - \ 
+            t\[ABar]\ vien\[ABar]dojuma\ tiek\ izteikts\ x[i] . \ 
+                Faktiski\ no\ katra\ vien\[ABar]dojuma\ tiek\ izteikts\ x[1], 
+          x[2], x[3] . \ Lai\ ieg\:016btu\ no\ i\  - \ 
+            t\[ABar]\ vien\[ABar]dojuma\ izteikto\ x[i], \ 
+          aiz\ solve\ ir\ j\[ABar]liek\ [\([1, 1]\)], \ 
+          t\[ABar]d\[ABar]\ veid\[ABar]\ ieg\:016bstot\ katra\ \
+atrisin\[ABar]juma\ pirmo\ elementu . \ To, \ 
+          ka\ j\[ABar]r\:012bkojas\ \[SHacek]\[ABar]di\ var\ redz\[EBar]t, \ 
+          izpildot\ \[SHacek]o\ komandu\ \(\(bez\ [\([1, 
+                  1]\)]\)\(.\)\)\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({1\/4\ \((5 - x[2] + 2\ x[3])\), 1\/4\ \((2 + x[1] - 3\ x[3])\), 
+      1\/3\ \((\(-2\) + 2\ x[1] + x[2])\)}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(\(is = 30\) \)\(;\)\(\ \)\( (*\ 
+      tiek\ uzdots\ iter\[ABar]ciju\ skaits\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(yi = {0, 0, 0}\) \)\(;\)\(\ \)\( (*\ 
+      yi\  - \ s\[ABar]kuma\ tuvin\[ABar]jums\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(Do[yi = v1 /. Thread[y \[Rule] yi] // N, {is}]\)\(\ \)\( (*\ 
+      y\ aizst\[ABar]jam\ ar\ yi, \ 
+      rezult\[ABar]tu\ ievietojam\ v1\ izteiksm\[EBar], \ 
+      k\[ABar]\ rezult\[ABar]t\[ABar]\ ieg\:016bstam\ jauno\ yi\ v\[EBar]rt\
+\:012bbu . \ \[CapitalSHacek]\:012bs\ darb\:012bbas\ atk\[ABar]rtojam\ is\ \
+reizes\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(yi\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({1.3076922779935176`, 0.5384615374353443`, 
+      0.38461535544095116`}\)], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude:", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X = LinearSolve[A, B] // N\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({1.3076923076923077`, 0.5384615384615384`, 
+      0.38461538461538464`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(yi - X\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({\(-2.9698790093846128`*^-8\), \(-1.0261941296718646`*^-9\), \
+\(-2.9174433480161355`*^-8\)}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+4.2. Zeide\:013ca metode ar fiks\[EBar]tu iter\[ABar]ciju skaitu.\
+\>", "Section"],
+
+Cell[BoxData[
+    \(\(\(\(yi = {0, 0, 0}\) \)\(;\)\(\ \)\( (*\ 
+      Atjauno\ s\[ABar]kuma\ tuvin\[ABar]jumu\ *) \)\)\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \(\(\(\(Do[
+        yi = Table[
+              yi[\([j]\)] = v1[\([j]\)] /. Thread[y \[Rule] yi], {j, n}] // 
+            N, {is}]\) \)\(;\)\(\ \)\( (*\ Dara\ to\ pa\[SHacek]u, 
+      ko\ Jakobi\ metod\[EBar]\ ar\ to\ at\[SHacek]\:0137ir\:012bbu, \ 
+      ka\ tikko\ apr\[EBar]\:0137in\[ABar]t\[ABar]s\ v1\ v\[EBar]rt\:012bbas\ \
+nekav\[EBar]joties\ \((taj\[ABar]\ pa\[SHacek]\[ABar]\ iter\[ABar]cij\[ABar]\ \
+)\) tiek\ izmantotas\ t\[ABar]l\[ABar]kaj\[ABar]\ apr\[EBar]\:0137in\[ABar]\ *) \
+\)\)\)], "Input",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(yi\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({1.3076923076922184`, 0.5384615384615935`, 
+      0.3846153846153434`}\)], "Output"]
+}, Open  ]],
+
+Cell["P\[ABar]rbaude:", "Text",
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(yi - X\)], "Input",
+  FontSize->14],
+
+Cell[BoxData[
+    \({\(-8.926193117986259`*^-14\), 
+      5.5067062021407764`*^-14, \(-4.1244785364824565`*^-14\)}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input",
+  FontSize->14]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{865, 561},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+PrintingCopies->1,
+PrintingStartingPageNumber->1,
+PrintingPageRange->{Automatic, Automatic},
+Magnification->1.5,
+StyleDefinitions -> "PrimaryColor.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "LUDecomposition"->{
+    Cell[1967, 62, 330, 7, 187, "Section",
+      CellTags->"LUDecomposition"],
+    Cell[2300, 71, 278, 6, 62, "ExampleText",
+      CellTags->"LUDecomposition"],
+    Cell[4326, 129, 444, 13, 119, "Text",
+      CellTags->"LUDecomposition"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"LUDecomposition", 41767, 1592}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 166, 5, 144, "Title"],
+
+Cell[CellGroupData[{
+Cell[1967, 62, 330, 7, 187, "Section",
+  CellTags->"LUDecomposition"],
+Cell[2300, 71, 278, 6, 62, "ExampleText",
+  CellTags->"LUDecomposition"],
+Cell[2581, 79, 235, 8, 91, "Input"],
+Cell[2819, 89, 554, 9, 166, "Text"],
+
+Cell[CellGroupData[{
+Cell[3398, 102, 106, 2, 73, "Input"],
+Cell[3507, 106, 804, 20, 80, "Output"]
+}, Open  ]],
+Cell[4326, 129, 444, 13, 119, "Text",
+  CellTags->"LUDecomposition"],
+
+Cell[CellGroupData[{
+Cell[4795, 146, 103, 2, 44, "Input"],
+Cell[4901, 150, 110, 2, 41, "Output"]
+}, Open  ]],
+Cell[5026, 155, 82, 1, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[5133, 160, 74, 2, 44, "Input"],
+Cell[5210, 164, 43, 1, 41, "Output"]
+}, Open  ]],
+Cell[5268, 168, 140, 4, 50, "Text"],
+Cell[5411, 174, 85, 2, 44, "Input"],
+
+Cell[CellGroupData[{
+Cell[5521, 180, 89, 2, 44, "Input"],
+Cell[5613, 184, 756, 18, 80, "Output"]
+}, Open  ]],
+Cell[6384, 205, 147, 4, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[6556, 213, 76, 2, 44, "Input"],
+Cell[6635, 217, 268, 8, 99, "Output"]
+}, Open  ]],
+Cell[6918, 228, 122, 4, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[7065, 236, 84, 2, 44, "Input"],
+Cell[7152, 240, 284, 8, 99, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7485, 254, 47, 0, 109, "Section"],
+Cell[7535, 256, 245, 5, 105, "Text"],
+
+Cell[CellGroupData[{
+Cell[7805, 265, 81, 2, 44, "Input"],
+Cell[7889, 269, 476, 8, 141, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8402, 282, 64, 2, 44, "Input"],
+Cell[8469, 286, 478, 11, 99, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8984, 302, 64, 2, 44, "Input"],
+Cell[9051, 306, 390, 9, 99, "Output"]
+}, Open  ]],
+Cell[9456, 318, 47, 1, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[9528, 323, 83, 2, 44, "Input"],
+Cell[9614, 327, 398, 9, 113, "Output"]
+}, Open  ]],
+Cell[10027, 339, 252, 5, 79, "Text"],
+
+Cell[CellGroupData[{
+Cell[10304, 348, 82, 2, 44, "Input"],
+Cell[10389, 352, 67, 1, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10505, 359, 57, 0, 109, "Section"],
+Cell[10565, 361, 452, 9, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[11042, 374, 63, 2, 44, "Input"],
+Cell[11108, 378, 199, 3, 41, "Output"]
+}, Open  ]],
+Cell[11322, 384, 227, 5, 79, "Text"],
+Cell[11552, 391, 235, 8, 91, "Input"],
+
+Cell[CellGroupData[{
+Cell[11812, 403, 82, 2, 44, "Input"],
+Cell[11897, 407, 199, 3, 66, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12133, 415, 64, 2, 44, "Input"],
+Cell[12200, 419, 395, 9, 144, "Output"]
+}, Open  ]],
+Cell[12610, 431, 47, 1, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[12682, 436, 95, 2, 57, "Input"],
+Cell[12780, 440, 266, 8, 144, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[13095, 454, 64, 0, 71, "Section"],
+Cell[13162, 456, 331, 5, 141, "Text"],
+Cell[13496, 463, 243, 8, 104, "Input"],
+
+Cell[CellGroupData[{
+Cell[13764, 475, 96, 2, 57, "Input"],
+Cell[13863, 479, 996, 23, 135, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14896, 507, 62, 2, 57, "Input"],
+Cell[14961, 511, 479, 11, 144, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[15477, 527, 62, 2, 57, "Input"],
+Cell[15542, 531, 417, 10, 154, "Output"]
+}, Open  ]],
+Cell[15974, 544, 47, 1, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[16046, 549, 99, 2, 57, "Input"],
+Cell[16148, 553, 266, 8, 144, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16475, 568, 72, 1, 75, "Title"],
+
+Cell[CellGroupData[{
+Cell[16572, 573, 97, 2, 71, "Section"],
+
+Cell[CellGroupData[{
+Cell[16694, 579, 102, 2, 57, "Input"],
+Cell[16799, 583, 102, 2, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[16938, 590, 79, 2, 57, "Input"],
+Cell[17020, 594, 272, 4, 140, "Output"]
+}, Open  ]],
+Cell[17307, 601, 307, 6, 98, "Text"],
+
+Cell[CellGroupData[{
+Cell[17639, 611, 63, 2, 57, "Input"],
+Cell[17705, 615, 346, 5, 178, "Output"]
+}, Open  ]],
+Cell[18066, 623, 252, 5, 98, "Text"],
+Cell[18321, 630, 60, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[18406, 636, 85, 1, 104, "Input"],
+Cell[18494, 639, 148, 2, 64, "Output"]
+}, Open  ]],
+Cell[18657, 644, 71, 2, 57, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18765, 651, 51, 0, 71, "Section"],
+Cell[18819, 653, 76, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[18920, 659, 59, 1, 91, "Input"],
+Cell[18982, 662, 63, 1, 84, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19082, 668, 46, 1, 65, "Input"],
+Cell[19131, 671, 64, 1, 64, "Output"]
+}, Open  ]],
+Cell[19210, 675, 40, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[19275, 679, 46, 1, 65, "Input"],
+Cell[19324, 682, 53, 1, 64, "Output"]
+}, Open  ]],
+Cell[19392, 686, 52, 1, 65, "Input"],
+Cell[19447, 689, 52, 1, 65, "Input"],
+Cell[19502, 692, 68, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[19595, 698, 39, 1, 65, "Input"],
+Cell[19637, 701, 52, 1, 64, "Output"]
+}, Open  ]],
+Cell[19704, 705, 49, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[19778, 709, 40, 1, 65, "Input"],
+Cell[19821, 712, 52, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19910, 718, 44, 1, 65, "Input"],
+Cell[19957, 721, 52, 1, 64, "Output"]
+}, Open  ]],
+Cell[20024, 725, 52, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[20101, 729, 248, 4, 182, "Input"],
+Cell[20352, 735, 83, 1, 64, "Output"]
+}, Open  ]],
+Cell[20450, 739, 23, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[20498, 743, 41, 1, 65, "Input"],
+Cell[20542, 746, 73, 1, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20664, 753, 56, 0, 71, "Section"],
+Cell[20723, 755, 218, 7, 124, "Input"],
+Cell[20944, 764, 44, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[21013, 768, 59, 1, 65, "Input"],
+Cell[21075, 771, 266, 8, 144, "Output"]
+}, Open  ]],
+Cell[21356, 782, 48, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[21429, 786, 38, 1, 65, "Input"],
+Cell[21470, 789, 36, 1, 64, "Output"]
+}, Open  ]],
+Cell[21521, 793, 29, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[21575, 797, 39, 1, 65, "Input"],
+Cell[21617, 800, 41, 1, 64, "Output"]
+}, Open  ]],
+Cell[21673, 804, 50, 0, 63, "Text"],
+Cell[21726, 806, 218, 7, 124, "Input"],
+
+Cell[CellGroupData[{
+Cell[21969, 817, 52, 1, 65, "Input"],
+Cell[22024, 820, 276, 8, 144, "Output"]
+}, Open  ]],
+Cell[22315, 831, 63, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[22403, 835, 64, 1, 65, "Input"],
+Cell[22470, 838, 289, 8, 144, "Output"]
+}, Open  ]],
+Cell[22774, 849, 38, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[22837, 853, 57, 1, 65, "Input"],
+Cell[22897, 856, 337, 8, 170, "Output"]
+}, Open  ]],
+Cell[23249, 867, 31, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[23305, 871, 46, 1, 65, "Input"],
+Cell[23354, 874, 35, 1, 64, "Output"]
+}, Open  ]],
+Cell[23404, 878, 31, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[23460, 882, 84, 1, 104, "Input"],
+Cell[23547, 885, 67, 1, 64, "Output"]
+}, Open  ]],
+Cell[23629, 889, 39, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[23693, 893, 41, 1, 65, "Input"],
+Cell[23737, 896, 46, 1, 64, "Output"]
+}, Open  ]],
+Cell[23798, 900, 37, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[23860, 904, 46, 1, 65, "Input"],
+Cell[23909, 907, 45, 1, 64, "Output"]
+}, Open  ]],
+Cell[23969, 911, 45, 0, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[24039, 915, 44, 1, 65, "Input"],
+Cell[24086, 918, 36, 1, 64, "Output"]
+}, Open  ]],
+Cell[24137, 922, 74, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[24236, 928, 84, 1, 65, "Input"],
+Cell[24323, 931, 67, 1, 64, "Output"]
+}, Open  ]],
+Cell[24405, 935, 76, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[24506, 941, 151, 3, 143, "Input"],
+Cell[24660, 946, 67, 1, 64, "Output"]
+}, Open  ]],
+Cell[24742, 950, 69, 1, 65, "Input"],
+Cell[24814, 953, 108, 3, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[24947, 960, 63, 1, 65, "Input"],
+Cell[25013, 963, 311, 8, 144, "Output"]
+}, Open  ]],
+Cell[25339, 974, 108, 3, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[25472, 981, 66, 1, 65, "Input"],
+Cell[25541, 984, 353, 11, 246, "Output"]
+}, Open  ]],
+Cell[25909, 998, 71, 2, 57, "Input"]
+}, Open  ]],
+Cell[25995, 1003, 106, 3, 71, "Section"],
+
+Cell[CellGroupData[{
+Cell[26126, 1010, 120, 4, 104, "Subtitle"],
+Cell[26249, 1016, 195, 6, 102, "Text"],
+Cell[26447, 1024, 128, 4, 63, "Text"],
+Cell[26578, 1030, 102, 3, 57, "Input"],
+Cell[26683, 1035, 128, 4, 63, "Text"],
+Cell[26814, 1041, 187, 5, 86, "Input"],
+Cell[27004, 1048, 168, 4, 57, "Input"],
+Cell[27175, 1054, 186, 5, 86, "Input"],
+Cell[27364, 1061, 152, 4, 57, "Input"],
+
+Cell[CellGroupData[{
+Cell[27541, 1069, 108, 3, 57, "Input"],
+Cell[27652, 1074, 89, 1, 84, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[27778, 1080, 79, 3, 57, "Input"],
+Cell[27860, 1085, 131, 2, 64, "Output"]
+}, Open  ]],
+Cell[28006, 1090, 71, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[28102, 1096, 395, 9, 130, "Input"],
+Cell[28500, 1107, 91, 1, 102, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[28628, 1113, 88, 3, 57, "Input"],
+Cell[28719, 1118, 316, 9, 178, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[29072, 1132, 99, 3, 57, "Input"],
+Cell[29174, 1137, 46, 1, 64, "Output"]
+}, Open  ]],
+Cell[29235, 1141, 117, 4, 86, "Input"],
+
+Cell[CellGroupData[{
+Cell[29377, 1149, 92, 2, 71, "Section"],
+Cell[29472, 1153, 879, 17, 248, "Text"],
+Cell[30354, 1172, 155, 4, 57, "Input"],
+Cell[30512, 1178, 204, 5, 86, "Input"],
+
+Cell[CellGroupData[{
+Cell[30741, 1187, 190, 5, 86, "Input"],
+Cell[30934, 1194, 46, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31017, 1200, 227, 5, 86, "Input"],
+Cell[31247, 1207, 67, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31351, 1213, 220, 5, 86, "Input"],
+Cell[31574, 1220, 43, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31654, 1226, 178, 4, 86, "Input"],
+Cell[31835, 1232, 46, 1, 64, "Output"]
+}, Open  ]],
+Cell[31896, 1236, 269, 6, 115, "Input"],
+
+Cell[CellGroupData[{
+Cell[32190, 1246, 550, 11, 237, "Input"],
+Cell[32743, 1259, 58, 1, 56, "Print"],
+Cell[32804, 1262, 57, 1, 56, "Print"],
+Cell[32864, 1265, 58, 1, 56, "Print"],
+Cell[32925, 1268, 36, 1, 56, "Print"]
+}, Open  ]],
+Cell[32976, 1272, 269, 6, 115, "Input"],
+
+Cell[CellGroupData[{
+Cell[33270, 1282, 367, 8, 150, "Input"],
+Cell[33640, 1292, 52, 1, 56, "Print"],
+Cell[33695, 1295, 53, 1, 56, "Print"],
+Cell[33751, 1298, 52, 1, 56, "Print"],
+Cell[33806, 1301, 58, 1, 56, "Print"]
+}, Open  ]],
+Cell[33879, 1305, 215, 5, 86, "Input"],
+Cell[34097, 1312, 333, 7, 173, "Input"],
+
+Cell[CellGroupData[{
+Cell[34455, 1323, 159, 4, 86, "Input"],
+Cell[34617, 1329, 212, 4, 56, "Print"],
+Cell[34832, 1335, 211, 4, 56, "Print"],
+Cell[35046, 1341, 211, 4, 56, "Print"],
+Cell[35260, 1347, 219, 4, 56, "Print"]
+}, Open  ]],
+Cell[35494, 1354, 71, 2, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[35590, 1360, 113, 3, 57, "Input"],
+Cell[35706, 1365, 46, 1, 64, "Output"]
+}, Open  ]],
+Cell[35767, 1369, 71, 2, 57, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[35899, 1378, 130, 4, 75, "Title"],
+
+Cell[CellGroupData[{
+Cell[36054, 1386, 87, 2, 71, "Section"],
+
+Cell[CellGroupData[{
+Cell[36166, 1392, 211, 7, 104, "Input"],
+Cell[36380, 1401, 82, 1, 64, "Output"]
+}, Open  ]],
+Cell[36477, 1405, 67, 2, 57, "Input"],
+Cell[36547, 1409, 59, 2, 57, "Input"],
+
+Cell[CellGroupData[{
+Cell[36631, 1415, 209, 4, 86, "Input"],
+Cell[36843, 1421, 52, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[36932, 1427, 179, 4, 86, "Input"],
+Cell[37114, 1433, 166, 3, 140, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[37317, 1441, 785, 14, 347, "Input"],
+Cell[38105, 1457, 142, 2, 204, "Output"]
+}, Open  ]],
+Cell[38262, 1462, 138, 3, 57, "Input"],
+Cell[38403, 1467, 147, 3, 86, "Input"],
+Cell[38553, 1472, 380, 7, 173, "Input"],
+
+Cell[CellGroupData[{
+Cell[38958, 1483, 51, 2, 57, "Input"],
+Cell[39012, 1487, 105, 2, 64, "Output"]
+}, Open  ]],
+Cell[39132, 1492, 47, 1, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[39204, 1497, 75, 2, 57, "Input"],
+Cell[39282, 1501, 105, 2, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[39424, 1508, 55, 2, 57, "Input"],
+Cell[39482, 1512, 126, 2, 102, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[39657, 1520, 92, 2, 71, "Section"],
+Cell[39752, 1524, 147, 3, 86, "Input"],
+Cell[39902, 1529, 542, 10, 260, "Input"],
+
+Cell[CellGroupData[{
+Cell[40469, 1543, 51, 2, 57, "Input"],
+Cell[40523, 1547, 104, 2, 64, "Output"]
+}, Open  ]],
+Cell[40642, 1552, 47, 1, 63, "Text"],
+
+Cell[CellGroupData[{
+Cell[40714, 1557, 55, 2, 57, "Input"],
+Cell[40772, 1561, 128, 2, 102, "Output"]
+}, Open  ]],
+Cell[40915, 1566, 71, 2, 57, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

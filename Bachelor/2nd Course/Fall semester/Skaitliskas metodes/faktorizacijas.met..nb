@@ -1,0 +1,232 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4472,        160]*)
+(*NotebookOutlinePosition[      5129,        183]*)
+(*  CellTagsIndexPosition[      5085,        179]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+3. Sist\[EBar]mas ar tr\:012bsdiagon\[ABar]lu matricu.(Tiek pielietota \
+faktoriz\[ABar]cijas metode).\
+\>", "Section",
+  TextJustification->1],
+
+Cell["\<\
+J\[ABar]mekl\[EBar] \[SHacek]\[ABar]di: Add-ons&Links\[Rule]Standard Packages\
+\[Rule]Linear Algebra.\
+\>", "Text",
+  TextJustification->1,
+  FontFamily->"Arial Baltic"],
+
+Cell["\<\
+Vispirms j\[ABar]iel\[ABar]d\[EBar] speci\[ABar]l\[ABar] pakete.\
+\>", "Text",
+  TextJustification->1],
+
+Cell[BoxData[
+    \(<< LinearAlgebra`Tridiagonal`\)], "Input",
+  TextJustification->1],
+
+Cell["\<\
+T\[ABar]l\[ABar]k tiek ievad\:012btas matricas diagon\[ABar]les.\
+\>", "Text",
+  TextJustification->1],
+
+Cell[BoxData[
+    \(\(\(d1 = {1, 2, 3}\)\(;\)\(\ \ \)\( (*\ 
+      apak\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(d2 = {7, 8, 9, 10}\)\(;\)\(\ \ \)\( (*\ 
+      galven\[ABar]\ diagon\[ABar]le\ *) \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(d3 = {3, 2, 1}\)\(;\)\(\ \ \)\( (*\ 
+      aug\[SHacek]\[EBar]j\[ABar]\ blakusdiagon\[ABar]le\ *) \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(B = {6, 4, 7, 1}\)\(;\)\(\ \ \)\( (*\ 
+      lab\[ABar]\ puse\ *) \)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X = TridiagonalSolve[d1, d2, d3, B]\)], "Input"],
+
+Cell[BoxData[
+    \({3306\/4331, 948\/4331, 3217\/4331, \(-\(532\/4331\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% // N\)], "Input"],
+
+Cell[BoxData[
+    \({0.7633341029785269`, 0.2188870930501039`, 
+      0.7427845763103209`, \(-0.12283537289309628`\)}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(P\[ABar]rbaude\)\(.\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"A", "=", 
+      RowBox[{"(", GridBox[{
+            {\(d2[\([1]\)]\), \(d3[\([1]\)]\), "0", "0"},
+            {\(d1[\([1]\)]\), \(d2[\([2]\)]\), \(d3[\([2]\)]\), "0"},
+            {"0", \(d1[\([2]\)]\), \(d2[\([3]\)]\), \(d3[\([3]\)]\)},
+            {"0", "0", \(d1[\([3]\)]\), \(d2[\([4]\)]\)}
+            }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+    \({{7, 3, 0, 0}, {1, 8, 2, 0}, {0, 2, 9, 1}, {0, 0, 3, 10}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"7", "3", "0", "0"},
+            {"1", "8", "2", "0"},
+            {"0", "2", "9", "1"},
+            {"0", "0", "3", "10"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(A . X - B // N\) // Chop\)], "Input"],
+
+Cell[BoxData[
+    \({0, 0, 0, 0}\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{748, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FontSize->18
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 153, 4, 99, "Section"],
+Cell[1932, 59, 179, 5, 40, "Text"],
+Cell[2114, 66, 112, 3, 38, "Text"],
+Cell[2229, 71, 86, 2, 35, "Input"],
+Cell[2318, 75, 112, 3, 38, "Text"],
+Cell[2433, 80, 140, 2, 35, "Input"],
+Cell[2576, 84, 123, 2, 35, "Input"],
+Cell[2702, 88, 139, 2, 35, "Input"],
+Cell[2844, 92, 107, 2, 35, "Input"],
+
+Cell[CellGroupData[{
+Cell[2976, 98, 68, 1, 35, "Input"],
+Cell[3047, 101, 89, 1, 49, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3173, 107, 39, 1, 35, "Input"],
+Cell[3215, 110, 131, 2, 34, "Output"]
+}, Open  ]],
+Cell[3361, 115, 60, 1, 35, "Input"],
+
+Cell[CellGroupData[{
+Cell[3446, 120, 355, 7, 98, "Input"],
+Cell[3804, 129, 91, 1, 34, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3932, 135, 48, 1, 35, "Input"],
+Cell[3983, 138, 316, 9, 109, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4336, 152, 59, 1, 35, "Input"],
+Cell[4398, 155, 46, 1, 34, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

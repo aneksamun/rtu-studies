@@ -1,0 +1,186 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4953,        141]*)
+(*NotebookOutlinePosition[      5698,        166]*)
+(*  CellTagsIndexPosition[      5654,        162]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["2. m\[ABar]jas darbs.", "Title",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontWeight->"Plain",
+  FontVariations->{"CompatibilityType"->0}],
+
+Cell["\<\
+Skait\:013ci a,b,c t\[ABar]di pa\[SHacek]i k\[ABar] pirmaj\[ABar] m\[ABar]jas \
+darb\[ABar].\
+\>", "Text",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontVariations->{"CompatibilityType"->0}],
+
+Cell[BoxData[
+    \(1. \ uzdevums . \ 
+          Dotas\ funkcijas\ f \((n)\) = \(\(\@\(a\ n\) - \@\(b\ \
+n\)\%3\)\/\(sin \((c\ n)\)\)\ v\[EBar]rt\:012bbas\ pie\ n = 1\), 2,  ... , 
+    10, \ v\[EBar]rt\:012bbas . \ 
+        Pielietojot\ tabulas\ interpol\[ABar]ciju, \ 
+    atrast\ funkcijas\ v\[EBar]rt\:012bbas\ pie\ n = 1.5, 2.5,  ... , 
+    9.5 . \ Sal\:012bdzin\[ABar]t\ \[SHacek]\:012bs\ v\[EBar]rt\:012bbas\ ar\ \
+p\[EBar]c\ formulas\ apr\[EBar]\:0137in\[ABar]taj\[ABar]m\ v\[EBar]rt\:012bb\
+\[ABar]m . \ 
+        Dot\ rezult\[ABar]tu\ grafisku\ \(\(ilustr\[ABar]ciju\)\(.\)\)\)], \
+"Text",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontVariations->{"CompatibilityType"->0}],
+
+Cell["\<\
+2. uzdevums. Dotas funkcijas F(n)=f(n)+\[Epsilon](n) v\[EBar]rt\:012bbas pie \
+n=1,2,...,10, v\[EBar]rt\:012bbas, kur \[Epsilon](n) - gad\:012bjuma skait\
+\:013ci ar sadal\:012bjuma veidu un parametriem p\[EBar]c studenta \
+izv\[EBar]les.Pielietojot tabulas aproksim\[ABar]ciju,atrast funkcijas v\
+\[EBar]rt\:012bbas pie n=1.5, 2.5,...,9.5. Sal\:012bdzin\[ABar]t \[SHacek]\
+\:012bs v\[EBar]rt\:012bbas ar p\[EBar]c formulas f(n) apr\[EBar]\:0137in\
+\[ABar]taj\[ABar]m v\[EBar]rt\:012bb\[ABar]m. Dot rezult\[ABar]tu grafisku \
+ilustr\[ABar]ciju.\
+\>", "Text",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontVariations->{"CompatibilityType"->0}],
+
+Cell["\<\
+3. uzdevums. Izmantojot 2. uzdevuma rezult\[ABar]tus, atrast funkcijas F(n) \
+atvasin\[ABar]jumu punktos n=1.5, 2.5,...,9.5. Atrast funkcijas F(n) atvasin\
+\[ABar]jumu punktos n=1.5, 2.5,...,9.5 skaitliski un sal\:012bdzin\[ABar]t \
+abas atvasin\[ABar]jumu v\[EBar]rt\:012bbas ar f(n) prec\:012bzajiem atvasin\
+\[ABar]jumiem \[SHacek]ajos punktos.\
+\>", "Text",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontVariations->{"CompatibilityType"->0}],
+
+Cell[BoxData[
+    \(4. \ uzdevums . \ 
+          Ar\ \:0145\:016btona\ metodi\ atrast\ vien\[ABar]dojuma\ f \((x)\) \
+= 2\^\(a\ x\) - 3\^\(b\ x\) + c\ x\ \(\(saknes\)\(.\)\(\ \)\)\)], "Text",
+  PageWidth->WindowWidth,
+  CellDingbat->"\[EmptySquare]",
+  TextAlignment->AlignmentMarker,
+  TextJustification->1,
+  FontFamily->"Arial Baltic",
+  FontSize->14,
+  FontVariations->{"CompatibilityType"->0}]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+ScreenStyleEnvironment->"Presentation",
+WindowSize->{690, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 268, 8, 57, "Title"],
+Cell[2047, 63, 323, 10, 43, "Text"],
+Cell[2373, 75, 804, 18, 136, "Text"],
+Cell[3180, 95, 775, 16, 135, "Text"],
+Cell[3958, 113, 578, 13, 112, "Text"],
+Cell[4539, 128, 398, 10, 43, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
