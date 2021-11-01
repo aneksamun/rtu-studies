@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="CellPhone.CallEventArgs">
+    <Position X="17.5" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>CallEventArgs.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.Contact">
+    <Position X="16.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Contact.cs</FileName>
+      <HashCode>AAABIAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.Controller">
+    <Position X="0.5" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <FileName>Controller.cs</FileName>
+      <HashCode>AEkBABAIEIAABACAAiBAAAAgQAABAAAAACgABAAAgAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="View" />
+      <Property Name="Model" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CellPhone.Model">
+    <Position X="7.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>Model.cs</FileName>
+      <HashCode>AAEAgAACBkAQAAAAACgAAAAQAAAAAAAAAgAAAACAAAQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Memory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CellPhone.MultimediaMessage">
+    <Position X="15.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>MultimediaMessage.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <InheritanceLine Type="CellPhone.ShortMessage" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="4.5" />
+        <Point X="15.5" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+  </Class>
+  <Class Name="CellPhone.Phone">
+    <Position X="23.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Phone.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.PhoneDisplay">
+    <Position X="6.25" Y="8.25" Width="3.5" />
+    <TypeIdentifier>
+      <FileName>PhoneDisplay.cs</FileName>
+      <HashCode>AgABANAAAiAgBAAEAACAAQQCEACAIAACAgAEAAABAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.PhoneKeyboard">
+    <Position X="10.5" Y="6.75" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>PhoneKeyboard.cs</FileName>
+      <HashCode>AAAAAIgCACAAAAggAACAoCACAAAAAABAAAAAAIgw8A8=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.PhoneMemory">
+    <Position X="11.75" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>PhoneMemory.cs</FileName>
+      <HashCode>BAAAAAAQAAAAACAAAAAAAAIACAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.ShortMessage">
+    <Position X="12" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>ShortMessage.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.View">
+    <Position X="1.25" Y="7" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>View.cs</FileName>
+      <HashCode>AAiAKAAJACgRBAAAAgCAAQACIBEAIAAAAAAAAgAAAAI=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Display" />
+      <Property Name="Keyboard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CellPhone.Properties.Resources" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIgCAAAAAAggAAABsAAAAQAQAABAAAAAAIgw8I8=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CellPhone.Properties.Settings" Collapsed="true">
+    <Position X="23.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CellPhone.PhoneMode">
+    <Position X="15" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>PhoneMode.cs</FileName>
+      <HashCode>QAoAAQAAgAIBgAgAQAEAAAAQBAAAAAAAAABAQAAAAEg=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="CellPhone.CallEventHandler">
+    <Position X="17.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Controller.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+</ClassDiagram>

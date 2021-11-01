@@ -1,0 +1,149 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC28529B-67CA-4C6F-A054-EF0D09822077}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CellPhone</RootNamespace>
+    <AssemblyName>CellPhone</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CallEventArgs.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="PhoneMemory.cs" />
+    <Compile Include="MultimediaMessage.cs" />
+    <Compile Include="ShortMessage.cs" />
+    <Compile Include="PhoneMode.cs" />
+    <Compile Include="Model.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Phone.cs" />
+    <Compile Include="PhoneDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhoneDisplay.Designer.cs">
+      <DependentUpon>PhoneDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneKeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhoneKeyboard.Designer.cs">
+      <DependentUpon>PhoneKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PhoneDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PhoneDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneKeyboard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PhoneKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\w810.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSelectLeft.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnBack.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\btn0.PNG" />
+    <Content Include="Resources\btn1.PNG" />
+    <Content Include="Resources\btn2.PNG" />
+    <Content Include="Resources\btn3.PNG" />
+    <Content Include="Resources\btn4.PNG" />
+    <Content Include="Resources\btn5.PNG" />
+    <Content Include="Resources\btn6.PNG" />
+    <Content Include="Resources\btn7.PNG" />
+    <Content Include="Resources\btn8.PNG" />
+    <Content Include="Resources\btn9.PNG" />
+    <Content Include="Resources\btnDelete.PNG" />
+    <Content Include="Resources\btnDown.PNG" />
+    <Content Include="Resources\btnLeft.PNG" />
+    <Content Include="Resources\btnRight.PNG" />
+    <Content Include="Resources\btnSelectCenter.PNG" />
+    <Content Include="Resources\btnSelectRight.PNG" />
+    <Content Include="Resources\btnSharp.PNG" />
+    <Content Include="Resources\btnStar.PNG" />
+    <Content Include="Resources\btnUp.PNG" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="Resources\tr.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
