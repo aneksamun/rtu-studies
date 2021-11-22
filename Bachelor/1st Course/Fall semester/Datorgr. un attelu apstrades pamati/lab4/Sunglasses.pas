@@ -8,29 +8,28 @@ uses
 
 type
     TForm1 = class(TForm)
-        Edit1: TEdit;
-        Edit2: TEdit;
-        Edit3: TEdit;
-        Edit4: TEdit;
-        Edit5: TEdit;
-        Button1: TButton;
-        Label1: TLabel;
-        Label2: TLabel;
-        Label3: TLabel;
-        Label4: TLabel;
-        Label5: TLabel;
-        Edit6: TEdit;
-        Label6: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Edit6: TEdit;
+    Label6: TLabel;
         
-        procedure Button1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
 private
     { Private declarations }
 public
     { Public declarations }
 end;
 
-var
-    Form1: TForm1;
+var Form1: TForm1;
 
 implementation
 
@@ -73,10 +72,10 @@ implementation
                         p := p + Ry2x - Rx2y + Ry2;
                     end;
                     
-                    Zimet(x,y,xc,yc);
+                Zimet(x,y,xc,yc);
             end;
             
-         p := Ry2 * sqr(x + 0.5) + Rx2 * sqr(y - 1) - Rx2 * Ry2;
+        p := Ry2 * sqr(x + 0.5) + Rx2 * sqr(y - 1) - Rx2 * Ry2;
 
         while y >= 0 do
             begin
@@ -96,11 +95,11 @@ implementation
                     end;
                     
                 Zimet(x,y,xc,yc);
-           end;
+            end;
     end;
 
    procedure Taisne(x0, y0, x1, y1:Integer);
-        var x, y, dx, dy, ix, iy, p, i:Integer;
+        var x, y, dx, dy, ix, iy, p, i: Integer;
     begin
         dx := abs(x1-x0);
         dy := abs(y1-y0);
@@ -145,7 +144,7 @@ implementation
                 
                 for i := 1 to dy do   
                     begin              
-                        if p > 0 Then                    
+                        if p > 0 then                    
                             begin                        
                                 y := y + iy;                   
                                 x := x + ix;                   
@@ -164,7 +163,7 @@ implementation
     end;
 
     procedure TForm1.Button1Click(Sender: TObject);
-        var x, y, h, a, r1, r2 : integer;
+        var x, y, h, a, r1, r2: integer;
     begin
         x := strtoint(Edit1.Text);
         y := strtoint(Edit2.Text);

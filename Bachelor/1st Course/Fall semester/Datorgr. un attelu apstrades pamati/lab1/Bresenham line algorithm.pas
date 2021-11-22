@@ -40,23 +40,23 @@ implementation
         dy := abs(y1 - y0);
         x := x0;
         y := y0;
-        If (x1 - x0) < 0 Then 
+        if (x1 - x0) < 0 then 
             ix:=-1
-        Else 
+        else 
             ix:=1;
             
-        if y1 - y0 < 0 Then 
+        if y1 - y0 < 0 then 
             iy:=-1
         else 
             iy:=1;
             
-        If dx >= dy Then //slipumam mazakam vai vien. ar 45 gr.
+        if dx >= dy then //slipumam mazakam vai vien. ar 45 gr.
             begin
                 p := 2 * dy - dx;
                 
                 for i := 1 To dx do
                     begin
-                        if p > 0 Then
+                        if p > 0 then
                             begin
                                 x := x + ix;
                                 y := y + iy;
@@ -72,12 +72,12 @@ implementation
                             end;
                     end;
             end
-        Else           //slipumam > par 45 gr.
+        else           //slipumam > par 45 gr.
             begin
                 p := 2 * dx - dy;
                 for i := 1 To dy do
                     begin
-                        if p > 0 Then
+                        if p > 0 then
                             begin
                                 y := y + iy;
                                 x := x + ix;

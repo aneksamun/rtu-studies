@@ -8,51 +8,50 @@ uses
 
 type
     TForm1 = class(TForm)
-        Edit1: TEdit;
-        Edit2: TEdit;
-        Edit3: TEdit;
-        Label1: TLabel;
-        Label2: TLabel;
-        Label3: TLabel;
-        Button1: TButton;
-        procedure Button1Click(Sender: TObject);
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
 private
     { Private declarations }
 public
     { Public declarations }
 end;
 
-var
-    Form1: TForm1;
+var Form1: TForm1;
 
 implementation
 
 {$R *.dfm}
 
-    procedure Taisne(x0, y0, x1, y1 : Integer);
-        var x, y, dx, dy, ix, iy, p, i : Integer;
+    procedure Taisne(x0, y0, x1, y1: Integer);
+        var x, y, dx, dy, ix, iy, p, i: Integer;
     begin
         dx := abs(x1 - x0);
         dy := abs(y1 - y0);
         x := x0;
         y := y0;
-        If (x1 - x0) < 0 Then 
+        if (x1 - x0) < 0 then 
             ix:=-1
-        Else 
+        else 
             ix:=1;
             
-        if y1 - y0 < 0 Then 
+        if y1 - y0 < 0 then 
             iy:=-1
         else 
             iy:=1;
             
-        If dx >= dy Then //slipumam mazakam vai vien. ar 45 gr.
+        if dx >= dy then //slipumam mazakam vai vien. ar 45 gr.
             begin
                 p := 2 * dy - dx;
                 
-                for i := 1 To dx do
+                for i := 1 to dx do
                     begin
-                        if p > 0 Then
+                        if p > 0 then
                             begin
                                 x := x + ix;
                                 y := y + iy;
@@ -68,7 +67,7 @@ implementation
                             end;
                     end;
             end
-        Else           //slipumam > par 45 gr.
+        else           //slipumam > par 45 gr.
             begin
                 p := 2 * dx - dy;
                 for i := 1 To dy do
@@ -92,7 +91,7 @@ implementation
     end;
 
     procedure TForm1.Button1Click(Sender: TObject);
-        var x,y,h : integer;
+        var x, y, h: integer;
     begin
         x := strtoint(Edit1.Text);
         y := strtoint(Edit2.Text);

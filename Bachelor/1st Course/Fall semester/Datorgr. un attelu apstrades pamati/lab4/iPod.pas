@@ -7,27 +7,27 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TForm1 = class(TForm)
-        Edit1: TEdit;
-        Edit2: TEdit;
-        Edit3: TEdit;
-        Edit4: TEdit;
-        Edit5: TEdit;
-        Button1: TButton;
-        Label1: TLabel;
-        Label2: TLabel;
-        Label3: TLabel;
-        Label4: TLabel;
-        Label5: TLabel;
+    TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     
-        procedure Button1Click(Sender: TObject);
-        private
-            { Private declarations }
-        public
-            { Public declarations }
-        end;
-var
-  Form1: TForm1;
+    procedure Button1Click(Sender: TObject);
+    private
+        { Private declarations }
+    public
+        { Public declarations }
+    end;
+
+var Form1: TForm1;
 
 implementation
 
@@ -41,7 +41,7 @@ implementation
         Form1.Canvas.Pixels[-x + xc, -y + yc] := $000000;
     end;
 
-    procedure Ellipse(xc, yc, rx, ry : Integer);
+    procedure Ellipse(xc, yc, rx, ry: Integer);
     var x, y:Integer;
         Rx2y, Ry2x, Rx2, Ry2, p : Real;
     begin
@@ -53,7 +53,7 @@ implementation
         Ry2x := 2 * Ry2 * x;
         p := Ry2 - Rx2 + 0.25 * Rx2;
         
-        While Ry2x <= Rx2y do
+        while Ry2x <= Rx2y do
             begin
                 if p < 0 then
                     begin
@@ -70,14 +70,14 @@ implementation
                         p := p + Ry2x - Rx2y + Ry2;
                     end;
                     
-                    Zimet(x,y,xc,yc);
+                Zimet(x,y,xc,yc);
             end;
             
-         p := Ry2 * sqr(x + 0.5) + Rx2 * sqr(y - 1) - Rx2 * Ry2;
+        p := Ry2 * sqr(x + 0.5) + Rx2 * sqr(y - 1) - Rx2 * Ry2;
 
         while y >= 0 do
             begin
-                If p > 0 then
+                if p > 0 then
                     begin
                         y := y - 1;
                         Rx2y := 2 * Rx2 * y;
@@ -97,14 +97,14 @@ implementation
     end;
 
    procedure Taisne(x0, y0, x1, y1:Integer);
-        var x, y, dx, dy, ix, iy, p, i:Integer;
+    var x, y, dx, dy, ix, iy, p, i: Integer;
     begin
         dx := abs(x1-x0);
         dy := abs(y1-y0);
         x := x0;
         y := y0;
         
-        if ( x1 - x0 ) < 0 then    
+        if x1 - x0 < 0 then    
             ix:=-1
         else 
             ix:=1;
@@ -120,7 +120,7 @@ implementation
                 
                 for i := 1 to dx do
                     begin
-                        if p > 0 Then
+                        if p > 0 then
                             begin
                                 x := x + ix;
                                 y := y + iy;
@@ -142,7 +142,7 @@ implementation
                 
                 for i := 1 to dy do   
                     begin              
-                        if p > 0 Then                    
+                        if p > 0 then                    
                             begin                        
                                 y := y + iy;                   
                                 x := x + ix;                   
@@ -161,7 +161,7 @@ implementation
     end;
 
     procedure TForm1.Button1Click(Sender: TObject);
-        var x, y, h, r1, r2 : integer;
+        var x, y, h, r1, r2: integer;
     begin
         x := strtoint(Edit1.Text);
         y := strtoint(Edit2.Text);

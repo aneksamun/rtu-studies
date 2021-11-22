@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TForm1 = class(TForm)
+    TForm1 = class(TForm)
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -32,10 +32,10 @@ implementation
 {$R *.dfm}
 procedure Zimet(x,y,xc,yc:Integer);
 begin
-Form1.Canvas.Pixels[x+xc,y+yc]:=$000000;
-Form1.Canvas.Pixels[-x+xc,y+yc]:=$000000;
-Form1.Canvas.Pixels[x+xc,-y+yc]:=$000000;
-Form1.Canvas.Pixels[-x+xc,-y+yc]:=$000000;
+    Form1.Canvas.Pixels[x+xc,y+yc]:=$000000;
+    Form1.Canvas.Pixels[-x+xc,y+yc]:=$000000;
+    Form1.Canvas.Pixels[x+xc,-y+yc]:=$000000;
+    Form1.Canvas.Pixels[-x+xc,-y+yc]:=$000000;
 end;
 
 procedure Ellipse(xc,yc,rx,ry:Integer);
@@ -49,54 +49,56 @@ begin
     Rx2y:=2*Rx2*y;
     Ry2x:=2*Ry2*x;
     p:=Ry2-Rx2+0.25*Rx2;
-    While Ry2x<=Rx2y do
-     begin
-      if p<0 then
-              begin
-              x:=x+1;
-              Ry2x:=2*Ry2*x;
-              p:=p+Ry2x+Ry2;
-              end
-      else
-              begin
-              x:=x+1;
-              y:=y-1;
-              Rx2y:=2*Rx2*y;
-              Ry2x:=2*Ry2*x;
-              p:=p+Ry2x-Rx2y+Ry2;
-              end;
-      Zimet(x,y,xc,yc);
-     end;
-     p:=Ry2*sqr(x+0.5)+Rx2*sqr(y-1)-Rx2*Ry2;
+    
+    while Ry2x<=Rx2y do
+        begin
+            if p<0 then
+                begin
+                    x:=x+1;
+                    Ry2x:=2*Ry2*x;
+                    p:=p+Ry2x+Ry2;
+                end
+            else
+                begin
+                    x:=x+1;
+                    y:=y-1;
+                    Rx2y:=2*Rx2*y;
+                    Ry2x:=2*Ry2*x;
+                    p:=p+Ry2x-Rx2y+Ry2;
+                end;
+            Zimet(x,y,xc,yc);
+        end;
+     
+    p:=Ry2*sqr(x+0.5)+Rx2*sqr(y-1)-Rx2*Ry2;
 
-     while y>=0 do
-     begin
-      If p>0 then
-      begin
-      y:=y-1;
-      Rx2y:=2*Rx2*y;
-      p:=p-Rx2y+Rx2;
-      end
-      else
-       begin
-        x:=x+1;
-        y:=y-1;
-        rx2y:=2*Rx2*y;
-        ry2x:=2*Ry2*x;
-        p:=p+Ry2x-Rx2y+Rx2;
-       end;
-       Zimet(x,y,xc,yc);
-
+    while y>=0 do
+        begin
+            if p>0 then
+                begin
+                    y:=y-1;
+                    Rx2y:=2*Rx2*y;
+                    p:=p-Rx2y+Rx2;
+                end
+            else
+                begin
+                    x:=x+1;
+                    y:=y-1;
+                    rx2y:=2*Rx2*y;
+                    ry2x:=2*Ry2*x;
+                    p:=p+Ry2x-Rx2y+Rx2;
+                end;
+            Zimet(x,y,xc,yc);
        end;
 end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 var xc,yx,rx,ry:integer;
 begin
-xc:=StrToInt(Edit1.Text);
-yc:=StrToInt(Edit2.Text);
-rx:=StrToInt(Edit3.Text);
-ry:=StrToInt(Edit4.Text);
-Elipse_calc(xc,yc,rx,ry);
+    xc:=StrToInt(Edit1.Text);
+    yc:=StrToInt(Edit2.Text);
+    rx:=StrToInt(Edit3.Text);
+    ry:=StrToInt(Edit4.Text);
+    Elipse_calc(xc,yc,rx,ry);
 end;
 
 end.

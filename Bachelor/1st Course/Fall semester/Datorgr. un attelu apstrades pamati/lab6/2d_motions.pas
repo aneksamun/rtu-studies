@@ -8,27 +8,27 @@ uses
 
 type
     TForm1 = class(TForm)
-        Edit1: TEdit;
-        Edit2: TEdit;
-        Edit3: TEdit;
-        Edit4: TEdit;
-        Edit5: TEdit;
-        Label1: TLabel;
-        Edit6: TEdit;
-        Edit7: TEdit;
-        Edit8: TEdit;
-        Edit9: TEdit;
-        Edit10: TEdit;
-        Label2: TLabel;
-        Label3: TLabel;
-        Label4: TLabel;
-        Label5: TLabel;
-        Label6: TLabel;
-        Label7: TLabel;
-        Label8: TLabel;
-        Label9: TLabel;
-        Label10: TLabel;
-        Button1: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Label1: TLabel;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Button1: TButton;
         
     procedure Button1Click(Sender: TObject);
     
@@ -44,8 +44,8 @@ var
 implementation
 
     {$R *.dfm}
-    procedure Taisne(x0, y0, x1, y1:Integer);
-        var x, y, dx, dy, ix, iy, p, i:Integer;
+    procedure Taisne(x0, y0, x1, y1: Integer);
+        var x, y, dx, dy, ix, iy, p, i: Integer;
     begin
         dx := abs(x1-x0);
         dy := abs(y1-y0);
