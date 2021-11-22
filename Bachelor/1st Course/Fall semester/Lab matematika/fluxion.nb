@@ -1,0 +1,289 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6279,        206]*)
+(*NotebookOutlinePosition[      6926,        228]*)
+(*  CellTagsIndexPosition[      6882,        224]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(f[x_] = \(x*ArcSin[x]\)\/\@\(1 - x\^2\) + 
+        Ln[\@\(1 - x\^2\)]\), "\[IndentingNewLine]", 
+    \(\(f'\)[x] // FullSimplify\), "\[IndentingNewLine]", 
+    \(D[\(x*ArcSin[x]\)\/\@\(1 - x\^2\) + Ln[\@\(1 - x\^2\)], x] // 
+      FullSimplify\)}], "Input"],
+
+Cell[BoxData[
+    \(\(x\ ArcSin[x]\)\/\@\(1 - x\^2\) + Ln[\@\(1 - x\^2\)]\)], "Output"],
+
+Cell[BoxData[
+    FractionBox[
+      RowBox[{\(x\ \@\(1 - x\^2\)\), "+", \(ArcSin[x]\), "+", 
+        RowBox[{"x", " ", \((\(-1\) + x\^2)\), " ", 
+          RowBox[{
+            SuperscriptBox["Ln", "\[Prime]",
+              MultilineFunction->None], "[", \(\@\(1 - x\^2\)\), 
+            "]"}]}]}], \(\((1 - x\^2)\)\^\(3/2\)\)]], "Output"],
+
+Cell[BoxData[
+    FractionBox[
+      RowBox[{\(x\ \@\(1 - x\^2\)\), "+", \(ArcSin[x]\), "+", 
+        RowBox[{"x", " ", \((\(-1\) + x\^2)\), " ", 
+          RowBox[{
+            SuperscriptBox["Ln", "\[Prime]",
+              MultilineFunction->None], "[", \(\@\(1 - x\^2\)\), 
+            "]"}]}]}], \(\((1 - x\^2)\)\^\(3/2\)\)]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(f[x] = 
+      ArcSin[x]^\(\[ExponentialE]\^\(2*x\)\)\), "\[IndentingNewLine]", 
+    \(\(f'\)[x] // FullSimplify\), "\[IndentingNewLine]", 
+    \(D[ArcSin[x]^\(\[ExponentialE]\^\(2*x\)\), x] // 
+      FullSimplify\)}], "Input"],
+
+Cell[BoxData[
+    \(ArcSin[x]\^\(\[ExponentialE]\^\(2\ x\)\)\)], "Output"],
+
+Cell[BoxData[
+    FractionBox[
+      RowBox[{\(x\ \@\(1 - x\^2\)\), "+", \(ArcSin[x]\), "+", 
+        RowBox[{"x", " ", \((\(-1\) + x\^2)\), " ", 
+          RowBox[{
+            SuperscriptBox["Ln", "\[Prime]",
+              MultilineFunction->None], "[", \(\@\(1 - x\^2\)\), 
+            "]"}]}]}], \(\((1 - x\^2)\)\^\(3/2\)\)]], "Output"],
+
+Cell[BoxData[
+    \(\[ExponentialE]\^\(2\ x\)\ ArcSin[x]\^\(\(-1\) + \[ExponentialE]\^\(2\ \
+x\)\)\ \((1\/\@\(1 - x\^2\) + 2\ ArcSin[x]\ Log[ArcSin[x]])\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\n\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(f[x_] = \((2  x^2 - 7)\)*
+        Ln*\((x - 1)\)\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(\(f'''\)[x] // FullSimplify\), "\[IndentingNewLine]", 
+    \(D[\((2  x^2 - 7)\)*Ln*\((x - 1)\), {x, 3}] // FullSimplify\)}], "Input"],
+
+Cell[BoxData[
+    \(Ln\ \((\(-1\) + x)\)\ \((\(-7\) + 2\ x\^2)\)\)], "Output"],
+
+Cell[BoxData[
+    \(12\ Ln\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(f[x, y] = \((2*Sec^2*t)\)^2/Cos*2*t\), "\[IndentingNewLine]", 
+    \(D[f[x, y], x] // FullSimplify\), "\[IndentingNewLine]", 
+    \(D[f[x, y], y] // FullSimplify\), "\[IndentingNewLine]", 
+    \(D[f[x, y], {x, y}] // FullSimplify\)}], "Input"],
+
+Cell[BoxData[
+    \(\(8\ Sec\^4\ t\^3\)\/Cos\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[
+      D[4*Ln*\((3 + x\^2)\) - 8*x*y[x] + 2*x\^2*\(y\^3\)[x], x] \[Equal] 
+        D[x], \(y'\)[x]]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{"{", 
+        RowBox[{
+          RowBox[{
+            SuperscriptBox["y", "\[Prime]",
+              MultilineFunction->None], "[", "x", "]"}], "\[Rule]", 
+          FractionBox[
+            
+            RowBox[{\(-x\), "+", \(8\ Ln\ x\), "-", \(8\ y[x]\), 
+              "+", \(4\ x\ \(y\^3\)[x]\), "+", 
+              RowBox[{"2", " ", \(x\^2\), " ", 
+                RowBox[{
+                  SuperscriptBox[\(y\^3\), "\[Prime]",
+                    MultilineFunction->None], "[", "x", 
+                  "]"}]}]}], \(8\ x\)]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dt[Sin[x]]\)], "Input"],
+
+Cell[BoxData[
+    \(Cos[x]\ Dt[x]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dt[Sin[x*y]]\)], "Input"],
+
+Cell[BoxData[
+    \(Cos[x\ y]\ \((y\ Dt[x] + x\ Dt[y])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dt[4*x*\[PartialD]\_x\ x - 3*y*\[PartialD]\_x y\  = 
+        3*x\^2*y*\[PartialD]\_x\ y - 2*x*y\^2*\[PartialD]\_x\ x]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Set::"write"\), \(\(:\)\(\ \)\), "\<\"Tag \\!\\(Plus\\) in \
+\\!\\(0 + \\(\\(4\\\\ x\\)\\)\\) is Protected. \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::write\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(\(-2\)\ y\^2\ Dt[x] - 4\ x\ y\ Dt[y]\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 941}},
+WindowSize->{495, 740},
+WindowMargins->{{Automatic, 112}, {Automatic, -50}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 278, 5, 110, "Input"],
+Cell[2057, 60, 87, 1, 46, "Output"],
+Cell[2147, 63, 340, 7, 52, "Output"],
+Cell[2490, 72, 340, 7, 52, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2867, 84, 247, 5, 71, "Input"],
+Cell[3117, 91, 74, 1, 32, "Output"],
+Cell[3194, 94, 340, 7, 52, "Output"],
+Cell[3537, 103, 168, 2, 49, "Output"]
+}, Open  ]],
+Cell[3720, 108, 35, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[3780, 113, 255, 4, 90, "Input"],
+Cell[4038, 119, 78, 1, 29, "Output"],
+Cell[4119, 122, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4196, 128, 264, 4, 90, "Input"],
+Cell[4463, 134, 58, 1, 45, "Output"],
+Cell[4524, 137, 35, 1, 29, "Output"],
+Cell[4562, 140, 35, 1, 29, "Output"],
+Cell[4600, 143, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4672, 149, 138, 3, 52, "Input"],
+Cell[4813, 154, 602, 15, 46, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5452, 174, 43, 1, 30, "Input"],
+Cell[5498, 177, 47, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5582, 183, 45, 1, 30, "Input"],
+Cell[5630, 186, 70, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5737, 192, 150, 2, 31, "Input"],
+Cell[5890, 196, 300, 4, 22, "Message"],
+Cell[6193, 202, 70, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

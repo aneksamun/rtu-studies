@@ -1,0 +1,169 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      3548,        113]*)
+(*NotebookOutlinePosition[      4194,        135]*)
+(*  CellTagsIndexPosition[      4150,        131]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Solve[{5*x - y - z \[Equal] 8, 4*y - z == 3, 
+        2*x - y + 4*z \[Equal] 7}, {x, y, z}]\)], "Input"],
+
+Cell[BoxData[
+    \({{x \[Rule] 2, y \[Rule] 1, z \[Rule] 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \({{x \[Rule] 2, y \[Rule] 1, 
+        z \[Rule] 1}}\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(NSolve[{5*x1 + 2*x2 - x3 + 3*x4 + 5*x5 \[Equal] 2, 
+        3*x1 + x2 - 2*x3 + 3*x4 + 5*x5 \[Equal] 1, 
+        6*x1 + 3*x2 - 2*x3 + 4*x4 + 7*x5 \[Equal] 3}, {x1, x2, x3, x4, 
+        x5}]\)}], "Input"],
+
+Cell[BoxData[
+    \({{x \[Rule] 2, y \[Rule] 1, z \[Rule] 1}}\)], "Output"],
+
+Cell[BoxData[
+    \({{x1 \[Rule] \(\(0.`\)\(\[InvisibleSpace]\)\) - 
+            0.6000000000000002`\ x4 - 0.8000000000000003`\ x5, 
+        x2 \[Rule] \(\(1.`\)\(\[InvisibleSpace]\)\) + 
+            0.40000000000000036`\ x4 + 0.20000000000000048`\ x5, 
+        x3 \[Rule] \(\(0.`\)\(\[InvisibleSpace]\)\) + 
+            0.7999999999999998`\ x4 + 1.3999999999999997`\ x5}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Limit[\(x^3 + 2*x - 1\)\/\(x + \@\(4*x^6 + 5*x^2 - 9\)\), 
+      x \[Rule] Infinity]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(1\/2\[IndentingNewLine]\), "\[IndentingNewLine]", 
+    \(Limit\ n[\@\(n^2 + 1\) - \@\(n^2 - 1\), x \[Rule] Infinity]\)}], "Input"],
+
+Cell[BoxData[
+    \(1\/2\)], "Output"],
+
+Cell[BoxData[
+    \(Limit\ n[\(-\@\(\(-1\) + n\^2\)\) + \@\(1 + n\^2\), 
+        x \[Rule] \[Infinity]]\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(Limit\ n[\(-\@\(\(-1\) + n\^2\)\) + \@\(1 + n\^2\), 
+        x \[Rule] \
+\[Infinity]]\)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)
+    \)\)], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 941}},
+WindowSize->{495, 740},
+WindowMargins->{{Automatic, -10}, {63, Automatic}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 124, 2, 50, "Input"],
+Cell[1903, 57, 75, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2015, 63, 326, 6, 130, "Input"],
+Cell[2344, 71, 75, 1, 29, "Output"],
+Cell[2422, 74, 386, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2845, 85, 117, 2, 48, "Input"],
+Cell[2965, 89, 38, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3040, 95, 151, 2, 86, "Input"],
+Cell[3194, 99, 38, 1, 42, "Output"],
+Cell[3235, 102, 117, 2, 38, "Output"]
+}, Open  ]],
+Cell[3367, 107, 177, 4, 74, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

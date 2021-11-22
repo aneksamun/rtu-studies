@@ -1,0 +1,291 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4777,        195]*)
+(*NotebookOutlinePosition[      5420,        217]*)
+(*  CellTagsIndexPosition[      5376,        213]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    RowBox[{"A", "=", 
+      RowBox[{"(", GridBox[{
+            {"1"},
+            {"2"}
+            }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+    \({{1}, {2}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"B", "=", 
+      RowBox[{"(", GridBox[{
+            {"3"},
+            {"4"}
+            }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+    \({{3}, {4}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A . B\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Dot::"dotsh"\), \(\(:\)\(\ \)\), "\<\"Tensors \
+\\!\\({\\(\\({1}\\)\\), \\(\\({2}\\)\\)}\\) and \\!\\({\\(\\({3}\\)\\), \
+\\(\\({4}\\)\\)}\\) have incompatible shapes. \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"Dot::dotsh\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({{1}, {2}} . {{3}, {4}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dot[A, B]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Dot::"dotsh"\), \(\(:\)\(\ \)\), "\<\"Tensors \
+\\!\\({\\(\\({1}\\)\\), \\(\\({2}\\)\\)}\\) and \\!\\({\\(\\({3}\\)\\), \
+\\(\\({4}\\)\\)}\\) have incompatible shapes. \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"Dot::dotsh\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({{1}, {2}} . {{3}, {4}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"DD", "=", 
+      RowBox[{"(", GridBox[{
+            {"3", "4"}
+            }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+    \({{3, 4}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DD . A\)], "Input"],
+
+Cell[BoxData[
+    \({{11}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CC = Dot[DD, A]\)], "Input"],
+
+Cell[BoxData[
+    \({{11}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[CC] // N\)], "Input"],
+
+Cell[BoxData[
+    \({{\(-0.9999902065507035`\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"CC", " ", 
+      RowBox[{"(", GridBox[{
+            {"2", "3"},
+            {"4", "6"}
+            }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Thread::"tdlen"\), \(\(:\)\(\ \)\), "\<\"Objects of unequal \
+length in \\!\\(\\(\\({\\({11}\\)}\\)\\)\\\\ \\(\\({\\(\\({2, 3}\\)\\), \
+\\(\\({4, 6}\\)\\)}\\)\\)\\) cannot be combined. \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"Thread::tdlen\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({{11}}\ {{2, 3}, {4, 6}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DD . A + 3\)], "Input"],
+
+Cell[BoxData[
+    \({{14}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CC\)], "Input"],
+
+Cell[BoxData[
+    \({{11}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[CC]\)], "Input"],
+
+Cell[BoxData[
+    \({{Sin[11]}}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{572, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 137, 5, 41, "Input"],
+Cell[1916, 60, 44, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1997, 66, 137, 5, 41, "Input"],
+Cell[2137, 73, 44, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2218, 79, 38, 1, 30, "Input"],
+Cell[2259, 82, 356, 5, 22, "Message"],
+Cell[2618, 89, 57, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2712, 95, 42, 1, 30, "Input"],
+Cell[2757, 98, 356, 5, 22, "Message"],
+Cell[3116, 105, 57, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3210, 111, 124, 4, 30, "Input"],
+Cell[3337, 117, 42, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3416, 123, 39, 1, 30, "Input"],
+Cell[3458, 126, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3535, 132, 48, 1, 30, "Input"],
+Cell[3586, 135, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3663, 141, 45, 1, 30, "Input"],
+Cell[3711, 144, 62, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3810, 150, 148, 5, 41, "Input"],
+Cell[3961, 157, 376, 5, 37, "Message"],
+Cell[4340, 164, 58, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4435, 170, 43, 1, 30, "Input"],
+Cell[4481, 173, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4558, 179, 35, 1, 30, "Input"],
+Cell[4596, 182, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4673, 188, 40, 1, 30, "Input"],
+Cell[4716, 191, 45, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,277 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6139,        209]*)
+(*NotebookOutlinePosition[      6785,        231]*)
+(*  CellTagsIndexPosition[      6741,        227]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    RowBox[{"a", "=", 
+      RowBox[{"(", GridBox[{
+            {"2", "1", "3", \(-4\)},
+            {"5", \(-1\), "7", "1"},
+            {"0", "2", "5", "6"},
+            {"1", "3", "4", \(-2\)}
+            }], ")"}]}], "\[IndentingNewLine]", \(Det[a] // 
+      MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{2, 1, 3, \(-4\)}, {5, \(-1\), 7, 1}, {0, 2, 5, 6}, {1, 3, 
+        4, \(-2\)}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[\(-75\),
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(ClearAll[a]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    RowBox[{"a", "=", 
+      RowBox[{"(", GridBox[{
+            {"5", "4", "1", "2"},
+            {"5", \(-1\), "7", "1"},
+            {"1", "3", "4", \(-2\)}
+            }], ")"}]}], "\[IndentingNewLine]", 
+    RowBox[{"b", "=", 
+      RowBox[{"(", GridBox[{
+            {"2", "7", "6"},
+            {"1", "3", "2"},
+            {"9", "0", "1"},
+            {"0", \(-2\), \(-1\)}
+            }], ")"}]}], "\[IndentingNewLine]", \(a . b // 
+      MatrixForm\), "\[IndentingNewLine]", \(b . a // MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{5, 4, 1, 2}, {5, \(-1\), 7, 1}, {1, 3, 4, \(-2\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({{2, 7, 6}, {1, 3, 2}, {9, 0, 1}, {0, \(-2\), \(-1\)}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"23", "43", "37"},
+            {"72", "30", "34"},
+            {"41", "20", "18"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"51", "19", "75", \(-1\)},
+            {"22", "7", "30", "1"},
+            {"46", "39", "13", "16"},
+            {\(-11\), \(-1\), \(-18\), "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    RowBox[{"c", "=", 
+      RowBox[{"(", GridBox[{
+            {"2", "1", "3"},
+            {"5", \(-1\), "7"},
+            {"0", "2", "5"}
+            }], ")"}]}], "\[IndentingNewLine]", \(Inverse[c] // 
+      MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{2, 1, 3}, {5, \(-1\), 7}, {0, 2, 5}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(19\/33\), \(-\(1\/33\)\), \(-\(10\/33\)\)},
+            {\(25\/33\), \(-\(10\/33\)\), \(-\(1\/33\)\)},
+            {\(-\(10\/33\)\), \(4\/33\), \(7\/33\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    RowBox[{"d", "=", 
+      RowBox[{"(", GridBox[{
+            {"1", "0", "2"},
+            {"3", \(-1\), "4"},
+            {"1", "1", \(-2\)}
+            }], ")"}]}], "\[IndentingNewLine]", 
+    RowBox[{"e", "=", 
+      RowBox[{"(", GridBox[{
+            {"4"},
+            {"9"},
+            {"1"}
+            }], ")"}]}], "\[IndentingNewLine]", \(LinearSolve[d, e] // 
+      MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{1, 0, 2}, {3, \(-1\), 4}, {1, 1, \(-2\)}}\)], "Output"],
+
+Cell[BoxData[
+    \({{4}, {9}, {1}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"2"},
+            {"1"},
+            {"1"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    RowBox[{"s", "=", 
+      RowBox[{"(", GridBox[{
+            {"3", "1", \(-8\), "2", "1", \(-1\)},
+            {"2", \(-2\), \(-3\), \(-7\), "2", \(-8\)},
+            {"1", "1", \(-2\), "3", \(-5\), \(-2\)}
+            }], ")"}]}], "\[IndentingNewLine]", \(RowReduce[a] // 
+      MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{3, 1, \(-8\), 2, 1, \(-1\)}, {2, \(-2\), \(-3\), \(-7\), 
+        2, \(-8\)}, {1, 1, \(-2\), 3, \(-5\), \(-2\)}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0", \(121\/161\)},
+            {"0", "1", "0", \(-\(53\/161\)\)},
+            {"0", "0", "1", \(-\(71\/161\)\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 941}},
+WindowSize->{495, 740},
+WindowMargins->{{Automatic, 102}, {37, Automatic}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 302, 8, 98, "Input"],
+Cell[2081, 63, 114, 2, 29, "Output"],
+Cell[2198, 67, 108, 3, 43, "Output"]
+}, Open  ]],
+Cell[2321, 73, 44, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[2390, 78, 534, 14, 173, "Input"],
+Cell[2927, 94, 86, 1, 29, "Output"],
+Cell[3016, 97, 88, 1, 29, "Output"],
+Cell[3107, 100, 275, 8, 71, "Output"],
+Cell[3385, 110, 338, 9, 87, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3760, 124, 251, 7, 80, "Input"],
+Cell[4014, 133, 72, 1, 29, "Output"],
+Cell[4089, 136, 350, 8, 97, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4476, 149, 418, 13, 133, "Input"],
+Cell[4897, 164, 77, 1, 29, "Output"],
+Cell[4977, 167, 49, 1, 29, "Output"],
+Cell[5029, 170, 236, 8, 71, "Output"]
+}, Open  ]],
+Cell[5280, 181, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[5331, 185, 322, 7, 80, "Input"],
+Cell[5656, 194, 148, 2, 48, "Output"],
+Cell[5807, 198, 316, 8, 97, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

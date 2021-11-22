@@ -1,0 +1,535 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     14101,        433]*)
+(*NotebookOutlinePosition[     14792,        457]*)
+(*  CellTagsIndexPosition[     14748,        453]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    RowBox[{\(ClearAll[x, y, z]\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\ \ S\[ABar]kumlielumi\ \ *) \)}], "\
+\[IndentingNewLine]", \(x = 7\), "\[IndentingNewLine]", 
+    RowBox[{\(y = 5\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\ 
+        Decim\[ABar]li\ skaitli\ pieraksta\ izmantojot\ punkta\ \(simbolu : \ \
+\(\('\)\(.\)\('\)\)\)\ \ \ \ \ \ \ *) \)}], "\[IndentingNewLine]", 
+    RowBox[{\(z = 2.8\), "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", "   ", 
+        RowBox[{\(\(\(Saskait\:012b\[SHacek]ana/at\:0146em\[SHacek]ana\)/
+              reizin\[ABar]\[SHacek]ana\)/dal\:012b\[SHacek]ana\), " ", "-", 
+          " ", 
+          RowBox[{"k\[ABar]", " ", 
+            RowBox[{"parasti", ":", " ", 
+              StyleBox[\(x + y - \((x/y - x*y)\)\),
+                FontSlant->"Italic"]}]}]}], "     ", 
+        "*)"}]}], "\[IndentingNewLine]", \(x + 
+      y - \((x/y - x*y)\)\), "\[IndentingNewLine]", }], "Input"],
+
+Cell[BoxData[
+    \(7\)], "Output"],
+
+Cell[BoxData[
+    \(5\)], "Output"],
+
+Cell[BoxData[
+    \(2.8`\)], "Output"],
+
+Cell[BoxData[
+    \(228\/5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "   ", 
+        RowBox[{"Reizinot", ",", " ", 
+          RowBox[{
+            RowBox[{
+            "*", " ", "viet\[ABar]", " ", "dr\:012bkst", " ", "lietot", " ", 
+              RowBox[{"atstarpi", ":", " ", 
+                StyleBox[\(x*y\),
+                  FontSlant->"Italic"]}]}], 
+            StyleBox["=",
+              FontSlant->"Italic"], 
+            StyleBox[\(x\ y\),
+              FontSlant->"Italic"]}]}], "                   ", "*)"}], 
+      "\[IndentingNewLine]", \(\(x + 
+        y - \((x/y - x\ y)\)\)\(\[IndentingNewLine]\)
+      \)}]], "Input"],
+
+Cell[BoxData[
+    \(228\/5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "   ", 
+        RowBox[{
+          RowBox[{
+          "Lai", " ", "dab\:016btu", " ", "skaitlisko", " ", 
+            "rezult\[ABar]tu", " ", "j\[ABar]lieto", 
+            " ", \(komanda\ '\), \(N'\), " ", "vien\[ABar]", " ", "no", "  ", 
+            "\[IndentingNewLine]", "  ", 
+            RowBox[{"form\[ABar]m", ":", "   ", 
+              RowBox[{
+                RowBox[{
+                  StyleBox[\(N[x + y - \((x/y - x\ y)\)]\),
+                    FontSlant->"Italic"], 
+                  StyleBox["    ",
+                    FontSlant->"Italic"], 
+                  StyleBox["vai",
+                    FontSlant->"Plain"], 
+                  StyleBox["     ",
+                    FontSlant->"Italic"], 
+                  StyleBox["x",
+                    FontSlant->"Italic"]}], 
+                StyleBox["+",
+                  FontSlant->"Italic"], 
+                StyleBox["y",
+                  FontSlant->"Italic"], 
+                StyleBox["-",
+                  FontSlant->"Italic"], 
+                StyleBox[\((x/y - x\ y)\),
+                  FontSlant->"Italic"]}]}]}], 
+          StyleBox["//",
+            FontSlant->"Italic"], 
+          StyleBox["N",
+            FontSlant->"Italic"]}], "           ", "*)"}], 
+      "\n", \(N[x + y - \((x/y - x\ y)\)]\n
+      x + y - \((x/y - x\ y)\) // N\[IndentingNewLine]
+      \)}]], "Input"],
+
+Cell[BoxData[
+    \(45.6`\)], "Output"],
+
+Cell[BoxData[
+    \(45.6`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "    ", 
+        RowBox[{"K\[ABar]pin\[ABar]\[SHacek]ana", ":", " ", 
+          StyleBox[\(x^y\),
+            FontSlant->"Italic"]}], "                   ", "*)"}], 
+      "\[IndentingNewLine]", \(\(x^y\)\(\[IndentingNewLine]\)
+      \)}]], "Input"],
+
+Cell[BoxData[
+    \(16807\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ \ \ \ Ja\ pak\[ABar]pe\ ir\ negat\:012bvs\ vai\ da\:013cveida\ \
+skaitlis, \ 
+      j\[ABar]lieto\ apa\:013cas\ \(iekavas : \ \(\('\) \(\((\ )\)'\)\)\)\ \ \
+\ \ \ \ \ *) \)\(\[IndentingNewLine]\)\(\(x^\((\(-y\))\) - 
+      y^\((1/x)\)\)\(\[IndentingNewLine]\)
+    \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(1\/16807 - 5\^\(1/7\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "  ", 
+        RowBox[{"!", 
+          RowBox[{"!", 
+            RowBox[{"!", " ", 
+              RowBox[{
+              "Visu", " ", "funkciju", " ", "argumentus", " ", "j\[ABar]liek",
+                 " ", 
+                RowBox[{
+                  StyleBox["kvadr\[ABar]tiekav\[ABar]s",
+                    FontSlant->"Italic"], ":", " ", 
+                  RowBox[{
+                    RowBox[{
+                      RowBox[{
+                        StyleBox["f",
+                          FontSlant->"Italic"], 
+                        StyleBox["[",
+                          FontSize->18], 
+                        StyleBox["arguments",
+                          FontSlant->"Italic"], 
+                        StyleBox["]",
+                          FontSize->18]}], " ", "!!"}], "!"}]}]}]}]}]}], 
+        "     ", "*)"}], "\[IndentingNewLine]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "       ", 
+        RowBox[{"Kvadr\[ABar]tsakne", ":", " ", 
+          StyleBox[\(Sqrt[x]\),
+            FontSlant->"Italic"]}], "         ", "*)"}], 
+      "\[IndentingNewLine]", \(Sqrt[x]\[IndentingNewLine]
+      Sqrt[x] // N\[IndentingNewLine]
+      \)}]], "Input"],
+
+Cell[BoxData[
+    \(\@7\)], "Output"],
+
+Cell[BoxData[
+    \(2.6457513110645907`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "       ", 
+        RowBox[{"Natur\[ABar]lais", " ", "logaritms", " ", 
+          RowBox[{"ln", ":", " ", 
+            RowBox[{
+              RowBox[{
+                StyleBox[\(Log[x]\),
+                  FontSlant->"Italic"], ".", " ", "\n", "         ", 
+                "Logaritms"}], " ", "p\[EBar]c", " ", "b\[ABar]zes", " ", 
+              RowBox[{"a", ":", "  ", 
+                StyleBox[\(Log[a, x]\),
+                  FontSlant->"Italic"]}]}]}]}], "           ", "*)"}], 
+      "\[IndentingNewLine]", \(Log[2]\[IndentingNewLine]
+      Log[2] // N\[IndentingNewLine]
+      Log[2, 2]\[IndentingNewLine]
+      \)}]], "Input"],
+
+Cell[BoxData[
+    \(Log[2]\)], "Output"],
+
+Cell[BoxData[
+    \(0.6931471805599453`\)], "Output"],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "    ", 
+        RowBox[{
+          RowBox[{
+          "Ieb\:016bv\[EBar]to", " ", "funkciju", " ", "saraksts", " ", 
+            "atrodas", " ", "\[IndentingNewLine]", "     ", 
+            StyleBox["Help",
+              FontSlant->"Italic"]}], 
+          StyleBox["->",
+            FontSlant->"Italic"], 
+          StyleBox[\(Help\ Browser -> Mathematical\ Functions\),
+            FontSlant->"Italic"]}], "                          ", "*)"}], 
+      "\[IndentingNewLine]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "    ", 
+        RowBox[{"Piem\[EBar]ram", ",", " ", 
+          RowBox[{
+            RowBox[{
+            "SINUSU", " ", "varam", " ", "atrast", " ", "p\[EBar]c", " ", 
+              "\n", "        ", 
+              StyleBox["Help",
+                FontSlant->"Italic"]}], 
+            StyleBox["->",
+              FontSlant->"Italic"], 
+            
+            StyleBox[\(Help\ Browser -> \(Mathematical\ Functions -> 
+                  Elementary\ Functions\)\),
+              FontSlant->"Italic"]}]}], "     ", "*)"}], 
+      "\[IndentingNewLine]", \(Sin[x]\[IndentingNewLine]
+      Sin[x] // N\)}]], "Input"],
+
+Cell[BoxData[
+    \(Sin[7]\)], "Output"],
+
+Cell[BoxData[
+    \(0.6569865987187891`\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{"(*", "   ", 
+      RowBox[{
+        RowBox[{
+        "P\[ABar]r\[EBar]j\[ABar]s", " ", "elemnt\[ABar]r\[ABar]s", " ", 
+          "funkcijas", " ", "rakstam", " ", "sekojo\[SHacek]\[ABar]", " ", 
+          RowBox[{"form\[ABar]", ":", "  ", "\[IndentingNewLine]", "      ", 
+            StyleBox[\(Cos[x]\),
+              FontSlant->"Italic"]}]}], 
+        StyleBox[",",
+          FontSlant->"Italic"], 
+        StyleBox[" ",
+          FontSlant->"Italic"], 
+        StyleBox[\(ArcSin[x]\),
+          FontSlant->"Italic"], 
+        StyleBox[",",
+          FontSlant->"Italic"], 
+        StyleBox[" ",
+          FontSlant->"Italic"], 
+        StyleBox[\(Tan[x]\),
+          FontSlant->"Italic"], 
+        StyleBox[",",
+          FontSlant->"Italic"], 
+        StyleBox[" ",
+          FontSlant->"Italic"], 
+        StyleBox[\(ArcTan[x]\),
+          FontSlant->"Italic"], 
+        StyleBox[",",
+          FontSlant->"Italic"], 
+        StyleBox[" ",
+          FontSlant->"Italic"], 
+        StyleBox[\(Exp[x] = \ \[ExponentialE]\^x\),
+          FontSlant->"Italic"]}], 
+      StyleBox[" ",
+        FontSlant->"Italic"], "*)"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{"(*", "  ", 
+      RowBox[{
+        RowBox[{
+        "Visu", " ", "funkciju", " ", "nosaukumi", " ", "s\[ABar]kas", " ", 
+          "ar", " ", 
+          StyleBox["lielo",
+            FontSlant->"Italic"], 
+          StyleBox[" ",
+            FontSlant->"Italic"], 
+          StyleBox["burtu",
+            FontSlant->"Italic"], " ", \((Sin, \ Tan, \ Sum)\)}], ",", "  ", 
+        "\[IndentingNewLine]", 
+        "        ", \(\(\(t\[ABar]p\[EBar]c\ !!\)!\)\ nerekomend\[EBar]\ \
+lietot\ main\:012bgo\ nosaukumus\), ",", " ", "\[IndentingNewLine]", 
+        "                  ", \(kuri\ s\[ABar]kas\ ar\ lielo\ \(\(burtu\ \
+!!\)!\)\)}], "             ", "*)"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ \ \(Ir\ iesp\[EBar]ja\ uzdot\ savu\ funkciju . \ 
+          Piem\[EBar]ram\)\(,\)\ \ \ \ \ \ \ \ \ \ *) \)\(\[IndentingNewLine]\
+\)\(\[IndentingNewLine]\)\(ClearAll[x, 
+      f]\[IndentingNewLine]\[IndentingNewLine]
+    f[x_] = Sin[x]^2 + Exp[\(-x\)]\[IndentingNewLine]
+    f[5\ Pi]\[IndentingNewLine]
+    f[5\ Pi] // N\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\[ExponentialE]\^\(-x\) + Sin[x]\^2\)], "Output"],
+
+Cell[BoxData[
+    \(\[ExponentialE]\^\(\(-5\)\ \[Pi]\)\)], "Output"],
+
+Cell[BoxData[
+    \(1.5070172753900654`*^-7\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\( (*\ \ \ \ \(! \(! \(! \ \ Pirms\ jauniem\ apr\[EBar]\:0137iniem\ j\
+\[ABar]lieto\ komanda\ ' \(\(\(ClearAll'\)\ \ !!\)!\)\)\)\)\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ *) \)\(\[IndentingNewLine]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ \ \ \ Izmanto\ komandu\ ' // 
+        Simplify'\ p\[EBar]c\ izteksmes, \ 
+      lai\ vienk\[ABar]r\[SHacek]otu\ izteiksmi . \ \[IndentingNewLine]\
+\[IndentingNewLine]\ \ Izmanto\ komandu\ ' // 
+        Expand'\ p\[EBar]c\ izteiksmes, \ 
+      lai\ atv\[EBar]rtu\ \(\(iekavas\)\(.\)\)\ \ \ \ \ \ \ \ \ \ \ \ \ *) \)\
+\(\[IndentingNewLine]\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ \ \ \ \(Izmanto\ simbolu\ ';\)'\ p\[EBar]c\ izteiksmes, \ 
+      lai\ neredz\[EBar]tu\ datora\ \(\(starprezult\[ABar]tus\)\(.\)\)\ \ \ \
+*) \)\(\[IndentingNewLine]\)\(x1 = 2\[IndentingNewLine]
+    \(x3 = 5;\)\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(2\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", "    ", 
+        RowBox[{
+          RowBox[{
+          "Da\:017e\[ABar]m", " ", "darb\:012bb\[ABar]m", " ", 
+            "eksist\[EBar]", " ", "speci\[ABar]li", " ", 
+            StyleBox["\[SHacek]abloni",
+              FontSlant->"Italic"]}], ",", " ", 
+          RowBox[{
+            RowBox[{
+            "kurus", " ", "var", " ", "dab\:016bt", " ", "p\[EBar]c", 
+              "\[IndentingNewLine]", "          ", 
+              StyleBox["File",
+                FontSlant->"Italic"]}], 
+            StyleBox["\[Rule]",
+              FontSlant->"Italic"], 
+            StyleBox[\(Palettes \[Rule] Basic\ Input\),
+              FontSlant->"Italic"]}]}], 
+        "                                            ", "*)"}], 
+      "\[IndentingNewLine]", "     ", "\[IndentingNewLine]", 
+      RowBox[{"(*", "    ", 
+        RowBox[{
+          StyleBox["Koment\[ABar]rus",
+            FontSlant->"Italic"], " ", "raksta", " ", "apa\:013c\[ABar]s", 
+          " ", "iekav\[ABar]s", " ", "s\[ABar]kot", " ", "un", " ", "beidzot",
+           " ", "koment\[ABar]ru", " ", "ar", " ", \(simbolu\ '\), "*", "'"}],
+         "   ", "*)"}]}]], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1680}, {0, 914}},
+WindowSize->{808, 740},
+WindowMargins->{{28, Automatic}, {Automatic, 36}},
+PrintingCopies->1,
+PrintingPageRange->{3, 4}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 999, 18, 250, "Input"],
+Cell[2778, 73, 35, 1, 29, "Output"],
+Cell[2816, 76, 35, 1, 29, "Output"],
+Cell[2854, 79, 38, 1, 29, "Output"],
+Cell[2895, 82, 40, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2972, 88, 615, 16, 70, "Input"],
+Cell[3590, 106, 40, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3667, 112, 1405, 36, 110, "Input"],
+Cell[5075, 150, 39, 1, 29, "Output"],
+Cell[5117, 153, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5193, 159, 296, 7, 70, "Input"],
+Cell[5492, 168, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5568, 174, 310, 6, 70, "Input"],
+Cell[5881, 182, 55, 1, 42, "Output"]
+}, Open  ]],
+Cell[5951, 186, 911, 23, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[6887, 213, 315, 8, 90, "Input"],
+Cell[7205, 223, 37, 1, 30, "Output"],
+Cell[7245, 226, 53, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7335, 232, 681, 16, 130, "Input"],
+Cell[8019, 250, 40, 1, 29, "Output"],
+Cell[8062, 253, 53, 1, 29, "Output"],
+Cell[8118, 256, 35, 1, 29, "Output"]
+}, Open  ]],
+Cell[8168, 260, 534, 13, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[8727, 277, 660, 17, 90, "Input"],
+Cell[9390, 296, 40, 1, 29, "Output"],
+Cell[9433, 299, 53, 1, 29, "Output"]
+}, Open  ]],
+Cell[9501, 303, 1160, 34, 50, "Input"],
+Cell[10664, 339, 697, 16, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[11386, 359, 365, 7, 150, "Input"],
+Cell[11754, 368, 69, 1, 29, "Output"],
+Cell[11826, 371, 68, 1, 29, "Output"],
+Cell[11897, 374, 57, 1, 29, "Output"]
+}, Open  ]],
+Cell[11969, 378, 225, 3, 50, "Input"],
+Cell[12197, 383, 383, 7, 90, "Input"],
+
+Cell[CellGroupData[{
+Cell[12605, 394, 254, 4, 70, "Input"],
+Cell[12862, 400, 35, 1, 29, "Output"]
+}, Open  ]],
+Cell[12912, 404, 1185, 27, 90, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

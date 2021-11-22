@@ -1,0 +1,556 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12215,        430]*)
+(*NotebookOutlinePosition[     12907,        454]*)
+(*  CellTagsIndexPosition[     12863,        450]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(\( (*\ \ \ 4.  
+        Nodarb\:012bba . \ 
+          MATRICAS\ UN\ \(\(VEKTORI\)\(.\)\)\ \
+*) \)\(\[IndentingNewLine]\)\)\)], "Input"],
+
+Cell[BoxData[{\(ClearAll[a, b, c1, c2, d1, d2, x]\), "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{"(*", " ", 
+        RowBox[{\(Lai\ izveidotu\ matricu\ vai\ vektoru\ \((vertorrindu\ vai\ \
+vektorkolonnu)\)\), ",", " ", 
+          RowBox[{
+            RowBox[{
+              RowBox[{"izmanto", ":", "\[IndentingNewLine]", 
+                StyleBox["Input",
+                  FontSlant->"Italic"]}], 
+              StyleBox["\[Rule]",
+                FontSlant->"Italic"], 
+              StyleBox[\(Create\ \(Table/Matrix\)/Palette\),
+                FontSlant->"Italic"]}], 
+            StyleBox["/.",
+              FontSlant->"Italic"], 
+            StyleBox["..",
+              FontSlant->"Italic"]}]}], " ", "*)"}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    RowBox[{
+      RowBox[{"a", "=", 
+        RowBox[{"(", GridBox[{
+              {"1", "2", "3"},
+              {"4", "5", "6"},
+              {"7", "8", "0"}
+              }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"b", "=", 
+      RowBox[{"(", GridBox[{
+            {"1", "2", "2"},
+            {"2", "1", "2"},
+            {"2", "2", "1"}
+            }], ")"}]}], "\[IndentingNewLine]", \(b // MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    \({{1, 2, 2}, {2, 1, 2}, {2, 2, 1}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "2", "2"},
+            {"2", "1", "2"},
+            {"2", "2", "1"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Matricu\ saskait\:012b\[SHacek]ana\ un\ \(\(at\:0146em\[SHacek]ana\)\(:\
+\)\)\ *) \)\(\[IndentingNewLine]\)\(c1 = a + b\[IndentingNewLine]
+    c1 // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({{2, 4, 5}, {6, 6, 8}, {9, 10, 1}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"2", "4", "5"},
+            {"6", "6", "8"},
+            {"9", "10", "1"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(c2 = a - b\), "\[IndentingNewLine]", 
+    \(c2 // MatrixForm\), "\[IndentingNewLine]", 
+    \(\(\(a - 
+        b\)\(//\)\(MatrixForm\)\(\ \ \ \ \ \ \ \ \ \)\( (*\ \(! \(! \(! \ 
+                bet\ NEDR\:012aKST\ c2\)\)\) = 
+          a - b // \(\(MatrixForm\ !!\)!\)\ *) \)\)\)}], "Input"],
+
+Cell[BoxData[
+    \({{0, 0, 1}, {2, 4, 4}, {5, 6, \(-1\)}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "1"},
+            {"2", "4", "4"},
+            {"5", "6", \(-1\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"0", "0", "1"},
+            {"2", "4", "4"},
+            {"5", "6", \(-1\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Reizin\[ABar]\[SHacek]ana\ ar\ \(\(skaitli\)\(:\)\)\ \ *) \)\(\
+\[IndentingNewLine]\)\(\(d1 = 7*a;\)\[IndentingNewLine]
+    \(d2 = 7\ a;\)\[IndentingNewLine]
+    d1 // MatrixForm\[IndentingNewLine]
+    d2 // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"7", "14", "21"},
+            {"28", "35", "42"},
+            {"49", "56", "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"7", "14", "21"},
+            {"28", "35", "42"},
+            {"49", "56", "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Matricu\ \(\(reizin\[ABar]jums\)\(:\)\)\ \
+*) \)\(\[IndentingNewLine]\)\(a . b // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"11", "10", "9"},
+            {"26", "25", "24"},
+            {"23", "22", "30"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Matricas\ determinanta\ \
+\(\(apr\[EBar]\:0137in\[ABar]\[SHacek]ana\)\(:\)\)\ \ *) \)\(\
+\[IndentingNewLine]\)\(Det[b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ \(Transpon\[EBar]\[SHacek]ana\)\(:\)\ \ *) \)\(\
+\[IndentingNewLine]\)\(Transpose[a] // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "4", "7"},
+            {"2", "5", "8"},
+            {"3", "6", "0"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Inversa\ \(\(matrica\)\(:\)\)\ *) \)\(\[IndentingNewLine]\)\(Inverse[
+        a] // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-\(16\/9\)\), \(8\/9\), \(-\(1\/9\)\)},
+            {\(14\/9\), \(-\(7\/9\)\), \(2\/9\)},
+            {\(-\(1\/9\)\), \(2\/9\), \(-\(1\/9\)\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Matricas\ \(\(rangs\)\(:\)\)\ *) \)\(\[IndentingNewLine]\)\(MatrixRank[
+      a]\[IndentingNewLine]
+    MatrixRank[b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(3\)], "Output"],
+
+Cell[BoxData[
+    \(3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"(*", " ", 
+        RowBox[{
+          RowBox[{"Matricu", " ", "vien\[ABar]dojumu", " ", 
+            StyleBox["A",
+              FontSlant->"Italic"], 
+            StyleBox["*",
+              FontSlant->"Italic"], 
+            StyleBox["x",
+              FontSlant->"Italic"]}], 
+          StyleBox["=",
+            FontSlant->"Italic"], 
+          RowBox[{
+            StyleBox["B",
+              FontSlant->"Italic"], 
+            " ", \(\(risin\[ABar]\[SHacek]ana\)\(:\)\)}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", \(x = LinearSolve[a, b]\[IndentingNewLine]
+      x // MatrixForm\)}]], "Input"],
+
+Cell[BoxData[
+    \({{\(-\(2\/9\)\), \(-\(26\/9\)\), \(-\(17\/9\)\)}, {4\/9, 25\/9, 
+        16\/9}, {1\/9, \(-\(2\/9\)\), 1\/9}}\)], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-\(2\/9\)\), \(-\(26\/9\)\), \(-\(17\/9\)\)},
+            {\(4\/9\), \(25\/9\), \(16\/9\)},
+            {\(1\/9\), \(-\(2\/9\)\), \(1\/9\)}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Gausa\ metode\ line\[ABar]ro\ vien\[ABar]dojumu\ sist\[EBar]mas\ \
+\(\(risin\[ABar]\[SHacek]anai\)\(:\)\)\ \
+*) \)\(\[IndentingNewLine]\)\(RowReduce[a] // MatrixForm\)\)\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0"},
+            {"0", "1", "0"},
+            {"0", "0", "1"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{"(*", " ", 
+      RowBox[{
+        RowBox[{
+        "P\[ABar]r\[EBar]j\[ABar]s", " ", "oper\[ABar]cijas", " ", "var", " ",
+           
+          RowBox[{"atrast", ":", "\[IndentingNewLine]", 
+            StyleBox["Help",
+              FontSlant->"Italic"]}]}], 
+        StyleBox["\[Rule]",
+          FontSlant->"Italic"], 
+        RowBox[{
+          StyleBox[\(List\ and\ Matrices\),
+            FontSlant->"Italic"], 
+          StyleBox["\[Rule]",
+            FontSlant->"Italic"], 
+          RowBox[{
+            StyleBox["Matrix",
+              FontSlant->"Italic"], 
+            StyleBox[" ",
+              FontSlant->"Italic"], 
+            RowBox[{
+              StyleBox["Operations",
+                FontSlant->"Italic"], "."}]}]}]}], "  ", "*)"}]], "Input"],
+
+Cell[BoxData[
+    \(\(\(\[IndentingNewLine]\)\( (*\ \(VEKTORI\)\(.\)\ *) \)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ClearAll[a, b]\), "\[IndentingNewLine]", 
+    \(a = {2, 3, 5}\), "\[IndentingNewLine]", 
+    \(b = {6, 11, 25}\)}], "Input"],
+
+Cell[BoxData[
+    \({2, 3, 5}\)], "Output"],
+
+Cell[BoxData[
+    \({6, 11, 25}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Vektoru\ skal\[ABar]rais\ \(reizin\[ABar]jums : \ \(\('\) \(a . 
+              b'\)\(\ \)\(vai\ '\) \(Dot[a, 
+                b]'\)\)\)\ *) \)\(\[IndentingNewLine]\)\(a . 
+      b\[IndentingNewLine]
+    Dot[a, b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(170\)], "Output"],
+
+Cell[BoxData[
+    \(170\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Vektoru\ vektori\[ABar]lais\ \(\(reizin\[ABar]jums\)\(:\)\)\ *) \)\(\
+\[IndentingNewLine]\)\(a\[Cross]
+      b\ \ \  (*\ \(! \(! \(! \ 
+            Mazais\ \(\(krusti\:0146\[SHacek]\ !!\)!\)\)\)\)\ \
+*) \[IndentingNewLine]
+    Cross[a, b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({20, \(-20\), 4}\)], "Output"],
+
+Cell[BoxData[
+    \({20, \(-20\), 4}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Vektora\ \(\(modulis\)\(:\)\)\ *) \)\(\[IndentingNewLine]\)\(Norm[
+      a]\[IndentingNewLine]
+    Norm[b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\@38\)], "Output"],
+
+Cell[BoxData[
+    \(\@782\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*\ Uzdevums : \[IndentingNewLine]\ \ \ \ 1. \ m\[ABar]jas\ darba\ ' 
+          Line\[ABar]r\[ABar]\ algebra'\ risin\[ABar]\[SHacek]ana . \
+\[IndentingNewLine]Var\ dab\:016bt\ no\ \(BlackBoarda : \
+\[IndentingNewLine]www . vu . lv\), \ 
+      Courses \[Rule] \ \(Augst\[ABar]k\[ABar]\ matem\[ABar]tika \[Rule] \
+\(Cours\ Documents \[Rule] Tipveida\ uzdevumi\)\)\ *) \)], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1680}, {0, 914}},
+WindowSize->{899, 577},
+WindowMargins->{{385, Automatic}, {Automatic, 73}},
+PrintingCopies->1,
+PrintingPageRange->{3, 3}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 157, 4, 50, "Input"],
+Cell[1914, 57, 737, 17, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[2676, 78, 451, 13, 133, "Input"],
+Cell[3130, 93, 67, 1, 29, "Output"],
+Cell[3200, 96, 266, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3503, 109, 212, 4, 70, "Input"],
+Cell[3718, 115, 68, 1, 29, "Output"],
+Cell[3789, 118, 267, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4093, 131, 312, 6, 70, "Input"],
+Cell[4408, 139, 72, 1, 29, "Output"],
+Cell[4483, 142, 269, 8, 57, "Output"],
+Cell[4755, 152, 269, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5061, 165, 271, 6, 110, "Input"],
+Cell[5335, 173, 273, 8, 57, "Output"],
+Cell[5611, 183, 273, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5921, 196, 145, 3, 50, "Input"],
+Cell[6069, 201, 274, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6380, 214, 171, 4, 50, "Input"],
+Cell[6554, 220, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6626, 226, 144, 2, 50, "Input"],
+Cell[6773, 230, 266, 8, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7076, 243, 147, 3, 50, "Input"],
+Cell[7226, 248, 338, 8, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7601, 261, 170, 4, 70, "Input"],
+Cell[7774, 267, 35, 1, 29, "Output"],
+Cell[7812, 270, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7884, 276, 645, 18, 70, "Input"],
+Cell[8532, 296, 143, 2, 42, "Output"],
+Cell[8678, 300, 335, 8, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9050, 313, 218, 4, 50, "Input"],
+Cell[9271, 319, 266, 8, 57, "Output"]
+}, Open  ]],
+Cell[9552, 330, 792, 23, 50, "Input"],
+Cell[10347, 355, 90, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[10462, 360, 145, 3, 70, "Input"],
+Cell[10610, 365, 43, 1, 29, "Output"],
+Cell[10656, 368, 45, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10738, 374, 265, 6, 70, "Input"],
+Cell[11006, 382, 37, 1, 29, "Output"],
+Cell[11046, 385, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11120, 391, 291, 7, 70, "Input"],
+Cell[11414, 400, 50, 1, 29, "Output"],
+Cell[11467, 403, 50, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11554, 409, 159, 4, 70, "Input"],
+Cell[11716, 415, 38, 1, 30, "Output"],
+Cell[11757, 418, 39, 1, 30, "Output"]
+}, Open  ]],
+Cell[11811, 422, 400, 6, 90, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
