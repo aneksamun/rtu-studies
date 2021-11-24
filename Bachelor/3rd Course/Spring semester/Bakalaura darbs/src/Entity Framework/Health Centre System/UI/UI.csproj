@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71047DB3-B3B0-46F8-95D0-C9C483850699}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthSystem.UI</RootNamespace>
+    <AssemblyName>HealthSystem.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Disease\DiseaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Disease\DiseaseForm.Designer.cs">
+      <DependentUpon>DiseaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Disease\DiseaseListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Disease\DiseaseListForm.Designer.cs">
+      <DependentUpon>DiseaseListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\NullableDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\NullableDateTimePicker.Designer.cs">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\PatientAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\PatientAssignmentForm.Designer.cs">
+      <DependentUpon>PatientAssignmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\PatientsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\PatientsListForm.Designer.cs">
+      <DependentUpon>PatientsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\PatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\PatientsForm.Designer.cs">
+      <DependentUpon>PatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\RegistryStaffListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\RegistryStaffListForm.Designer.cs">
+      <DependentUpon>RegistryStaffListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\DoctorsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\DoctorsListForm.Designer.cs">
+      <DependentUpon>DoctorsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\EmployersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal\EmployersForm.Designer.cs">
+      <DependentUpon>EmployersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Threatment\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Threatment\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdiParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdiParentForm.Designer.cs">
+      <DependentUpon>MdiParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\PictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\PictureForm.Designer.cs">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Disease\DiseaseForm.resx">
+      <DependentUpon>DiseaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Disease\DiseaseListForm.resx">
+      <DependentUpon>DiseaseListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\NullableDateTimePicker.resx">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\PatientAssignmentForm.resx">
+      <DependentUpon>PatientAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\PatientsListForm.resx">
+      <DependentUpon>PatientsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\PatientsForm.resx">
+      <DependentUpon>PatientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal\RegistryStaffListForm.resx">
+      <DependentUpon>RegistryStaffListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal\DoctorsListForm.resx">
+      <DependentUpon>DoctorsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal\EmployersForm.resx">
+      <DependentUpon>EmployersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Threatment\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiParentForm.resx">
+      <DependentUpon>MdiParentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\PictureForm.resx">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Threatment\TreatmentsForm.resx">
+      <DependentUpon>TreatmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Threatment\TreatmentsListForm.resx">
+      <DependentUpon>TreatmentsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.Config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Threatment\TreatmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Threatment\TreatmentsForm.Designer.cs">
+      <DependentUpon>TreatmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Threatment\TreatmentsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Threatment\TreatmentsListForm.Designer.cs">
+      <DependentUpon>TreatmentsListForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{845F9725-ADDA-4434-AD23-C3CCD288932D}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{EEE465F0-4C37-47D5-BE4B-09C94C003C68}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

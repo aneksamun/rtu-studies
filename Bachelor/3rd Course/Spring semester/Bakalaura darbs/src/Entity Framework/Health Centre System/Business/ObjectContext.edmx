@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HealthCentreModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="HealthCentreModelStoreContainer">
+          <EntitySet Name="Ārstēšana" EntityType="HealthCentreModel.Store.Ārstēšana" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ĀrstsPacients" EntityType="HealthCentreModel.Store.ĀrstsPacients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Persona" EntityType="HealthCentreModel.Store.Persona" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Slimība" EntityType="HealthCentreModel.Store.Slimība" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonasValidācijaSet" EntityType="HealthCentreModel.Store.PersonasValidācija">
+            <DefiningQuery>
+              SELECT cast(0 as int) PersonasID, cast(0 as tinyint) Personas_tips
+              WHERE 1 = 2
+            </DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Ārstēšana_ĀrstsPersona" Association="HealthCentreModel.Store.FK_Ārstēšana_ĀrstsPersona">
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" />
+            <End Role="Ārstēšana" EntitySet="Ārstēšana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ārstēšana_Slimība" Association="HealthCentreModel.Store.FK_Ārstēšana_Slimība">
+            <End Role="Slimība" EntitySet="Slimība" />
+            <End Role="Ārstēšana" EntitySet="Ārstēšana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ĀrstsPacients_Persona" Association="HealthCentreModel.Store.FK_ĀrstsPacients_Persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ĀrstsPacients_Persona1" Association="HealthCentreModel.Store.FK_ĀrstsPacients_Persona1">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ārstēšana">
+          <Key>
+            <PropertyRef Name="ĀrstēšanasID" />
+          </Key>
+          <Property Name="ĀrstēšanasID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Terapijas_kurss" Type="varchar" Nullable="false" MaxLength="420" />
+          <Property Name="Diagnozes_datums" Type="date" Nullable="false" />
+          <Property Name="Atveselošanas_datums" Type="date" />
+          <Property Name="Slimības_stāvoklis" Type="varchar" Nullable="false" MaxLength="420" />
+          <Property Name="SlimībasID" Type="int" Nullable="false" />
+          <Property Name="ĀrstaPacientaID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ĀrstsPacients">
+          <Key>
+            <PropertyRef Name="ĀrstaPacientaID" />
+          </Key>
+          <Property Name="ĀrstaPacientaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ĀrstaID" Type="int" />
+          <Property Name="PacientaID" Type="int" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="PersonasID" />
+          </Key>
+          <Property Name="PersonasID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Vārds" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Uzvārds" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Personas_kods" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Telefons" Type="int" Nullable="false" />
+          <Property Name="Adrese" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Lietotājvārds" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Parole" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Attēls" Type="image" />
+          <Property Name="Asins_grupa" Type="tinyint" />
+          <Property Name="Specializācija" Type="varchar" MaxLength="25" />
+          <Property Name="Kabineta_numurs" Type="smallint" />
+          <Property Name="Personas_tips" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Slimība">
+          <Key>
+            <PropertyRef Name="SlimībasID" />
+          </Key>
+          <Property Name="SlimībasID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Diagnoze" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Simptomi" Type="varchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="PersonasValidācija">
+           <Key>
+             <PropertyRef Name="PersonasID" />
+           </Key>
+           <Property Name="PersonasID" Type="int" Nullable="false" />
+           <Property Name="Personas_tips" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ārstēšana_ĀrstsPersona">
+          <End Role="ĀrstsPacients" Type="HealthCentreModel.Store.ĀrstsPacients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ārstēšana" Type="HealthCentreModel.Store.Ārstēšana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ĀrstsPacients">
+              <PropertyRef Name="ĀrstaPacientaID" />
+            </Principal>
+            <Dependent Role="Ārstēšana">
+              <PropertyRef Name="ĀrstaPacientaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ārstēšana_Slimība">
+          <End Role="Slimība" Type="HealthCentreModel.Store.Slimība" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ārstēšana" Type="HealthCentreModel.Store.Ārstēšana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Slimība">
+              <PropertyRef Name="SlimībasID" />
+            </Principal>
+            <Dependent Role="Ārstēšana">
+              <PropertyRef Name="SlimībasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ĀrstsPacients_Persona">
+          <End Role="Persona" Type="HealthCentreModel.Store.Persona" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ĀrstsPacients" Type="HealthCentreModel.Store.ĀrstsPacients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="PersonasID" />
+            </Principal>
+            <Dependent Role="ĀrstsPacients">
+              <PropertyRef Name="ĀrstaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ĀrstsPacients_Persona1">
+          <End Role="Persona" Type="HealthCentreModel.Store.Persona" Multiplicity="0..1" />
+          <End Role="ĀrstsPacients" Type="HealthCentreModel.Store.ĀrstsPacients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="PersonasID" />
+            </Principal>
+            <Dependent Role="ĀrstsPacients">
+              <PropertyRef Name="PacientaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CheckPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HealthCentreModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="MapConnection">
+          <EntitySet Name="Persona" EntityType="HealthCentreModel.Persona" />
+          <EntitySet Name="Slimība" EntityType="HealthCentreModel.Slimība" />
+          <EntitySet Name="Ārstēšana" EntityType="HealthCentreModel.Ārstēšana" />
+          <AssociationSet Name="FK_Ārstēšana_Slimība" Association="HealthCentreModel.FK_Ārstēšana_Slimība">
+            <End Role="Slimība" EntitySet="Slimība" />
+            <End Role="Ārstēšana" EntitySet="Ārstēšana" /></AssociationSet>
+          <EntitySet Name="ĀrstsPacients" EntityType="HealthCentreModel.ĀrstsPacients" />
+          <AssociationSet Name="FK_Ārstēšana_ĀrstsPersona" Association="HealthCentreModel.FK_Ārstēšana_ĀrstsPersona">
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" />
+            <End Role="Ārstēšana" EntitySet="Ārstēšana" /></AssociationSet>
+          <AssociationSet Name="ĀrstsĀrstsPacients" Association="HealthCentreModel.ĀrstsĀrstsPacients">
+            <End Role="Ārsts" EntitySet="Persona" />
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" /></AssociationSet>
+          <AssociationSet Name="PacientsĀrstsPacients" Association="HealthCentreModel.PacientsĀrstsPacients">
+            <End Role="Pacients" EntitySet="Persona" />
+            <End Role="ĀrstsPacients" EntitySet="ĀrstsPacients" /></AssociationSet>
+          <EntitySet Name="PersonasValidācijaSet" EntityType="HealthCentreModel.PersonasValidācija" />
+          <FunctionImport Name="CheckPerson" EntitySet="PersonasValidācijaSet" ReturnType="Collection(HealthCentreModel.PersonasValidācija)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" /></FunctionImport></EntityContainer>
+        <EntityType Name="Persona" Abstract="true">
+          <Key>
+            <PropertyRef Name="PersonasID" />
+          </Key>
+          <Property Name="PersonasID" Type="Int32" Nullable="false" />
+          <Property Name="Vārds" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Uzvārds" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Personas_kods" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="Telefons" Type="Int32" Nullable="false" />
+          <Property Name="Adrese" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Lietotājvārds" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Parole" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Attēls" Type="Binary" MaxLength="Max" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="Slimība">
+          <Key>
+            <PropertyRef Name="SlimībasID" />
+          </Key>
+          <Property Name="SlimībasID" Type="Int32" Nullable="false" />
+          <Property Name="Diagnoze" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Simptomi" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Ārstēšana" Relationship="HealthCentreModel.FK_Ārstēšana_Slimība" FromRole="Slimība" ToRole="Ārstēšana" /></EntityType>
+        <EntityType Name="Administrators" BaseType="HealthCentreModel.Persona" />
+        <EntityType Name="Ārsts" BaseType="HealthCentreModel.Persona" >
+          <Property Name="Specializācija" Type="String" Nullable="true" />
+          <Property Name="Kabineta_numurs" Type="Int16" Nullable="true" />
+          <NavigationProperty Name="ĀrstsPacients" Relationship="HealthCentreModel.ĀrstsĀrstsPacients" FromRole="Ārsts" ToRole="ĀrstsPacients" /></EntityType>
+        <EntityType Name="Reģ_darb" BaseType="HealthCentreModel.Persona" />
+        <EntityType Name="Pacients" BaseType="HealthCentreModel.Persona" >
+          <Property Name="Asins_grupa" Type="Byte" Nullable="true" />
+          <NavigationProperty Name="ĀrstsPacients" Relationship="HealthCentreModel.PacientsĀrstsPacients" FromRole="Pacients" ToRole="ĀrstsPacients" /></EntityType>
+        <EntityType Name="Ārstēšana">
+          <Key>
+            <PropertyRef Name="ĀrstēšanasID" /></Key>
+          <Property Name="ĀrstēšanasID" Type="Int32" Nullable="false" />
+          <Property Name="Terapijas_kurss" Type="String" Nullable="false" />
+          <Property Name="Diagnozes_datums" Type="DateTime" Nullable="false" />
+          <Property Name="Atveselošanas_datums" Type="DateTime" Nullable="true" />
+          <Property Name="Slimības_stāvoklis" Type="String" Nullable="false" />
+          <NavigationProperty Name="Slimība" Relationship="HealthCentreModel.FK_Ārstēšana_Slimība" FromRole="Ārstēšana" ToRole="Slimība" />
+          <NavigationProperty Name="ĀrstsPacients" Relationship="HealthCentreModel.FK_Ārstēšana_ĀrstsPersona" FromRole="Ārstēšana" ToRole="ĀrstsPacients" /></EntityType>
+        <Association Name="FK_Ārstēšana_Slimība">
+          <End Type="HealthCentreModel.Slimība" Role="Slimība" Multiplicity="1" />
+          <End Type="HealthCentreModel.Ārstēšana" Role="Ārstēšana" Multiplicity="*" /></Association>
+        <EntityType Name="ĀrstsPacients">
+          <Key>
+            <PropertyRef Name="ĀrstaPacientaID" /></Key>
+          <Property Name="ĀrstaPacientaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ārstēšana" Relationship="HealthCentreModel.FK_Ārstēšana_ĀrstsPersona" FromRole="ĀrstsPacients" ToRole="Ārstēšana" />
+          <NavigationProperty Name="Ārsts" Relationship="HealthCentreModel.ĀrstsĀrstsPacients" FromRole="ĀrstsPacients" ToRole="Ārsts" />
+          <NavigationProperty Name="Pacients" Relationship="HealthCentreModel.PacientsĀrstsPacients" FromRole="ĀrstsPacients" ToRole="Pacients" /></EntityType>
+        <Association Name="FK_Ārstēšana_ĀrstsPersona">
+          <End Type="HealthCentreModel.ĀrstsPacients" Role="ĀrstsPacients" Multiplicity="1" />
+          <End Type="HealthCentreModel.Ārstēšana" Role="Ārstēšana" Multiplicity="*" /></Association>
+        <Association Name="ĀrstsĀrstsPacients">
+          <End Type="HealthCentreModel.Ārsts" Role="Ārsts" Multiplicity="1" />
+          <End Type="HealthCentreModel.ĀrstsPacients" Role="ĀrstsPacients" Multiplicity="*" /></Association>
+        <Association Name="PacientsĀrstsPacients">
+          <End Type="HealthCentreModel.Pacients" Role="Pacients" Multiplicity="1" />
+          <End Type="HealthCentreModel.ĀrstsPacients" Role="ĀrstsPacients" Multiplicity="*" /></Association>
+        <EntityType Name="PersonasValidācija">
+          <Key>
+            <PropertyRef Name="PersonasID" /></Key>
+          <Property Name="PersonasID" Type="Int32" Nullable="false" />
+          <Property Name="Personas_tips" Type="Byte" Nullable="false" /></EntityType></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="HealthCentreModelStoreContainer" CdmEntityContainer="MapConnection">
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Reģ_darb)">
+              <MappingFragment StoreEntitySet="Persona" >
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" />
+                <Condition ColumnName="Personas_tips" Value="2" /></MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Administrators)">
+              <MappingFragment StoreEntitySet="Persona" >
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" />
+                <Condition ColumnName="Personas_tips" Value="0" /></MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Pacients)">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" />
+                <ScalarProperty Name="Asins_grupa" ColumnName="Asins_grupa" />
+                <Condition ColumnName="Personas_tips" Value="3" /></MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Ārsts)">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" />
+                <ScalarProperty Name="Kabineta_numurs" ColumnName="Kabineta_numurs" />
+                <ScalarProperty Name="Specializācija" ColumnName="Specializācija" />
+                <Condition ColumnName="Personas_tips" Value="1" /></MappingFragment></EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Persona)">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" />
+                <ScalarProperty Name="Vārds" ColumnName="Vārds" />
+                <ScalarProperty Name="Uzvārds" ColumnName="Uzvārds" />
+                <ScalarProperty Name="Personas_kods" ColumnName="Personas_kods" />
+                <ScalarProperty Name="Telefons" ColumnName="Telefons" />
+                <ScalarProperty Name="Adrese" ColumnName="Adrese" />
+                <ScalarProperty Name="Lietotājvārds" ColumnName="Lietotājvārds" />
+                <ScalarProperty Name="Parole" ColumnName="Parole" />
+                <ScalarProperty Name="Attēls" ColumnName="Attēls" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Slimība">
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Slimība)">
+              <MappingFragment StoreEntitySet="Slimība">
+                <ScalarProperty Name="SlimībasID" ColumnName="SlimībasID" />
+                <ScalarProperty Name="Diagnoze" ColumnName="Diagnoze" />
+                <ScalarProperty Name="Simptomi" ColumnName="Simptomi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ārstēšana">
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.Ārstēšana)">
+              <MappingFragment StoreEntitySet="Ārstēšana">
+                <ScalarProperty Name="Slimības_stāvoklis" ColumnName="Slimības_stāvoklis" />
+                <ScalarProperty Name="Atveselošanas_datums" ColumnName="Atveselošanas_datums" />
+                <ScalarProperty Name="Diagnozes_datums" ColumnName="Diagnozes_datums" />
+                <ScalarProperty Name="Terapijas_kurss" ColumnName="Terapijas_kurss" />
+                <ScalarProperty Name="ĀrstēšanasID" ColumnName="ĀrstēšanasID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_Ārstēšana_Slimība" TypeName="HealthCentreModel.FK_Ārstēšana_Slimība" StoreEntitySet="Ārstēšana">
+            <EndProperty Name="Ārstēšana">
+              <ScalarProperty Name="ĀrstēšanasID" ColumnName="ĀrstēšanasID" /></EndProperty>
+            <EndProperty Name="Slimība">
+              <ScalarProperty Name="SlimībasID" ColumnName="SlimībasID" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="ĀrstsPacients">
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.ĀrstsPacients)">
+              <MappingFragment StoreEntitySet="ĀrstsPacients">
+                <ScalarProperty Name="ĀrstaPacientaID" ColumnName="ĀrstaPacientaID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_Ārstēšana_ĀrstsPersona" TypeName="HealthCentreModel.FK_Ārstēšana_ĀrstsPersona" StoreEntitySet="Ārstēšana">
+            <EndProperty Name="Ārstēšana">
+              <ScalarProperty Name="ĀrstēšanasID" ColumnName="ĀrstēšanasID" /></EndProperty>
+            <EndProperty Name="ĀrstsPacients">
+              <ScalarProperty Name="ĀrstaPacientaID" ColumnName="ĀrstaPacientaID" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="PacientsĀrstsPacients" TypeName="HealthCentreModel.PacientsĀrstsPacients" StoreEntitySet="ĀrstsPacients">
+            <EndProperty Name="Pacients">
+              <ScalarProperty Name="PersonasID" ColumnName="PacientaID" /></EndProperty>
+            <EndProperty Name="ĀrstsPacients">
+              <ScalarProperty Name="ĀrstaPacientaID" ColumnName="ĀrstaPacientaID" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="ĀrstsĀrstsPacients" TypeName="HealthCentreModel.ĀrstsĀrstsPacients" StoreEntitySet="ĀrstsPacients">
+            <EndProperty Name="Ārsts">
+              <ScalarProperty Name="PersonasID" ColumnName="ĀrstaID" /></EndProperty>
+            <EndProperty Name="ĀrstsPacients">
+              <ScalarProperty Name="ĀrstaPacientaID" ColumnName="ĀrstaPacientaID" /></EndProperty></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="CheckPerson" FunctionName="HealthCentreModel.Store.CheckPerson" />
+          <EntitySetMapping Name="PersonasValidācijaSet">
+            <EntityTypeMapping TypeName="IsTypeOf(HealthCentreModel.PersonasValidācija)">
+              <MappingFragment StoreEntitySet="PersonasValidācijaSet">
+                <ScalarProperty Name="Personas_tips" ColumnName="Personas_tips" />
+                <ScalarProperty Name="PersonasID" ColumnName="PersonasID" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ObjectContext">
+        <EntityTypeShape EntityType="HealthCentreModel.Persona" Width="1.5" PointX="2.875" PointY="1.375" Height="2.7494921875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthCentreModel.Slimība" Width="1.5" PointX="10.375" PointY="4.5" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthCentreModel.Administrators" Width="1.5" PointX="0.625" PointY="2.875" Height="0.4" IsExpanded="false" />
+        <InheritanceConnector EntityType="HealthCentreModel.Administrators" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.875" PointY="3.075" />
+          <ConnectorPoint PointX="2.125" PointY="3.075" />
+          </InheritanceConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.Ārsts" Width="1.5" PointX="5.125" PointY="3.125" Height="1.5956835937499996" />
+        <InheritanceConnector EntityType="HealthCentreModel.Ārsts" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.375" PointY="3.8170475260416663" />
+          <ConnectorPoint PointX="5.125" PointY="3.8170475260416663" />
+          </InheritanceConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.Reģ_darb" Width="1.5" PointX="0.625" PointY="2.25" Height="0.4" IsExpanded="false" />
+        <InheritanceConnector EntityType="HealthCentreModel.Reģ_darb" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.875" PointY="2.45" />
+          <ConnectorPoint PointX="2.125" PointY="2.45" />
+          </InheritanceConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.Pacients" Width="1.5" PointX="5.125" PointY="1.375" Height="1.4033821614583339" />
+        <InheritanceConnector EntityType="HealthCentreModel.Pacients" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.375" PointY="1.9805403645833337" />
+          <ConnectorPoint PointX="5.125" PointY="1.9805403645833337" />
+          </InheritanceConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.Ārstēšana" Width="1.5" PointX="7.875" PointY="4.375" Height="2.3648893229166656" />
+        <AssociationConnector Association="HealthCentreModel.FK_Ārstēšana_Slimība" >
+          <ConnectorPoint PointX="10.375" PointY="5.3939925130208337" />
+          <ConnectorPoint PointX="9.375" PointY="5.3939925130208337" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.ĀrstsPacients" Width="1.5" PointX="7.75" PointY="2.125" Height="1.4033821614583339" />
+        <AssociationConnector Association="HealthCentreModel.FK_Ārstēšana_ĀrstsPersona" >
+          <ConnectorPoint PointX="8.5625" PointY="3.5283821614583339" />
+          <ConnectorPoint PointX="8.5625" PointY="4.375" /></AssociationConnector>
+        <AssociationConnector Association="HealthCentreModel.ĀrstsĀrstsPacients">
+          <ConnectorPoint PointX="6.625" PointY="3.3266910807291667" />
+          <ConnectorPoint PointX="7.75" PointY="3.3266910807291667" /></AssociationConnector>
+        <AssociationConnector Association="HealthCentreModel.PacientsĀrstsPacients">
+          <ConnectorPoint PointX="6.625" PointY="2.3555403645833337" />
+          <ConnectorPoint PointX="7.75" PointY="2.3555403645833337" /></AssociationConnector>
+        <EntityTypeShape EntityType="HealthCentreModel.PersonasValidācija" Width="1.5" PointX="5.125" PointY="5.125" Height="1.4033821614583326" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

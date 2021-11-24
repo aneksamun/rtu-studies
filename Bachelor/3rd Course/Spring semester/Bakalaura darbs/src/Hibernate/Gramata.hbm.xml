@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.example.hibernate">
+  <class name="Grāmata" table="Grāmata" catalog="TestDB" schema="dbo">
+  	<id column="GrāmatasID" name="grāmatasID" type="int">
+  		<generator class="assigned"></generator>
+  	</id>
+  	<property name="nosaukums" column="Nosaukums" type="string" not-null="true" length="15"/>
+  	<property name="izdevniecība" column="izdevniecība" type="string" not-null="true" length="15"/>
+  	<set name="autori" table="Grāmata_Autors" cascade="all">
+  		<key column="GrāmatasID"/>
+  		<many-to-many column="AutoraID" class="Autors"/>
+  	</set>
+  </class>
+</hibernate-mapping>
