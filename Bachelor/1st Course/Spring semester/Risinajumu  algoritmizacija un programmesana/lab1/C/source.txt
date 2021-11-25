@@ -1,0 +1,4 @@
+Formally, x[i] is equivalent to *(x + i).
+Since the type of the pointer involved is known to the compiler at compile time,
+the address that x + i points to is not the address pointed to by x incremented by i bytes,
+but rather incremented by i multiplied by the size of an element that x points to.
