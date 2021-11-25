@@ -505,7 +505,7 @@ var
     str: string;
     code, size: integer;
     TypeOfS: boolean;
-    ch : string[1];
+    ch: string[1];
 
 begin
     InProc:=False;
@@ -527,9 +527,8 @@ begin
     hidecursor;
     seek(textfile,i-1);
     {$I+}
-    if (ioresult <> 0) or ((i < 1) or ( i > filesize (textfile))) then
-    begin FError (5); exit; end;
-
+    if (ioresult <> 0) or ((i < 1) or (i > filesize (textfile))) then
+    begin FError(5); exit; end;
     read (textfile,REC);
     seek (textfile,i-1);
     with REC do
@@ -544,14 +543,19 @@ begin
         gotoXY(53,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
         If (Ch = 'J') or (Ch = 'j') then
             begin
-               Textbackground(white);
-               gotoXY(20,13); textbackground (6); textcolor (white);
-  	       write (' Ievadi vardu: ');textbackground (white); gotoXY(37,13);
-               textbackground(lightgreen);   write ('            ');
-               gotoXY(37,13); TypeOfS:=True; InputCheck(str,12,TypeOfS); vards:=str;
-               If InProc then begin Close(textfile); Exit; end;
-               textbackground(white);
-               ClrEOL;
+                Textbackground(white);
+                gotoXY(20, 13); 
+                textbackground(6); 
+                textcolor(white);
+  	            write ' Ievadi vardu: ');
+                textbackground (white); 
+                gotoXY(37,13);
+                textbackground(lightgreen);   
+                write ('            ');
+                gotoXY(37,13); TypeOfS:=True; InputCheck(str,12,TypeOfS); vards := str;
+                if InProc then begin Close(textfile); Exit; end;
+                textbackground(white);
+                ClrEOL;
             end
         else if inproc then begin close (textfile); exit; end;
 
@@ -563,311 +567,321 @@ begin
         gotoXY (54,11);Textbackground (lightgreen); write ('  ');
         gotoXY(54,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
         If (Ch = 'J') or (Ch = 'j') then
-           begin
-              Textbackground(white);gotoXY(20,13); textbackground (6);
-              textcolor (white);write (' Ievadi uzvardu: '); textbackground(white);
-              gotoXY (40,13);textbackground (lightgreen); write ('            ');
-              gotoXY(40,13);InputCheck(str,12,TypeOfS); uzvards:=str;
-              If InProc then begin Close(textfile); Exit; end;
-              textbackground (white);
-           end
+        begin
+            textbackground(white);
+            gotoXY(20,13); 
+            textbackground(6);
+            textcolor (white); write(' Ievadi uzvardu: '); textbackground(white);
+            gotoXY (40,13);textbackground (lightgreen); write ('            ');
+            gotoXY(40,13);InputCheck(str,12,TypeOfS); 
+            uzvards := str;
+            if InProc then begin 
+                Close(textfile); 
+                exit; 
+            end;
+            textbackground (white);
+        end
+        else if inproc then begin close (textfile); exit; end;
+
+        textbackground(white);
+        gotoXY(1, 11); ClrEOL;
+        gotoXY(1, 13); ClrEOL;
+        gotoXY(20, 11); textbackground(6);
+        write ('Jus gribat mainit numuru?Ja:"j"'); textbackground(white);
+        gotoXY (54, 11); textbackground(lightgreen); write ('  '); gotoXY (54,11);
+        TypeOfS:=true; Inputcheck (str,1,TypeOfS);  ch:=Str;
+        if (Ch = 'J') or (Ch = 'j') then
+        begin
+            Textbackground(white); gotoXY(20,13); textbackground (6);
+            textcolor (white); write (' Ievadi numuru: '); textbackground(white);
+            gotoXY (40,13); textbackground (lightgreen); write ('  ');
+ 	        gotoxy(40,13); TypeOfS:=false; InputCheck(str,2,TypeOfS);
+            If InProc then begin Close (textfile); Exit; end;
+            val (str, numurs, code);
+            textbackground(white);
+        end
+        else if inproc then begin close (textfile); exit; end;
+
+        textbackground(white);
+        gotoXY(1,11); ClrEOL;
+        gotoXY(1,13); ClrEOL;
+        gotoXY(20,11); textbackground(6);
+        write ('Jus gribat istabu sk. numuraa? Ja:"j"'); Textbackground(white);
+        gotoXY(60,11); textbackground (lightgreen);  write ('  ');
+        gotoXY(60,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
+        if (Ch = 'J') or (Ch = 'j') then
+        begin
+            textbackground(white);gotoXY(20,13); textbackground (6);
+	        write (' Ievadi skaitu: '); textbackground(white);
+            gotoXY(40,13); textbackground (lightgreen); write ('  ');
+	        gotoXY(40,13); typeOfS:=false; InputCheck(str,2,TypeOfS);
+            If InProc then begin Close(textfile); Exit; end;
+            val (str,istabas, code);
+            textbackground(white);
+        end
         else if inproc then begin close (textfile); exit; end;
 
         textbackground(white);
         gotoXY(1,11); ClrEOL;
         gotoXY(1,13); ClrEOL;
         gotoXY(20,11); textbackground (6);
-        write ('Jus gribat mainit numuru?Ja:"j"'); textbackground (white);
-        gotoXY (54,11); textbackground(lightgreen);write ('  ');gotoXY (54,11);
-        TypeOfS:=true; Inputcheck (str,1,TypeOfS);  ch:=Str;
-        If (Ch = 'J') or (Ch = 'j') then
-             begin
-                Textbackground(white); gotoXY(20,13); textbackground (6);
-                textcolor (white); write (' Ievadi numuru: '); textbackground(white);
-                gotoXY (40,13); textbackground (lightgreen); write ('  ');
- 	        gotoxy(40,13); TypeOfS:=false; InputCheck(str,2,TypeOfS);
-                If InProc then begin Close (textfile); Exit; end;
-                val (str, numurs, code);
-                textbackground(white);
-             end
+        write ('Jus gribat mainit numura stavokli? Ja:"j"'); Textbackground(white);
+        gotoXY (62,11); textbackground (lightgreen); write ('  ');
+        gotoXY(62,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
+        if (Ch = 'J') or (Ch = 'j') then
+        begin
+            textbackground(white); gotoXY(20,13); textbackground (6);
+            write ('Numurs brivs?Ja/Ne?:'); textbackground(white);
+            gotoXY(42,13); textbackground (lightgreen); write ('  ');
+            gotoXY(42,13); TypeOfS:=true; InputCheck(str, 2, TypeOfS); 
+            stavoklis := str;
+            If InProc then begin Close(textfile); exit; end;
+            Textbackground(white);
+        end
+        else if inproc then begin close(textfile); exit; end;
+
+        textbackground(white);
+        gotoXY(1,11); ClrEOL;
+        gotoXY(1,13); ClrEOL;
+        gotoXY(20,11); textbackground (6);
+        write ('Jus gribat mainit cenu? Ja:"j"'); Textbackground(white);
+        gotoXY(54,11); textbackground (lightgreen); write ('  ');
+        gotoXY(54,11); TypeOfS := True; InputCheck(str, 1, TypeOfS); ch := Str;
+        if (Ch = 'J') or (Ch = 'j') then
+        begin
+            textbackground(white);gotoXY(20,13); textbackground(6);
+	        write (' Ievadi cenu: '); textbackground(white);
+            gotoXY(40,13); textbackground (lightgreen); write ('   ');
+            gotoXY(40,13); TypeOfS:=false; InputCheck(str,3,TypeOfS);
+            val (str, cena, code);
+            if InProc then begin Close(textfile); Exit; end;
+            textbackground (white);
+        end
         else if inproc then begin close (textfile); exit; end;
 
-       textbackground(white);
-       gotoXY(1,11); ClrEOL;
-       gotoXY(1,13); ClrEOL;
-       gotoXY(20,11); textbackground(6);
-       write ('Jus gribat istabu sk. numuraa? Ja:"j"'); Textbackground(white);
-       gotoXY(60,11); textbackground (lightgreen);  write ('  ');
-       gotoXY(60,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
-       If (Ch = 'J') or (Ch = 'j') then
-            begin
-               textbackground(white);gotoXY(20,13); textbackground (6);
-	       write (' Ievadi skaitu: '); textbackground(white);
-               gotoXY(40,13); textbackground (lightgreen); write ('  ');
-	       gotoXY(40,13); typeOfS:=false; InputCheck(str,2,TypeOfS);
-               If InProc then begin Close(textfile); Exit; end;
-               val (str,istabas, code);
-               textbackground(white);
-            end
-       else if inproc then begin close (textfile); exit; end;
-
-       textbackground(white);
-       gotoXY(1,11); ClrEOL;
-       gotoXY(1,13); ClrEOL;
-       gotoXY(20,11); textbackground (6);
-       write ('Jus gribat mainit numura stavokli? Ja:"j"'); Textbackground(white);
-       gotoXY (62,11); textbackground (lightgreen); write ('  ');
-       gotoXY(62,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
-       If (Ch = 'J') or (Ch = 'j') then
-            begin
-               textbackground(white); gotoXY(20,13); textbackground (6);
-               write ('Numurs brivs?Ja/Ne?:'); textbackground(white);
-               gotoXY(42,13); textbackground (lightgreen);write  ('  ');
-               gotoXY(42,13); TypeOfS:=true; InputCheck(str,2,TypeOfS); stavoklis:=str;
-               If InProc then begin Close(textfile); exit; end;
-               Textbackground(white);
-            end
-       else if inproc then begin close (textfile); exit; end;
-
-       textbackground(white);
-       gotoXY(1,11); ClrEOL;
-       gotoXY(1,13); ClrEOL;
-       gotoXY(20,11); textbackground (6);
-       write ('Jus gribat mainit cenu? Ja:"j"'); Textbackground(white);
-       gotoXY(54,11);textbackground (lightgreen); write ('  ');
-       gotoXY(54,11); TypeOfS:=True; InputCheck  (str,1,TypeOfS); ch:=Str;
-       If (Ch = 'J') or (Ch = 'j') then
-            begin
-               textbackground(white);gotoXY(20,13); textbackground(6);
-	       write (' Ievadi cenu: '); textbackground(white);
-               gotoXY(40,13); textbackground (lightgreen); write ('   ');
-               gotoXY(40,13); TypeOfS:=false; InputCheck(str,3,TypeOfS);
-               val(str,cena,code);
-               If InProc then begin Close(textfile); Exit; end;
-               textbackground (white);
-            end
-       else if inproc then begin close (textfile); exit; end;
-   textbackground (white);
-   write (textfile, REC);
-   writeln;
-   close (textfile);
-   hidecursor;
-   FError (6);
-   Content (textfile, filename);
-   if Inproc then exit;
-   assign (textfile, filename);
-   {$I-}
-   reset (textfile);
-   {$I+}
-   for i:=1 to filesize(textfile) - 1 do
-   begin
-       seek (textfile, i - 1);
-       read (textfile, rec);
-       records[i]^:=rec;
-   end;
-Close (textfile);
-readkey;
-end;
+        textbackground (white);
+        write (textfile, REC);
+        writeln;
+        close (textfile);
+        hidecursor;
+        FError (6);
+        Content (textfile, filename);
+        if Inproc then exit;
+        assign (textfile, filename);
+        {$I-}
+        reset (textfile);
+        {$I+}
+        for i := 1 to filesize(textfile) - 1 do
+        begin
+            seek (textfile, i - 1);
+            read (textfile, rec);
+            records[i]^:=rec;
+        end;
+        Close (textfile);
+        readkey;
+    end;
 end;
 
 (*---------------------------------------------------------------------------------*)
 
 procedure Sort (var textfile: myfile; filename: string);
 var
-  save, rec: Outlaw;
-        nos: string;
-   TypeOfS : boolean;
-       str : string;
-  Findtrue : boolean;
-       i,j : integer;
+    save, rec: Outlaw;
+    nos: string;
+    TypeOfS: boolean;
+    str: string;
+    FindTrue: boolean;
+    i,j: integer;
 
 begin
-  InProc:=false;
-  assign (textfile, filename);
-  reset (textfile);
-  Clrscr;
-  gotoXY(35,17);
-  textbackground (6);
-  Textcolor (white);
-  Write ('ESC - iziet');
-  textbackground (white);
-  Findtrue:=false;
-  repeat
-     gotoXY(17,13); textbackground (6);
-     write ('Kartosim pec istabu skaita vai uzvardiem?I/U?');
-     textbackground (white);gotoXY(65,13); textbackground (lightgreen); write ('  ');
-     showcursor; gotoXY(65,13); TypeOfS:=True; InputCheck (str,1,TypeOfS);
-     Textbackground(white); ch:=str[1];
-     if Inproc then Exit;
+    InProc:=false;
+    assign (textfile, filename);
+    reset (textfile);
+    Clrscr;
+    gotoXY(35,17);
+    textbackground (6);
+    Textcolor (white);
+    Write ('ESC - iziet');
+    textbackground (white);
+    FindTrue := false;
+    repeat
+        gotoXY(17,13); textbackground (6);
+        write ('Kartosim pec istabu skaita vai uzvardiem?I/U?');
+        textbackground (white);gotoXY(65,13); textbackground (lightgreen); write ('  ');
+        showcursor; gotoXY(65,13); TypeOfS:=True; InputCheck (str,1,TypeOfS);
+        Textbackground(white); ch:=str[1];
+        if Inproc then Exit;
 
-     Findtrue:=false;
+        FindTrue := false;
 
-     if (ch = 'I') then
-     begin
-      Findtrue:=true;
-      for i:= 0 to (filesize (textfile)-1) do
-      for j:= 0 to (filesize (textfile)-1) do
-       begin
-        seek (textfile, i);
-        read (textfile, rec);
-      save:=rec;
-      seek (textfile, j);
-      read (textfile, rec);
-         if save.istabas < rec.istabas then
-       begin
-         seek (textfile, i);
-         write (textfile, rec);
-         seek (textfile, j);
-         write (textfile, save);
-       end;
-   end;
-end else
-     if (ch = 'U') then
-begin
-     Findtrue:=true;
-     for i:= 0 to (filesize (textfile)-1) do
-     for j:= 0 to (filesize (textfile)-1) do
-  begin
-      seek (textfile, i);
-      read (textfile, rec);
-      save:=rec;
-      seek (textfile, j);
-      read (textfile, rec);
-         if save.uzvards < rec.uzvards then
-       begin
-         seek (textfile, i);
-         write (textfile, rec);
-         seek (textfile, j);
-         write (textfile, save);
+        if (ch = 'I') then
+        begin
+            FindTrue := true;
+            for i:= 0 to (filesize(textfile) - 1) do
+            for j:= 0 to (filesize (textfile)-1) do
+            begin
+                seek (textfile, i);
+                read (textfile, rec);
+                save := rec;
+                seek (textfile, j);
+                read (textfile, rec);
+                if save.istabas < rec.istabas then
+                begin
+                    seek (textfile, i);
+                    write (textfile, rec);
+                    seek (textfile, j);
+                    write (textfile, save);
+                end;
+            end;
+        end else if (ch = 'U') then
+        begin
+            FindTrue := true;
+            for i := 0 to (filesize (textfile) - 1) do
+            for j := 0 to (filesize (textfile) - 1) do
+            begin
+                seek(textfile, i);
+                read(textfile, rec);
+                save := rec;
+                seek (textfile, j);
+                read (textfile, rec);
+                if save.uzvards < rec.uzvards then
+                begin
+                    seek (textfile, i);
+                    write (textfile, rec);
+                    seek (textfile, j);
+                    write (textfile, save);
+                end;
+            end;
+        end else if ord(ch) = 27 then Exit
+        else if ((ch <> 'U') and (ch <> 'A')) then
+        begin
+            gotoxy(WhereX - 1, WhereY);
+            TextColor (green); Write (' ');
+            gotoxy(WhereX - 1, WhereY);
+            Textcolor(white);
         end;
-   end;
-end else If ord(ch) = 27 then Exit
-else If ((ch <> 'U') and (ch <> 'A')) then
-begin
-gotoxy(WhereX - 1, WhereY);
-TextColor (green); Write (' ');
-gotoxy(WhereX - 1, WhereY);
-Textcolor(white);
-end;
-Until Findtrue;
+    until FindTrue;
 
-Close (textfile);
-hidecursor;
-FError (6);
-Content (textfile,filename);
-If Inproc then Exit;
+    Close (textfile);
+    hidecursor;
+    FError (6);
+    Content (textfile,filename);
+    if Inproc then Exit;
 
-assign (textfile, filename);
-{$I-}
-reset (textfile);
-{$I+}
-for i:=1 to filesize(textfile) - 1 do
-begin
-   seek (textfile, i - 1);
-   read (textfile,rec);
-   records[i]^:=rec;
-end;
-Close (textfile);
-readkey;
+    assign (textfile, filename);
+    {$I-}
+    reset (textfile);
+    {$I+}
+    for i := 1 to filesize(textfile) - 1 do
+    begin
+        seek (textfile, i - 1);
+        read (textfile,rec);
+        records[i] ^:= rec;
+    end;
+    Close (textfile);
+    readkey;
 end;
 
 (*----------------------------------------------------*)
 
 Procedure expensive (var textfile : myfile; filename : string);
 Const
-     holdname = 'holdtext.txt';
+    holdname = 'holdtext.txt';
 var
-save,rec : Outlaw;
-     str : string;
-  typeofS: boolean;
-    hold : myfile;
- sum,k,i : integer;
-   count : real;
+    save, rec: Outlaw;
+    str: string;
+    typeofS: boolean;
+    hold: myfile;
+    sum, k, i: integer;
+    count: real;
 
 begin
+    InProc := false;
+    assign (textfile, filename);
+    reset (textfile);
+    assign (hold,holdname);
+    rewrite (hold);
 
-InProc:=false;
-assign (textfile, filename);
-reset (textfile);
-assign (hold,holdname);
-rewrite (hold);
+    count:=0;
+    sum:=0;
 
-count:=0;
-sum:=0;
+    for i:= 0 to (filesize (textfile)-1) do
+    begin
+        seek (textfile, i);
+        read (textfile, rec);
+        if rec.cena > count then
+        count:=rec.cena;
+    end;
 
-  for i:= 0 to (filesize (textfile)-1) do
-  begin
-    seek (textfile, i);
-    read (textfile, rec);
-    if rec.cena > count then
-    count:=rec.cena;
-  end;
+    for k:= 0 to (filesize (textfile)-1) do
+    begin
+        seek (textfile,k);
+        read (textfile,rec);
+        with REC do If ((REC.cena) = count) then begin
+        inc (sum); write (hold,REC); end;
+    end;
 
-  for k:= 0 to (filesize (textfile)-1) do
-  begin
-   seek (textfile,k);
-   read (textfile,rec);
-   with REC do If ((REC.cena) = count) then begin
-   inc (sum); write (hold,REC); end;
-   end;
+    Close (textfile);
+    Close (hold);
 
-Close (textfile);
-Close (hold);
-
-If sum > 0 then
-begin
- gotoXY(10,22); textbackground (6); Textcolor (31);
- write ('Kopigi sameklets(ti) ',sum,' numurs(ri) , spiediet jebkuru taustinu');
- textbackground (white);textcolor(white);
- readkey;
- Content (hold,holdname);
- end;
-
+    If sum > 0 then
+    begin
+        gotoXY(10,22); textbackground (6); Textcolor (31);
+        write ('Kopigi sameklets(ti) ',sum,' numurs(ri) , spiediet jebkuru taustinu');
+        textbackground (white); 
+        textcolor(white);
+        readkey;
+        Content (hold, holdname);
+    end;
 end;
 
 (*-----------------------------------------------------------------------------------*)
 
-procedure search (var textfile : myfile; filename : string);
+procedure search (var textfile: myfile; filename: string);
 Const
-     roomname = 'roomdata.txt';
+    roomname = 'roomdata.txt';
 var
-     rec : Outlaw;
-    yeah : string;
-    room : MyFile;
- k,i,sum : integer;
+    rec: Outlaw;
+    yeah: string;
+    room: MyFile;
+    k, i, sum: integer;
 
 begin
-  InProc:=false;
-  assign (textfile, filename);
-  reset (textfile);
-  assign (room,roomname);
-  rewrite (room);
+    InProc := false;
+    assign(textfile, filename);
+    reset(textfile);
+    assign(room,roomname);
+    rewrite(room);
 
-Clrscr;
- k:=0;
- sum:=0;
- yeah:='Ja';
+    Clrscr;
+    k:=0;
+    sum:=0;
+    yeah:='Ja';
 
-  for i:= 0 to (filesize (textfile)-1) do
-  begin
-    seek (textfile, i);
-    read (textfile, rec);
-    with REC do If ((rec.stavoklis) = yeah) then begin
-    sum:= sum + rec.istabas; write (room,rec); end;
-  end;
+    for i:= 0 to (filesize (textfile) - 1) do
+    begin
+        seek (textfile, i);
+        read (textfile, rec);
+        with REC do If ((rec.stavoklis) = yeah) then begin
+            sum := sum + rec.istabas; 
+            write (room,rec); 
+        end;
+    end;
 
-Close (textfile);
-Close (room);
+    Close (textfile);
+    Close (room);
 
-If sum > 0 then
-begin
- gotoXY(10,22); textbackground (6); Textcolor (31);
- write ('Kopigi samekletas ',sum,' istabas , spiediet jebkuru taustinu');
- textbackground (white);textcolor(white);
- readkey;
- Content (room, roomname);
- end;
-
+    If sum > 0 then
+    begin
+        gotoXY(10,22); 
+        textbackground (6); 
+        Textcolor (31);
+        write ('Kopigi samekletas ',sum,' istabas , spiediet jebkuru taustinu');
+        textbackground (white);
+        textcolor(white);
+        readkey;
+        Content (room, roomname);
+    end;
 end;
 
 (*---------------------------------------------------------------------------------------------------------*)
@@ -876,17 +890,17 @@ procedure MakeMenu (optText: array of string; MaxItems: integer);
 var
    i, _X: byte;
 begin
-     Y := row;
-     _X := X;
-     for i := 0 to MaxItems-1 do
-     begin
-          GoToXY (_X, Y);
-          if i = selected then
-             TextColor (optSelected)
-          else
-             TextColor (optNormal);
-             write (optText[i]);
-             inc (Y,1);
+    Y := row;
+    _X := X;
+    for i := 0 to MaxItems - 1 do
+    begin
+        GoToXY (_X, Y);
+        if i = selected then
+            TextColor (optSelected)
+        else
+            TextColor (optNormal);
+        write (optText[i]);
+        inc (Y,1);
      end;
 end;
 
@@ -894,27 +908,27 @@ end;
 
 function MenuOption (optText: array of string; MaxItems: integer): byte;
 var
-   ch: char;
+    ch: char;
 begin
-     selected := 0;
-       X := (80 - width) div 2;
-       row := (25 - MaxItems) div 2;
+    selected := 0;
+    X := (80 - width) div 2;
+    row := (25 - MaxItems) div 2;
 
-     repeat
-           MakeMenu (optText, MaxItems);
+    repeat
+        MakeMenu (optText, MaxItems);
 
-           ch := readkey;
-           if ch = #0 then
-              ch := readkey;
+        ch := readkey;
+        if ch = #0 then
+            ch := readkey;
 
-           case ch of
-           #80, #77: {Down/Right}
-           begin
+            case ch of
+            #80, #77: {Down/Right}
+            begin
                 inc (Selected);
                 if Selected = MaxItems then
-                   Selected := 0;
+                    Selected := 0;
                 MakeMenu (optText, MaxItems);
-           end;
+            end;
 
            #72, #75: {Up/Left}
            begin
@@ -923,13 +937,13 @@ begin
                    Selected := MaxItems-1;
                 MakeMenu (optText, MaxItems);
            end;
-           end;
-     until ch = #13; {Enter}
+        end;
+    until ch = #13; {Enter}
 
-     MenuOption := Selected + 1;
+    MenuOption := Selected + 1;
 
-     TextColor (optNormal);
-     If _style = Vertical Then
+    TextColor(optNormal);
+    If _style = Vertical Then
         clrscr;
 end;
 
@@ -937,120 +951,136 @@ end;
 
 procedure menu;
 var
-  Option, i: byte;
+    Option, i: byte;
 
 begin
-     TextBackground (white);
-     clrscr;
-     hidecursor;
-     Textbackground(6);
-     Textcolor(white);
-     gotoxy(14,5);write (' Jusu riciba ir viesnicas datu bazes informacija ');
-     Textbackground(white);
-     TextColor (1);
-     Gotoxy(15,7);
-     for i:= 1 to 48 do write ('�');
-     Gotoxy(15,16);
-     for i:= 1 to 48 do write ('�');
-     Gotoxy(14,7);  write ('�');
-     Gotoxy(14,16); write ('�');
-     Gotoxy(63,7);write ('�');
-     Gotoxy(63,8);write ('�');
-     Gotoxy(63,9);write ('�');
-     Gotoxy(14,8);write ('�');
-     Gotoxy(14,9);write ('�');
-     Gotoxy(14,10);write ('�');
-     Gotoxy(14,11);write ('�');
-     Gotoxy(14,12);write ('�');
-     Gotoxy(14,13);write ('�');
-     Gotoxy(14,14);write ('�');
-     Gotoxy(14,15);write ('�');
-     Gotoxy(63,10);write ('�');
-     Gotoxy(63,11);write ('�');
-     Gotoxy(63,12);write ('�');
-     Gotoxy(63,13);write ('�');
-     Gotoxy(63,14);write ('�');
-     Gotoxy(63,15);write ('�');
-     Gotoxy(63,16);write ('�');
-     Gotoxy(9,18);Textbackground(6);
-     Textcolor(white);
-     write('Parvietoties pa izvelni var ar taustinu "->" un "<-" palidzibu');
-     Textbackground(white);
+    TextBackground (white);
+    clrscr;
+    hidecursor;
+    Textbackground(6);
+    Textcolor(white);
+    gotoxy(14,5);write (' Jusu riciba ir viesnicas datu bazes informacija ');
+    Textbackground(white);
+    TextColor (1);
+    Gotoxy(15,7);
+    for i := 1 to 48 do write ('�');
+    Gotoxy(15,16);
+    for i := 1 to 48 do write ('�');
+    Gotoxy(14,7); write ('�');
+    Gotoxy(14,16); write ('�');
+    Gotoxy(63,7); write ('�');
+    Gotoxy(63,8); write ('�');
+    Gotoxy(63,9); write ('�');
+    Gotoxy(14,8); write ('�');
+    Gotoxy(14,9); write ('�');
+    Gotoxy(14,10); write ('�');
+    Gotoxy(14,11); write ('�');
+    Gotoxy(14,12); write ('�');
+    Gotoxy(14,13); write ('�');
+    Gotoxy(14,14); write ('�');
+    Gotoxy(14,15); write ('�');
+    Gotoxy(63,10); write ('�');
+    Gotoxy(63,11); write ('�');
+    Gotoxy(63,12); write ('�');
+    Gotoxy(63,13); write ('�');
+    Gotoxy(63,14); write ('�');
+    Gotoxy(63,15); write ('�');
+    Gotoxy(63,16); write ('�');
+    Gotoxy(9,18); Textbackground(6);
+    Textcolor(white);
+    write('Parvietoties pa izvelni var ar taustinu "->" un "<-" palidzibu');
+    Textbackground(white);
 
-     _style := Vertical;
-     Option := MenuOption (optText1, Items1);
+    _style := Vertical;
+    Option := MenuOption (optText1, Items1);
 
-     case option of
-     1: begin;
-          Textbackground (white);
-	  Clrscr;
-	  position (Textfile);
-           if (chapter = 1) then begin FError (1); menu; end else
-	   if (chapter = 2) then begin FError (2); menu; end;
-           if (chapter = 0) then begin
-           Content (textfile, filename); menu; end;
-	end;
-
-     2: begin
-          Textbackground (White);
-          Clrscr;
-          position (Textfile);
-           if (chapter = 0) or (chapter = 2) then begin
-           addrecords (Textfile, filename); menu; end
-           else if (chapter = 1) then begin FError (1); menu; end;
+    case option of
+        1: begin;
+            Textbackground (white);
+            Clrscr;
+            position (Textfile);
+            if (chapter = 1) then begin FError (1); menu; end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then begin
+                Content (textfile, filename); 
+                menu; 
+            end;
         end;
 
-     3: begin
-          Textbackground (white);
-          Clrscr;
-          position (textfile);
-          if (chapter = 1) then begin FError (1); menu; end else
-	  if (chapter = 2) then begin FError (2); menu; end;
-          if (chapter = 0) then begin
-          discharge (textfile, filename); menu; end;
-	end;
-
-     4: begin
-          Textbackground (white);
-          Clrscr;
-          position (textfile);
-          if (chapter = 1) then begin FError (1); menu; end else
-	  if (chapter = 2) then begin FError (2); menu; end;
-          if (chapter = 0) then begin
-          correct (textfile, filename); menu; end;
-        end;
-     5: begin
-          Textbackground (white);
-          Clrscr;
-          position (textfile);
-          if (chapter = 1) then begin FError (1); menu; end else
-	  if (chapter = 2) then begin FError (2); menu; end;
-          if (chapter = 0) then begin
-          sort (textfile, filename); menu; end;
-        end;
-     6: begin
-          Textbackground (white);
-          Clrscr;
-          position (textfile);
-          if (chapter = 1) then begin FError (1); menu; end else
-	  if (chapter = 2) then begin FError (2); menu; end;
-          if (chapter = 0) then begin
-          search (textfile, filename); menu; end;
-        end;
-     7: begin
-          textbackground (white);
-          Clrscr;
-          position (textfile);
-          if (chapter = 1) then begin FError (1); menu; end else
-	  if (chapter = 2) then begin FError (2); menu; end;
-          if (chapter = 0) then begin
-          expensive (textfile, filename); menu; end;
-        end;
-     8: begin
-          exit;
+        2: begin
+            Textbackground (White);
+            Clrscr;
+            position (Textfile);
+            if (chapter = 0) or (chapter = 2) then begin
+            addrecords (Textfile, filename); menu; end
+            else if (chapter = 1) then begin FError (1); menu; end;
         end;
 
-     end;
+        3: begin
+            Textbackground (white);
+            Clrscr;
+            position (textfile);
+            if (chapter = 1) then begin FError (1); menu; end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then 
+            begin
+                discharge (textfile, filename); 
+                menu; 
+            end;
+        end;
+
+        4: begin
+            Textbackground (white);
+            Clrscr;
+            position (textfile);
+            if (chapter = 1) then begin FError (1); menu; end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then begin
+                correct (textfile, filename); 
+                menu; 
+            end;
+        end;
+
+        5: begin
+            Textbackground (white);
+            Clrscr;
+            position (textfile);
+            if (chapter = 1) then begin FError (1); menu; end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then begin
+            sort (textfile, filename); menu; end;
+        end;
+        
+        6: begin
+            Textbackground (white);
+            Clrscr;
+            position (textfile);
+            if (chapter = 1) then begin FError (1); menu; end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then 
+            begin
+                search (textfile, filename); menu; end;
+            end;
+        7: begin
+            textbackground (white);
+            Clrscr;
+            position (textfile);
+            if (chapter = 1) then 
+            begin 
+                FError (1); 
+                menu; 
+            end 
+            else if (chapter = 2) then begin FError (2); menu; end;
+            if (chapter = 0) then 
+            begin
+                expensive (textfile, filename); 
+                menu; 
+            end;
+        end;
+
+        8: begin
+            exit;
+        end;
+    end;
 end;
-
 end.

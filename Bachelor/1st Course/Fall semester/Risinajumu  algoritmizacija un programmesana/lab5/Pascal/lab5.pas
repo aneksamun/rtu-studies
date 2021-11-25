@@ -4,15 +4,15 @@
 
 program massiv1;
 uses crt;
-const num=20;   						{ Masiva izmers }
+const num=20;                           { Masiva izmers }
 var
-    oper,         						{ Izpildama programmas operacija }
+    oper,                               { Izpildama programmas operacija }
                                         { oper=3333 beigt }
-    i,j:integer;    					{ Darba indeksi }
-    ms: array[1..num] of real;			{ Masivs, kuru apstrada }
+    i,j:integer;                        { Darba indeksi }
+    ms: array[1..num] of real;          { Masivs, kuru apstrada }
     x, dx:real;
-    idet:integer; 						{ Indeksi rezultatam }
-    lielneg:real;           			{ Rezultats }
+    idet:integer;                       { Indeksi rezultatam }
+    lielneg:real;                       { Rezultats }
     label  MENU, SOLVE, BEIGAS;
  begin
     clrscr;
