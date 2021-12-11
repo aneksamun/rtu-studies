@@ -1,0 +1,443 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12800,        343]*)
+(*NotebookOutlinePosition[     13445,        365]*)
+(*  CellTagsIndexPosition[     13401,        361]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \( (*3.  
+        Nodarbiba . 
+          Diskr\[EBar]tas\ matem\[ABar]tikas\ \(\(pamati\)\(.\)\)*) \)], \
+"Input"],
+
+Cell[BoxData[
+    \(\(\( (*Kombinatorikas\ elementi*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*Faktori\[ABar]ls\ n = \(1*2*3*4* ... \)*\((n - 
+              1)\) \(\(n\)\(.\)\)*) \)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factorial[4]\)], "Input"],
+
+Cell[BoxData[
+    \(24\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(4!\)\)], "Input"],
+
+Cell[BoxData[
+    \(24\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*Permut\[ABar]cijas\ sk . \ \((Pn = \(n!\))\)\ Binomial\ [n, 
+          k]*) \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*vari\[ABar]cijas\ \(k!\)*
+        Binomial[n, 
+          k]*) \)\(\[IndentingNewLine]\)\( (*Visas\ permut\[ABar]cijas\ \
+iegust\ ar\ Permutations\ \
+\((saraksts)\)*) \)\(\[IndentingNewLine]\)\(Permutations[{k, l, a, 
+        s}]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({{k, l, a, s}, {k, l, s, a}, {k, a, l, s}, {k, a, s, l}, {k, s, l, 
+        a}, {k, s, a, l}, {l, k, a, s}, {l, k, s, a}, {l, a, k, s}, {l, a, s, 
+        k}, {l, s, k, a}, {l, s, a, k}, {a, k, l, s}, {a, k, s, l}, {a, l, k, 
+        s}, {a, l, s, k}, {a, s, k, l}, {a, s, l, k}, {s, k, l, a}, {s, k, a, 
+        l}, {s, l, k, a}, {s, l, a, k}, {s, a, k, l}, {s, a, l, 
+        k}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\:0145utona\ binoms*) \)\(\[IndentingNewLine]\)\(\((a + b)\)^6 // 
+      Expand\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(a\^6 + 6\ a\^5\ b + 15\ a\^4\ b\^2 + 20\ a\^3\ b\^3 + 15\ a\^2\ b\^4 + 
+      6\ a\ b\^5 + b\^6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*Galiga\ summa; \ komanda\ ' Sumf, \([f, {i, imax}]\)', \ 
+      ja\ \(\[Sum]\+\(i = 1\)\%imax\ f\), \ 
+      vai\ ' Sum[f, {i, imin, imax}]', \ 
+      ja\ \(\[Sum]\+\(i = imin\)\%imx f\), \ 
+      vai' Sum\ [f, {i, imin, imax, di}]', \ 
+      Ja\ \(\[Sum]\+\(i = imin\)\%imax 
+            f\ ar\ soli\ di\ p\[EBar]c\ i\)*) \)\(\[IndentingNewLine]\)\( \
+(*piem\[EBar]ram, \ \[Sum]\+\(k = 1\)\%n\((6  k\^2 - 2  k - 1)\) = 
+        2  n\^3 + 2  n\^2 - n\ *) \)\(\[IndentingNewLine]\)\(Sum[
+        6*k^2 - 2*k - 1, {k, n}] // Expand\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(-n\) + 2\ n\^2 + 2\ n\^3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sum[6  k^2 - 2  k - 1, {k, 1}] // Expand\)], "Input"],
+
+Cell[BoxData[
+    \(3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(t - Sum[6  k^2 - 2  k - 1, {k, n - 1}] // Expand\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1\) - n + 4\ n\^2 - 2\ n\^3 + t\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\( (*2.  
+        T\[EBar]ma . \ 
+          Oper\[ABar]cijas\ ar\ kop\[ABar]m\ *) \)\(\[IndentingNewLine]\)\( \
+(*kopas\ uzdod\ k\[ABar]\ sarakstu\ a = {a, b, c, d, e, f, i, 
+          g}*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( (*\ 
+      Apveinojums\ A \[Union] B \[Union]  ... , \ 
+      Komanda\ ' Union[set1, set2, set3,  .. ]', \ 
+      Def := Kopa\ Aun\ B\ apvienojums\ ir\ kopa, \ 
+      kuras\ elementi\ pieder\ kopai\ A\ vai\ B\ *) \)\(\[IndentingNewLine]\)\
+\(\[IndentingNewLine]\)\( (*\[CapitalSHacek]\:0137elums\ A \[Intersection] 
+          B \[Intersection]  ... , \ 
+      Komanda\ ' 
+        Intersection\ [kopa1, kopa2, 
+            kopa3,  ... ]'*) \)\(\[IndentingNewLine]\)\(\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \)\(\(_\)\(\[IndentingNewLine]\)\( (*papildin\[ABar]jums\ A' 
+        vai\ A\ , \ \[IndentingNewLine]komanda\ ' 
+        Complement[univers + kopa, kopa1, 
+              kopa2]' . \[SHacek]i\ komanda\ apr . \ kopu, \ 
+      kura\ sastav\ no\ \(\(kopam\)\(.\)\)*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*Kopu\ \(starpiba : \ \(\('\) \(A\\B\)\)\) = \(A \
+\[Intersection] B' . Komanda\ ' Kopustrap[a_, b_] = 
+          Intersection[a, Complement + Union[a, b], 
+                  b]' . \[IndentingNewLine]Def .  : \ 
+            Kopu\ starpiba\ ir\ kopa\), \ 
+      kas\ satur\ tikai\ tos\ A\ elementus, \ 
+      kuri\ pieder\ kopai\ B*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\
+\)
+    \( (*Kopu\ Simetrisk\[ABar]\ \(starpiba : \ 
+            A\ \[CapitalDelta]\ B\) = \(\((A\\B)\) \[Union] \((B\\A)\) = \((A \
+\[Intersection] B)\) \[Union] \((B \[Intersection] 
+                A)\)\), \ \[IndentingNewLine]Komanda\ ' 
+          Sumstarp\ [a_, 
+            b_] = \(\(Union[
+              Intersection[a, 
+                Complement[Union[a, b], a]]]'\)\(.\)\)*) \)\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*Kopu\ Dekarta\ reizin . \(nav!\)*) \)\(\[IndentingNewLine]\)\( \
+(*Piemeram, \ 
+      noteikt\ kopas\ A\  = \ \({1, 2, 3, 4, 5}\ un\ B = {1, 3, 5, 
+              7}\ apveinojumu\), \ \[SHacek]\:0137elumu, \ 
+      starpibu\ simetrisko\ \(\(starpibu\)\(:\)\)\ *) \)\(\[IndentingNewLine]\
+\)\( (*Uzdodam\ \(\(komandas\)\(:\)\)*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(Kopustarp\ [a_, b_] := 
+        Intersection\ [a, \ 
+          Complement\ [Union\ [a, b], 
+            b]]\ ;\)\[IndentingNewLine]\[IndentingNewLine]
+    simetrstarpiba\ [a_, b_] := 
+      Union\ [Intersection[a, Complement[Union[a, b], b]], \ 
+        Intersection[b, 
+          Complement[
+            Union[a, b, a]]]]\ \[IndentingNewLine]\[IndentingNewLine]
+    \(a = {1, 2, 3, 4, 5};\)\[IndentingNewLine]
+    \(b = {1, 3, 5, 7};\)\[IndentingNewLine]
+    Union\ [a, b]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 3, 4, 5, 7}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Intersection\ [a, b]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 3, 5}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Kopustarp[a, b]\)], "Input"],
+
+Cell[BoxData[
+    \(Kopustarp[{1, 2, 3, 4, 5}, {1, 3, 5, 7}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(simetrstarpiba[a, b]\)], "Input"],
+
+Cell[BoxData[
+    \(simetrstarpiba[{1, 2, 3, 4, 5}, {1, 3, 5, 7}]\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(\ \)\( (*\ 
+      3. \ \(T\[EBar]ma : \ \:013bog . \ 
+            oper\[ABar]cijas\)\ *) \)\(\[IndentingNewLine]\)\( (*\ \:013bog . \
+\ oper\[ABar]cijas\ tiek\ veiktas\ ar\ izteikumiem . \ 
+          J\ a\ izteikums\ ir\ patiess, \ tad\ vertiba\ 1, \ 
+      ja\ aplams\  - \ 
+        v\[EBar]rtiba\ 0*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( \
+(*\ pamatoperacijas*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( \
+(*Neg\[ABar]cija . \ Noliedz\ doto\ \(izteiksmi : \ 
+          No\ patiesas\ izteiksmes\ iegustam\ aplamo\ un\ otr\[ABar]di\)*) \)\
+\(\[IndentingNewLine]\)\( (*Komanda\ ' Not[izteiksme]' 
+        vai\ ' \(\[Not] \ 
+          izteksme' 
+            no\ paligpane\:013ca\)*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*Konjukcija : \ \(izt1 \[And] izt2 \[And] 
+              izt3 \[And]  ... \) atbilst\ vardam\ ' un', \ 
+      t . i . \ patiess\ tad\ un\ tikai\ tad, \ 
+      ja\ abi\ izteikumi\ ir\ patiesi*) \)\(\[IndentingNewLine]\)\( \
+(*\(\(Komanda\ ' AND\ [izt1, izt2, izt3,  ... ]' vai' izt1 && izt2 && 
+                      izt3 &&  ... \)' vai\ ' izt1 \[And] izt2 \[And] 
+              izt3 \[And]  ... \)' 
+        no\ pane\:013ca*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( \
+(*Disjunkcija\ izt1 \[Or] izt2 \[Or]  ... , \ 
+      atbilst\ vardam\ ' vai' . Patiesa, \ 
+      ja\ vismaz\ viens\ no\ izteikumiem\ ir\ patiess*) \)\(\
+\[IndentingNewLine]\)\( (*\(\(Komanda\ ' 
+                      or\ [izt1, izt2, izt3,  ... ]\ vai\ ' izt1 || izt2 || 
+                    izt3 ||  ... \)'\ vai\ ' izt1 \[Or] izt2 \[Or] 
+            izt3 ... \)'*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(\
+\ \)\( (*\ Implik\[ABar]cija : \ izt1\  \[Rule] \ 
+        izt2 . \ \[IndentingNewLine]\(Ideja : \ "\<ja x, tad y \>"\ jeb\ \
+"\<no x seko y\>" . \[IndentingNewLine]Implik\[ABar]cija\ aplama\), \ 
+      ja\ x\ ir\ patiess, \ bet\ y\  - \ aplams, \ 
+      citos\ gadijumos\ ta\ ir\ patiesa\ *) \)\(\[IndentingNewLine]\)\( \
+(*Komanda\ ' 
+        Implies[izt1, izt2, 
+          izt3]*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( \
+(*Ekvivalence : x <=  > y\  = \ \((x \[Rule] y)\) \[And] \((y \[Rule] x)\), \ 
+      patiesa, \ 
+      ja\ abas\ izteiksmju\ vertibas\ ir\ vien\[ABar]das*) \)\(\
+\[IndentingNewLine]\)\( (*Komanda\ ' Ekviv\ {x_, y_} = 
+        And[Implies[x, y], 
+            Implies[y, 
+              x]]'*) \)\(\[IndentingNewLine]\)\(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \)\(\(___  \
+___  ___\)\(\[IndentingNewLine]\)\( (*Neekvivalence\ x + 
+          y = \((x \[Rule] 
+              y)\) \[And] \((y \[Rule] 
+                  x)\) . \[IndentingNewLine]Neekvivalence\ ir\ ekvivalences\ \
+noliegums, \ 
+      patiesa\  - \ 
+        ja\ abu\ izt . 
+            vertibas\ ir\ at\[SHacek]\:0137irigas*) \)\(\[IndentingNewLine]\)\
+\( (*Komanda\ ' Neekviv[x_, y_] = 
+        Not[Ekviv[x_y  _]]'*) \)\(\[IndentingNewLine]\)
+    \(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \)\(___\)\(\[IndentingNewLine]\)\( (*\ \
+\[CapitalSHacek]efera\ \(svutra : \ x | y\) = 
+        x \[And] 
+          y\ ; \[IndentingNewLine]\[SHacek]efera\ svitra\ ir\ konjukcijas\ \
+noliegums . \ Ta\ ir\ aplama\ tad, \ ja\ abu\ izteikumi\ ir\ patiesi, \ 
+      citos\ gad . \ ir\ patiesa*) \)\(\[IndentingNewLine]\)\( (*Komanda' 
+          Shefer[x_, y_] = Not[And[x, y]]'*) \)\(\[IndentingNewLine]\)
+    \(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \)\(___\)\(\[IndentingNewLine]\)\( (*Pirsa\ \(bulta : \ 
+            x\[DownArrow]y\) = 
+        x \[Or] y\ , \[IndentingNewLine]disjunkcijas\ \(noliegums\  : \ 
+          pateisa\ ja\ abu\ izt . \ 
+              ir\ aplamas\)*) \)\(\[IndentingNewLine]\)\( (*Komanda' 
+          Pirs[x_, 
+            y_] = \(\(Not[
+              Or[x, y]]'\)\(.\)\)*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)
+    \( (*\ Lai\ vienkar\[SHacek]otu\ lo\:0123 . \ izt . \ izmanto\ komandu\ ' 
+        LogicExpand'\ *) \)\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*Piem\[EBar]rs*) \)\(\[IndentingNewLine]\)\( (*Vienk . \ 
+          izt .  : \ \((\((x | x)\) \[Rule] 
+            x | \(\(\[Or]\)\(x \((x\[DownArrow]
+                      y)\)\)\)\)*) \)\(\[IndentingNewLine]\)\( (*Vispirms\ j\
+\[ABar]apre\:0137ina\ Konjukcija; \ 
+      p\[EBar]c\ tam\ disjunkcija*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(Shefer[x_, y_] = Not[And[x, y]]\[IndentingNewLine]
+    Pirs[x_, y_] = Not[Or[x, y]]\[IndentingNewLine]
+    LogicalExpand\ [\((Implies[Shefer[x, y], x])\) || \((x && 
+            Pirs[x, y])\)]\[IndentingNewLine]
+    \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(! \((x && y)\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(! \((x || y)\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(x\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 911}},
+WindowSize->{495, 740},
+WindowMargins->{{157, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 132, 4, 30, "Input"],
+Cell[1889, 57, 210, 3, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[2124, 64, 45, 1, 30, "Input"],
+Cell[2172, 67, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2245, 73, 39, 1, 30, "Input"],
+Cell[2287, 76, 36, 1, 29, "Output"]
+}, Open  ]],
+Cell[2338, 80, 112, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[2475, 86, 272, 6, 90, "Input"],
+Cell[2750, 94, 415, 6, 124, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3202, 105, 123, 2, 50, "Input"],
+Cell[3328, 109, 129, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3494, 116, 573, 10, 133, "Input"],
+Cell[4070, 128, 60, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4167, 134, 73, 1, 30, "Input"],
+Cell[4243, 137, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4315, 143, 81, 1, 30, "Input"],
+Cell[4399, 146, 68, 1, 29, "Output"]
+}, Open  ]],
+Cell[4482, 150, 1938, 36, 530, "Input"],
+
+Cell[CellGroupData[{
+Cell[6445, 190, 898, 18, 350, "Input"],
+Cell[7346, 210, 52, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7435, 216, 53, 1, 30, "Input"],
+Cell[7491, 219, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7571, 225, 48, 1, 30, "Input"],
+Cell[7622, 228, 74, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7733, 234, 53, 1, 30, "Input"],
+Cell[7789, 237, 79, 1, 29, "Output"]
+}, Open  ]],
+Cell[7883, 241, 4115, 75, 1110, "Input"],
+
+Cell[CellGroupData[{
+Cell[12023, 320, 613, 11, 210, "Input"],
+Cell[12639, 333, 52, 1, 29, "Output"],
+Cell[12694, 336, 52, 1, 29, "Output"],
+Cell[12749, 339, 35, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,467 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7132,        309]*)
+(*NotebookOutlinePosition[      7779,        331]*)
+(*  CellTagsIndexPosition[      7735,        327]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*Kompleksie\ sk . \ 
+          vienk\[ABar]rso\[SHacek]ana\ ar\ da\:013cam*) \)\(\
+\[IndentingNewLine]\)\(\(z = \((\(-4\) + 
+              4 \@ 3*\[ImaginaryI])\)*\((1 + \[ImaginaryI]*\@3)\);\)\
+\[IndentingNewLine]
+    Re[z]\[IndentingNewLine]
+    Im[z]\[IndentingNewLine]
+    Abs[z]\[IndentingNewLine]
+    Arg[z]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(-16\)\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(16\)], "Output"],
+
+Cell[BoxData[
+    \(\[Pi]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Conjugate[z]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 - \[ImaginaryI]\ \@3)\)\ \((\(-4\) - 
+          4\ \[ImaginaryI]\ \@3)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ComplexExpand[Sin[x + \[ImaginaryI]*y]]\)], "Input"],
+
+Cell[BoxData[
+    \(Cosh[y]\ Sin[x] + \[ImaginaryI]\ Cos[x]\ Sinh[y]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PowerExpand[\((a*b)\)^n]\)], "Input"],
+
+Cell[BoxData[
+    \(a\^n\ b\^n\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PowerExpand[Log[\((a*b)\)^n]]\)], "Input"],
+
+Cell[BoxData[
+    \(n\ \((Log[a] + Log[b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Collect[x + 4  y + 5  x*y, x]\), "\[IndentingNewLine]", 
+    \(Collect[x + 4  y + 5  x*y, y]\)}], "Input"],
+
+Cell[BoxData[
+    \(4\ y + x\ \((1 + 5\ y)\)\)], "Output"],
+
+Cell[BoxData[
+    \(x + \((4 + 5\ x)\)\ y\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(Collect[
+      x^4 + \((a + y)\)*\((x + y^3)\)*x^2 + \((Y^3 + 3)\), {x, 
+        y}]\)\(\[IndentingNewLine]\)
+    \)\)], "Input"],
+
+Cell[BoxData[
+    \(3 + x\^4 + x\^3\ \((a + y)\) + x\^2\ \((a\ y\^3 + y\^4)\) + 
+      Y\^3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Together[a\/b*c\/d]\)], "Input"],
+
+Cell[BoxData[
+    \(\(a\ c\)\/\(b\ d\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apart[1/\((\((3 + x)\)*\((1 + x)\)^3)\)]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(2\ \((1 + x)\)\^3\) - 1\/\(4\ \((1 + x)\)\^2\) + 
+      1\/\(8\ \((1 + x)\)\) - 1\/\(8\ \((3 + x)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cancel[\(x\^2 - 4  x\)\/\(x\^2 - x\) + \(x\^2 + 3  x - 4\)\/\(x\^2 - \
+1\)]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(-4\) + x\)\/\(\(-1\) + x\) + \(4 + x\)\/\(1 + x\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[x^5 + x^4 + x + 1]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 + x)\)\ \((1 + x\^4)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TrigExpand[Cos[2  x]*Sin[3  x]^2]\)], "Input"],
+
+Cell[BoxData[
+    \(Cos[x]\^2\/2 - Cos[x]\^4\/4 - Cos[x]\^8\/4 - Sin[x]\^2\/2 + 
+      3\/2\ Cos[x]\^2\ Sin[x]\^2 + 7\ Cos[x]\^6\ Sin[x]\^2 - Sin[x]\^4\/4 - 
+      35\/2\ Cos[x]\^4\ Sin[x]\^4 + 7\ Cos[x]\^2\ Sin[x]\^6 - 
+      Sin[x]\^8\/4\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TrigReduce[Sin[x]^2 + Cos[x]^2]\)], "Input"],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TrigFactor[Cos[2  x]*Sin[3  x]^2]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 + 2\ Cos[2\ x])\)\^2\ \((Cos[x] - 
+          Sin[x])\)\ Sin[x]\^2\ \((Cos[x] + Sin[x])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(\[IndentingNewLine]\)\(v = TrigToExp[Sinh[x]]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\[ExponentialE]\^\(-x\)\/2\)\) + \[ExponentialE]\^x\/2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TrigToExp[ArcTan[x]]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \[ImaginaryI]\ Log[1 - \[ImaginaryI]\ x] - 
+      1\/2\ \[ImaginaryI]\ Log[1 + \[ImaginaryI]\ x]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ExpToTrig[v]\)], "Input"],
+
+Cell[BoxData[
+    \(Sinh[x]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*Darb\:012bbas\ ar\ da\:013cam*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(Numerator[3/4]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Numerator[Together[1\/\(1 - x\) + y\/\(1 + x\)]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1\) - x - y + x\ y\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Denominator[\(\[ExponentialE]^\((\(-a\))\)*\[ExponentialE]^b\)\/\(\
+\[ExponentialE]^\((\(-c\))\)*\[ExponentialE]^d\)]\)], "Input"],
+
+Cell[BoxData[
+    \(\[ExponentialE]\^\(a + d\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(ClearAll[x, y]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Denominator[Together[1\/\(1 - x\) + y\/\(1 + x\)]]\)], "Input"],
+
+Cell[BoxData[
+    \(\((\(-1\) + x)\)\ \((1 + x)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( \
+(*Substitucija*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(1 + x /. 
+      x \[Rule] a\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(1 + a\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(\({a, b, c} /. a \[Rule] b\) /. 
+      b \[Rule] d\)\(\[IndentingNewLine]\)
+    \)\)], "Input"],
+
+Cell[BoxData[
+    \({d, d, c}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c} /. {a \[Rule] b, b \[Rule] d}\)], "Input"],
+
+Cell[BoxData[
+    \({b, d, c}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 941}},
+WindowSize->{713, 688},
+WindowMargins->{{142, Automatic}, {Automatic, -18}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 356, 9, 133, "Input"],
+Cell[2135, 64, 41, 1, 29, "Output"],
+Cell[2179, 67, 35, 1, 29, "Output"],
+Cell[2217, 70, 36, 1, 29, "Output"],
+Cell[2256, 73, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2332, 79, 45, 1, 30, "Input"],
+Cell[2380, 82, 111, 2, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2528, 89, 72, 1, 30, "Input"],
+Cell[2603, 92, 82, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2722, 98, 57, 1, 30, "Input"],
+Cell[2782, 101, 44, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2863, 107, 62, 1, 30, "Input"],
+Cell[2928, 110, 58, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3023, 116, 127, 2, 50, "Input"],
+Cell[3153, 120, 58, 1, 29, "Output"],
+Cell[3214, 123, 55, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3306, 129, 153, 4, 50, "Input"],
+Cell[3462, 135, 105, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3604, 142, 52, 1, 40, "Input"],
+Cell[3659, 145, 52, 1, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3748, 151, 73, 1, 30, "Input"],
+Cell[3824, 154, 140, 2, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4001, 161, 108, 2, 45, "Input"],
+Cell[4112, 165, 87, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4236, 171, 58, 1, 30, "Input"],
+Cell[4297, 174, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4395, 180, 66, 1, 30, "Input"],
+Cell[4464, 183, 253, 4, 82, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4754, 192, 64, 1, 30, "Input"],
+Cell[4821, 195, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4893, 201, 66, 1, 30, "Input"],
+Cell[4962, 204, 127, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5126, 211, 86, 1, 50, "Input"],
+Cell[5215, 214, 93, 1, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5345, 220, 53, 1, 30, "Input"],
+Cell[5401, 223, 136, 2, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5574, 230, 45, 1, 30, "Input"],
+Cell[5622, 233, 41, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5700, 239, 142, 2, 70, "Input"],
+Cell[5845, 243, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5917, 249, 81, 1, 42, "Input"],
+Cell[6001, 252, 55, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6093, 258, 150, 2, 44, "Input"],
+Cell[6246, 262, 60, 1, 29, "Output"]
+}, Open  ]],
+Cell[6321, 266, 47, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6393, 271, 83, 1, 42, "Input"],
+Cell[6479, 274, 63, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6579, 280, 138, 3, 70, "Input"],
+Cell[6720, 285, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6796, 291, 119, 3, 50, "Input"],
+Cell[6918, 296, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6998, 302, 72, 1, 30, "Input"],
+Cell[7073, 305, 43, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
