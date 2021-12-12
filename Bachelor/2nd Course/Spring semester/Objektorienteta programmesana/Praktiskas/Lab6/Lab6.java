@@ -5,7 +5,7 @@ class CoordPoint {
       x = 0;
       y = 0;
    }
-   public CoordPoint(int x, int y)	{
+   public CoordPoint(int x, int y) {
       this.x = X;
       this.y = Y;
    }
