@@ -1,10 +1,12 @@
 class CoordPoint {
+
    private int x, y;
 
    public CoordPoint() {
       x = 0;
       y = 0;
    }
+
    public CoordPoint(int x, int y) {
       this.x = X;
       this.y = Y;
@@ -13,6 +15,8 @@ class CoordPoint {
    public int getX() {
       return x;
    }
+
+
    public int getY() {
       return y;
    }
@@ -20,6 +24,7 @@ class CoordPoint {
    public void setX(int x) {
       this.x = x;
    }
+
    public void setY(int y) {
       this.y = y;
    }
