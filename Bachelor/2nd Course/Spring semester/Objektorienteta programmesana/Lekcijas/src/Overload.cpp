@@ -4,8 +4,6 @@
 #include <vcl.h>
 #pragma hdrstop
 
-// * class Vect * //
-
 class Vect
 {
 private:
