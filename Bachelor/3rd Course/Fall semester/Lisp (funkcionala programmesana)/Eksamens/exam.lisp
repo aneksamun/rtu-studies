@@ -1,0 +1,102 @@
+(defun is-a-list (l)
+  (cond ((null l) 'string "empty-list")
+        ((not(null l)) 'string "list")
+        (t 'string "something-else")))
+
+(defun lookup-details (arg lst)
+  (cond ((null lst) nil)
+        ((equal arg 'name) (format t "~a~%" (car lst)))
+        ((equal arg 'age) (format t "~a~%" (cadr lst)))
+        ((equal arg 'heigth) (format t "~a~%" (caddr lst)))
+        (t (format t "~nothing!~%"))))
+
+(defun make-lookup-table (lst)
+  (cons(cons 'name (list (car lst)))
+  (cons (cons 'age (list (cadr lst))) (list (cons 'height (list(caddr lst)))))))
+
+;; (setq mylist '((bush broccoli) (nixon watergate)(letterman (viewer mail))(you are no jack kennedy)(and please)(scorsese (robert deniro);;)))
+
+(defun play (mylist)
+  (cons
+    (list (car(car(cdr(cdr(cdr(cdr(cdr mylist)))))))
+          (car(car(cdr(cdr(cdr(cdr mylist))))))
+          (car(cdr(car(cdr(car(cdr(cdr(cdr(cdr(cdr mylist)))))))))))
+    (list (car(cdr(car(cdr(cdr(cdr mylist))))))
+          (car(cdr(cdr(car(cdr(cdr(cdr mylist)))))))
+          (car(car(cdr(car(cdr(cdr(cdr(cdr(cdr mylist)))))))))
+          (car(cdr(cdr(cdr(cdr(car(cdr(cdr(cdr mylist))))))))))))
+
+;; '(3 ((8 4) 7 (5 6)))
+
+(defun count-atoms (lst)
+  (cond ((null lst) 0)
+        ((atom (car lst)) (+ 1 (sum-atoms (cdr lst))))
+        (t (sum-atoms (cdr lst)))))
+
+(defun sum-atoms (lst)
+  (cond ((null lst) 0)
+        ((atom (car lst)) (+ (car lst) (sum-atoms (cdr lst))))
+        (t (+ (sum-atoms (car lst)) (sum-atoms (cdr lst))))))
+
+(defun counter (lst)
+  (cond ((null lst) 0)
+        ((atom (car lst)) (+ 1 (counter (cdr lst))))
+        (t (+ (counter (car lst)) (counter (cdr lst))))))
+
+(defun _nth (n lst)
+  (cond ((null lst) nil)
+        (t (check n lst 1))))
+
+(defun check (n lst i)
+  (cond ((null lst) nil)
+        ((equal i n) (car lst))
+        (t (check n (cdr lst) (+ i 1)))))
+
+(defun nth_prog (n lst) (prog (temp i)
+  (setq i 1)
+  (setq temp lst)
+   
+  loop (cond ((equal i n) (return (car temp))))
+       (setq temp (cdr temp))
+       (cond ((null temp) (return nil)))
+       (setq i (+ i 1))
+       (go loop)
+))
+
+(defun collect-0s (lst)
+   (cond ((null lst) nil)
+         ((not(numberp (car lst))) (format t "Error: unexpected string ~a~%" (car lst)))
+         ((floatp (car lst)) (format t "Error: unexpected SINGLE-FLOAT ~a~%" (car lst)))
+         ((> (car lst) 1) (format t "Error: unexpected FIXNUM ~a~%" (car lst)))
+         ((zerop (car lst)) (cons (car lst) (collect-0s (cdr lst))))
+         (t (collect-0s (cdr lst)))))
+
+(defun _minus (a &rest b) 
+  (prog (i digits) 
+        (setq i a)
+        (setq digits b)
+
+  loop  (cond ((null digits) (return i)))
+        (setq i (- i (car digits)))
+        (setq digits (cdr digits))
+        (go loop)))
+
+(defun minusys (a &rest b)
+  (cond ((null b) a)
+        (t (take-off a b))))
+
+(defun take-off (a b)
+  (cond ((null b) a)
+        (t (take-off (- a (car b)) (cdr b)))))
+
+(defun calculator() 
+  (prog (oper1 oper2 oper3 result)
+    loop (print "Please enter ur calculation:")
+         (setq oper1 (read))
+         (cond((equal oper1 'done) (go end)))
+         (setq oper2 (read))
+         (setq oper3 (read))
+         (setq result (eval (list oper2 oper1 oper3)))
+         (print result)
+         (go loop)
+    end))
