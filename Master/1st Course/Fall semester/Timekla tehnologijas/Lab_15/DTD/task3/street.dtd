@@ -1,0 +1,2 @@
+	<!ELEMENT STREET (HOUSE)+>
+	<!ATTLIST STREET Name (Brivibas|Elizabetes) #REQUIRED> 

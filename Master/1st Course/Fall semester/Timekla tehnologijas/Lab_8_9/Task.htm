@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta http-equiv="content-type"
+         content="text/html; charset=windows-1257">
+        <style type="text/css">
+            table {
+                border-style: ridge;
+                border-width: 8px;
+            }
+            
+            td.TopStyle {
+                border-top: 5px double silver;            
+            }
+        </style>
+        <script type="text/javascript">
+            
+            function displayCadidateInfo(form) {
+                var left = (screen.width/2) - (350/2);
+                var top = (screen.height/2) - (400/2);
+  
+                var display = window.open("", "CandidateForm", "width=350px, height=400px, " +
+                    "top=" + top + ", left=" + left + ", resizable=yes");
+                
+                display.document.write("<h2>Information about candidate:</h2>");
+                display.document.write("<b>Name:</b> " + form.name.value + "<br>");
+                display.document.write("<b>Surname:</b> " + form.surname.value + "<br>");
+                display.document.write("<b>Age:</b> " + form.age.value + "<br>");
+                display.document.write("<b>Diploma:</b> " + form.diploma.value + "<br>");
+                display.document.write("<b>University:</b> " + form.university.value + "<br>");
+                display.document.write("<b>Programmer:</b> " + displaySkill(form.programming));
+                display.document.write("<b>Network administrator:</b> " + displaySkill(form.networks));
+                display.document.write("<b>Designer:</b> " + displaySkill(form.design));
+                display.document.write("<b>Web-master:</b> " + displaySkill(form.web));
+                display.document.write("<b>Programming languages:</b> " + displayKnowledges(form.lang));
+                display.document.write("<b>Operating systems:</b> " + displayKnowledges(form.os));
+                display.document.write("<b>Computer graphics:</b> " + displayKnowledges(form.graphics));
+                display.document.write("<b>Web-tehnologies:</b> " + displayKnowledges(form.webTehnologies));
+
+                display.focus();
+            }
+            
+            function displaySkill(radioList) {
+                var tempValue = "";
+                
+                for (i = 0; i < radioList.length; i++)
+                    if (radioList[i].checked == true) {
+                        tempValue = radioList[i].value;
+                        break;
+                    }
+                
+                return tempValue + "<br>";
+            }
+            
+            function displayKnowledges(chBoxList) {
+                var tempValue = "";
+                
+                for (i = 0; i < chBoxList.length; i++)
+                    if (chBoxList[i].checked == true)
+                       tempValue += chBoxList[i].value + ", ";
+                
+                tempValue = tempValue.substring(0, tempValue.length - 2);
+                
+                return tempValue + "<br>";
+            }
+            
+            function validateInput(clientForm) {
+            
+                if (clientForm.name.value == "") {
+                    alert("Error: NAME is missing!");
+                    clientForm.name.focus();
+                    return false;
+                }
+                
+                if (clientForm.surname.value == "") {
+                    alert("Error: SURNAME is missing!");
+                    clientForm.surname.focus();
+                    return false;
+                }
+                
+                if (clientForm.age.value == "") {
+                    alert("Error: AGE is missing!");
+                    clientForm.age.focus();
+                    return false;
+                } 
+                else if (isNaN(clientForm.age.value) || 
+                        parseInt(clientForm.age.value) <= 0) {
+                    alert("Error: AGE is not positive integer value!");
+                    clientForm.age.focus();
+                    return false;
+                }
+
+                if (clientForm.university.value == "") {
+                    alert("Error: UNIVERSITY is missing!");
+                    clientForm.university.focus();
+                    return false;
+                }
+                
+                displayCadidateInfo(clientForm);
+                
+                return true;
+            }
+        </script>
+        <title>Form for candidate</title>
+    </head>
+    <body>
+        <h1 align="center">Form for candidate</h1>
+        <br>
+        <form name="candidate-form" onsubmit="return validateInput(this)">
+            <table align="center" cellpadding="8px" class="table">
+                <tr>
+                    <td>
+                        <label for="name" accesskey="n">
+                            <u>N</u>ame:
+                        </label>
+                        &nbsp;
+                        <input type="text" id="name">
+                    </td>
+                    <td  colspan="2">
+                        <label for="surname" accesskey="m">
+                            Surna<u>m</u>e:
+                        </label>
+                        &nbsp; &nbsp;
+                        <input type="text" id="surname" size="50">
+                    </td>
+                    <td>
+                        <label for="age" accesskey="e">
+                            Ag<u>e</u>:
+                        </label>
+                        &nbsp;
+                        <input type="text" id="age" size="4" maxlength="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="diploma" accesskey="p">
+                            Di<u>p</u>loma:
+                        </label>
+                        &nbsp;
+                        <select id="diploma" size="1">
+                            <option value="Bachelor">Bachelor</option>
+                            <option value="Master">Master</option>
+                            <option value="Engineer" selected>Engineer</option>
+                        </select>
+                    </td>
+                    <td colspan="3">
+                        <label for="university" accesskey="u">
+                            <u>U</u>niversity:
+                        </label>
+                        &nbsp;
+                        <input type="text" id="university" size="70">
+                    </td>               
+                </tr>
+                <tr>
+                    <td>
+                        <fieldset title="Programming">
+                            <legend>Programming</legend>
+                            <input type="radio" name="programming"
+                             value="Beginner" checked>Beginner<br>
+                            <input type="radio" name="programming"
+                             value="Professional">Professional<br>
+                            <input type="radio" name="programming"
+                             value="Expert">Expert<br>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset title="Networks">
+                            <legend>Networks</legend>
+                            <input type="radio" name="networks"
+                             value="Beginner" checked>Beginner<br>
+                            <input type="radio" name="networks"
+                             value="Professional">Professional<br>
+                            <input type="radio" name="networks"
+                             value="Expert">Expert<br>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset title="Graphics">
+                            <legend>Computer graphics</legend>
+                            <input type="radio" name="design"
+                             value="Beginner" checked>Beginner<br>
+                            <input type="radio" name="design"
+                             value="Professional">Professional<br>
+                            <input type="radio" name="design"
+                             value="Expert">Expert<br>
+                            </fieldset>
+                    </td>
+                    <td>
+                        <fieldset title="Web">
+                            <legend>Web-Technologies</legend>
+                            <input type="radio" name="web"
+                             value="Beginner" checked>Beginner<br>
+                            <input type="radio" name="web"
+                             value="Professional">Professional<br>
+                            <input type="radio" name="web"
+                             value="Expert">Expert<br>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                <td colspan="4" class="TopStyle">
+                        <i>Languages:</i>
+                        <input type="checkbox" name="lang" value="Java">Java&nbsp;
+                        <input type="checkbox" name="lang" value="C++">C++&nbsp;
+                        <input type="checkbox" name="lang" value="Ada">Ada&nbsp;
+                        <input type="checkbox" name="lang" value="Pascal">Pascal&nbsp;
+                        <input type="checkbox" name="lang" value="Basic">Basic&nbsp;
+                        <input type="checkbox" name="lang" value="Python">Python&nbsp;
+                        <input type="checkbox" name="lang" value="Perl">Perl
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <i>Operating systems:</i>
+                        <input type="checkbox" name="os" value="Windows 9x">Windows 9x&nbsp;
+                        <input type="checkbox" name="os" value="Windows NT/2000/XP">Windows NT/2000/XP&nbsp;
+                        <input type="checkbox" name="os" value="Novell NetWare">Novell NetWare&nbsp;
+                        <input type="checkbox" name="os" value="Unix">Unix
+                    </td>
+                </tr>
+                </tr>
+                    <td colspan="4">
+                        <i>Computer graphics:</i>
+                        <input type="checkbox" name="graphics" value="Corel DRAW">Corel DRAW&nbsp;
+                        <input type="checkbox" name="graphics" value="Adobe Photoshop">Adobe Photoshop&nbsp;
+                        <input type="checkbox" name="graphics" value="Quark xPress">Quark xPress&nbsp;
+                        <input type="checkbox" name="graphics" value="Adobe Pagemaker">Adobe Pagemaker
+                    </td>
+                <tr>
+                <tr>
+                    <td colspan="4">
+                        <i>Web-Technologies:</i>
+                        <input type="checkbox" name="webTehnologies" value="HTML">HTML&nbsp;
+                        <input type="checkbox" name="webTehnologies" value="XML">XML&nbsp;
+                        <input type="checkbox" name="webTehnologies" value="Javascript">Javascript&nbsp;
+                        <input type="checkbox" name="webTehnologies" value="VBScript">VBScript&nbsp;
+                        <input type="checkbox" name="webTehnologies" value="PHP">PHP&nbsp;
+                        <input type="checkbox" name="webTehnologies" value="ASP">ASP
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right">
+                        <input type="reset" value="Reset">&nbsp;
+                        <input type="submit" value="Send">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+<html>

@@ -1,0 +1,77 @@
+<html>
+   <head>
+       <style id="Small" type="text/css">
+           h1 {
+               color:red;
+               font-size:20pt;
+               letter-spacing:1pt;
+           }
+       </style>
+       <style id="Medium" type="text/css">
+           h1 {
+               color:yellow;
+               font-size:30pt;
+               letter-spacing:3pt;             
+           }
+       </style>
+       <style id="Large" type="text/css">
+           h1 {
+               color:green;
+               font-size:40pt;
+               letter-spacing:5pt;               
+           }
+       </style>
+       <script type="text/javascript">
+           
+           function pageReload() {
+               document.location.reload();
+           }
+			
+           function disableStyles() {
+               document.styleSheets.Small.disabled = true;
+               document.styleSheets.Medium.disabled = true;
+               document.styleSheets.Large.disabled = true;
+           }
+			
+           function setStyle(style) {
+                disableStyles();
+				
+                switch(style) {
+                    case "0":
+                        document.styleSheets.Small.disabled = false;
+                        break;
+                    case "1":
+                        document.styleSheets.Medium.disabled = false;
+                        break;
+                    case "2":
+                        document.styleSheets.Large.disabled = false;
+                        break;
+                }
+           }
+		   
+       </script>
+   </head>
+   <body onload="setStyle(cmbStyles.value)">
+      <select name="cmbStyles" id="cmbStyles" onchange="setStyle(cmbStyles.value)">
+          <option value="0" selected>Small</option>
+          <option value="1">Medium</option>
+          <option value="2">Large</option>
+	  </select>
+	  <input type="button" name="btnReset" value="Reset" onclick="pageReload()">
+      <br><br>
+      <hr width="100%">
+      <br>
+      <h1>Java</h1>
+         <p>Java...</p>
+         <p>Java...</p>
+         <p>Java...</p>
+      <h1>C++</h1>
+         <p>C++...</p>
+         <p>C++...</p>
+         <p>C++...</p>
+      <h1>C#</h1>
+         <p>C#...</p>
+         <p>C#...</p>
+         <p>C#...</p>
+   </body>
+</html>

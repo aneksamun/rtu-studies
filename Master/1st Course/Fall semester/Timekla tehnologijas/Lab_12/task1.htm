@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="Text/javascript">
+            var time;
+            var Images = 
+                new Array("one.jpg", "two.jpg", "three.jpg", "four.jpg", 0);
+			
+            function showSlides(ImId, TextId, Im) {
+                var img = document.getElementById(ImId.id);
+                var header = document.getElementById(TextId.id);
+			
+                var len = Im.length - 1;
+                var pos = Im[len]  + 1;
+			
+                if (pos == Im.length - 1)
+                    pos = 0;
+                
+                header.innerText = "Slide: " + Im[pos];
+                img.src = Im[pos];
+                Im[len] = pos;
+            }
+        </script>
+   </head>
+   <body onLoad="time = setInterval('showSlides(Foto, Slide, Images)', 500)">
+       <h2 id='Slide'>Slide <em>one.jpg</em></h2>
+       <img id='Foto' src='one.jpg'>
+       <form>
+          <input type="Button" value="Stop" onClick="clearInterval(time)">
+       </form>
+   </body>
+</html>

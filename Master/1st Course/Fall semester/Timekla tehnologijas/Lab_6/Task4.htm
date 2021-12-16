@@ -1,0 +1,32 @@
+<html>
+   <head>
+		<script type="text/javascript">
+			var headers = document.getElementsByTagName("H1");		   
+			
+			function changeSize(size) {
+				for (var i = 0; i < headers.length; i++)
+					headers[i].style.fontSize = size + "px"; 
+			}
+		</script>
+   </head>
+   <body>
+	  <i>Enter your size:</i>
+	  <input type="text" size="4" name="txtSize">
+	  <br><br>
+	  <input type="button" name="Enlarge" value="Enlarge" onclick="changeSize(txtSize.value)">
+	  <br><br>
+	  <hr width="100%">
+	  <br>
+      <h1>Java</h1>
+         <p>Java...</p>
+         <p>Java...</p>
+      <h1>C++</h1>
+         <p>C++...</p>
+         <p>C++...</p>
+         <p>C++...</p>
+      <h1>C#</h1>
+         <p>C#...</p>
+         <p>C#...</p>
+         <p>C#...</p>
+   </body>
+</html>

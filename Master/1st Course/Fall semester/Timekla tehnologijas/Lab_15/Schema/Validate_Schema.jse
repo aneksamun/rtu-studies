@@ -1,0 +1,53 @@
+main();
+
+function main()
+{
+  if (WScript.Arguments.length < 1) 
+  {
+	printUsage();
+	return;
+  }
+
+  var fname = WScript.Arguments.Item(0);
+  var sc = new ActiveXObject("MSXML2.XMLSchemaCache");
+
+  for (i=1; i<WScript.Arguments.length; i++)
+  {
+	option = WScript.Arguments.Item(i);
+	if (option == "-s")
+	{
+	  if (WScript.Arguments.length < i+1)
+	  {
+		WScript.echo("###error: missing argument");
+		printUsage();
+		return;
+	  }
+	  var schemaLoc = WScript.Arguments.Item(i+1);
+	  var sdoc = new ActiveXObject("MSXML2.DOMDocument");
+	  sdoc.async = false;
+	  sdoc.load(schemaLoc);
+	  var targetNS = sdoc.selectSingleNode("//*/@targetNamespace").text;
+	  sc.add(targetNS, sdoc);
+	}
+  }
+
+  var dom = new ActiveXObject("MSXML2.DOMDocument");
+  dom.async = false;
+  dom.schemas = sc;
+
+  if (dom.load(fname)) 
+  {
+	WScript.echo("success: document conforms to DTD/Schema");   
+  }
+  else
+  {
+	WScript.echo("### error: (" + dom.parseError.line + ", " + dom.parseError.linepos + ") " + dom.parseError.reason);
+	WScript.echo("### source: " + dom.parseError.srcText);
+  }
+}
+
+function printUsage()
+{
+   WScript.echo("usage: validate filename [options]");
+   WScript.echo("  -s <schema file location>");
+}

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Event test</title>
+        <script type="text/javascript">
+            function getPressedKey() {
+                var code = event.keyCode;
+                alert(code + " Char: " + 
+                    String.fromCharCode(code) + "\n" +
+                    "Shitf: " + event.shiftKey + "\n" +
+                    "Ctrl: " + event.ctrlKey + "\n" +
+                    "Alt: " + event.altKey);
+            }
+            
+            function checkInput(e) {
+                b = e.button;
+                
+                if (b != 0)
+                    alert("Button: " + b);
+            }
+        </script>
+    </head>
+    <body onmousedown="checkInput(event)"
+        onkeydown="getPressedKey()">
+        <h1 id="Java">Java</h1>
+        <br>
+        <h1 id="CS">C#</h1>
+        <br>
+        <h1 id="CPP">C++</h1>
+    </body>
+</html>

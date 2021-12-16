@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Inhabitants</title>
+    </head>
+    <body>
+        <xml id="CityInfo" src="city.xml" />
+        <table id="StreetInfo" datasrc="#CityInfo" border="1" 
+            datapagesize="1" width="100%" cellpadding="4px">
+            <caption align="center">
+                <h2>Inhabitants</h2>
+            </caption>
+            <tr>
+                <td style="background-color: yellow">
+                    <b>Street:</b>
+                    <span datafld="Name"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table id="HouseInfo" datafld="HOUSE" datasrc="#CityInfo" 
+                        border="1" width="100%" cellpadding="4px">
+                        <tr>
+                            <td style="background-color: green">
+                                <b>House:</b>
+                                <span datafld="No" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table id="FlatInfo" datafld="FLAT" datasrc="#CityInfo"
+                                    width="100%" cellpadding="4px">
+                                    <tr>
+                                        <td>
+                                            <b>Flat:</b>
+                                            <span datafld="No">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table id="InhabitantInfo" datafld="INHABITANT" datasrc="#CityInfo" 
+                                                border="1" width="100%" cellpadding="4px">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Surname, name</th>
+                                                        <th>Gender</th>
+                                                        <th>Year of birth</th>
+                                                    </tr>
+                                                </thead>
+                                                <tr>
+                                                    <td width="70%"><span datafld="$TEXT"></span></td>
+                                                    <td width="10%" align="center"><span datafld="Gender"></span></td>
+                                                    <td width="20%" align="center"><span dataFld="Year"></span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    <tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <input type="Button" value="First street" onclick="StreetInfo.firstPage()" />
+        <input type="Button" value="Previous street" onclick="StreetInfo.previousPage()" />
+        <input type="Button" value="Next street" onclick="StreetInfo.nextPage()" />
+        <input type="Button" value="Last street" onclick="StreetInfo.lastPage()" />
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="city.xsl"?>
+<RIGA>
+   <STREET Name="Brivibas">
+      <HOUSE No="1">
+         <FLAT No="1">
+            <INHABITANT Year="1970" Gender="M">Ivanovs Sergejs</INHABITANT>
+            <INHABITANT Year="1970" Gender="F">Ivanova Anna</INHABITANT>
+         </FLAT>
+         <FLAT No="2">
+            <INHABITANT Year="1972" Gender="M">Strods Janis</INHABITANT>
+            <INHABITANT Year="1972" Gender="F">Strode Inna</INHABITANT>
+            <INHABITANT Year="1974" Gender="F">Strode Julija</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+      <HOUSE No="2">
+         <FLAT No="1">
+            <INHABITANT Year="1974" Gender="M">Zemzars Uldis</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+   </STREET>
+   <STREET Name="Elizabetes">
+      <HOUSE No="1">
+         <FLAT No="1">
+            <INHABITANT Year="1985" Gender="M">Celms Juris</INHABITANT>
+         </FLAT>
+         <FLAT No="2">
+            <INHABITANT Year="1988" Gender="M">Dmitrijevs Igors</INHABITANT>
+            <INHABITANT Year="1988" Gender="F">Dmitrijeva Svetlana</INHABITANT>
+            <INHABITANT Year="1989" Gender="F">Dmitrijeva Olga</INHABITANT>
+            <INHABITANT Year="1989" Gender="M">Dmitrijevs Pjotrs</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+   </STREET>
+</RIGA>

@@ -1,0 +1,32 @@
+<html>
+   <head>
+		<script type="text/javascript">
+			var titles = document.getElementsByTagName("H1");		   
+			var size = 35;
+			
+			function changeSize() {
+				for (var i = 0; i < titles.length; i++)
+					titles[i].style.fontSize = size + "px"; 
+
+				size += 5;
+			}
+		</script>
+   </head>
+   <body>
+	  <input type="button" name="Enlarge" value="Enlarge" onclick="changeSize()">
+	  <br>
+	  <hr width="100%">
+	  <br>
+      <h1>Java</h1>
+         <p>Java...</p>
+         <p>Java...</p>
+      <h1>C++</h1>
+         <p>C++...</p>
+         <p>C++...</p>
+         <p>C++...</p>
+      <h1>C#</h1>
+         <p>C#...</p>
+         <p>C#...</p>
+         <p>C#...</p>
+   </body>
+</html>

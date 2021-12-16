@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script type="Text/javascript">
+		
+            function showSlides(ImId, TextId, Name, CurrId, MaxIn) {
+                var img = document.getElementById(ImId.id);
+                var header = document.getElementById(TextId.id);
+			
+                if (CurrId > MaxIn)
+                    CurrId = 1;
+			
+                header.innerText = "Slide: " + Name + CurrId + ".jpg";
+                img.src = Name + CurrId + ".jpg";
+                CurrId += 1;
+			
+                setTimeout('showSlides(' + ImId.id + ', ' + TextId.id + ', "' + Name + '", ' + CurrId + ', ' + MaxIn +')', 500);
+            }
+      </script>
+   </head>
+   <body onLoad="showSlides(Foto, Slide, 'p', 1, 4)">
+       <h2 id='Slide'>Slide <em>p1.jpg</em></h2>
+       <img id='Foto' src='p1.jpg'>
+   </body>
+</html>

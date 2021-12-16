@@ -1,0 +1,46 @@
+<!-- File Name: Validity Test.htm -->
+
+<HTML>
+
+<HEAD>
+   <TITLE>Validity Tester</TITLE>
+
+   <SCRIPT LANGUAGE="JavaScript" FOR="window" EVENT="ONLOAD">
+      Document = dsoTest.XMLDocument;
+
+      if (Document.readyState == 4)
+         DisplayError ();
+      else
+         Document.onreadystatechange = DisplayError;
+
+      function DisplayError ()
+         {
+         if (Document.readyState != 4)
+            return;
+         message = "parseError.errorCode: " 
+                 + Document.parseError.errorCode + "\n" 
+                 + "parseError.filepos: " 
+                 + Document.parseError.filepos + "\n"
+                 + "parseError.line: " + Document.parseError.line 
+                 + "\n"
+                 + "parseError.linepos: " 
+                 + Document.parseError.linepos + "\n"
+                 + "parseError.reason: " 
+                 + Document.parseError.reason + "\n"
+                 + "parseError.srcText: " 
+                 + Document.parseError.srcText + "\n"
+                 + "parseError.url: " + Document.parseError.url;
+         alert (message);
+         }
+   </SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<!--Set SRC to the URL of the XML document you want to check: -->
+<XML ID="dsoTest" SRC="City.xml"></XML>
+
+</BODY>
+
+</HTML>

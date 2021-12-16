@@ -1,0 +1,66 @@
+<html>
+   <head>
+		<script type="text/javascript">
+			var homeKey = 36;
+			var plusKey = 107;
+			var minusKey = 109;
+			var increaseStep = 5;
+			var minSize = 20;
+			var maxSize = 40;
+			var defaultSize = 30;
+			var currentSize;
+			
+			var headers = document.getElementsByTagName('H1');
+
+			function checkInput(e) {
+				switch(e.keyCode) {
+					case homeKey:
+						setDefault();
+						break;
+					case minusKey:
+						decreaseSize();
+						break;
+					case plusKey:
+						increaseSize();
+						break;
+				}
+			}
+			
+			function setDefault() {
+				setSize(defaultSize);
+			}
+			
+			function increaseSize() {
+				if (currentSize < maxSize)
+					setSize(currentSize + increaseStep)
+			}
+			
+			function decreaseSize() {
+				if (currentSize > minSize)
+					setSize(currentSize - increaseStep)
+			}
+
+			function setSize(size) {
+				for (i = 0; i < headers.length; i++)
+					headers[i].style.fontSize = size +"pt";
+					
+				currentSize = size;
+			}
+			
+		</script>
+   </head>
+   <body onload="setDefault()" onkeydown="checkInput(event)">
+      <h1>C++</h1>
+         <p>C++...</p>
+         <p>C++...</p>
+         <p>C++...</p>
+      <h1>Java</h1>
+         <p>Java...</p>
+         <p>Java...</p>
+         <p>Java...</p>
+      <h1>C#</h1>
+         <p>C#...</p>
+         <p>C#...</p>
+         <p>C#...</p>
+   </body>
+</html>

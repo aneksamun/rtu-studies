@@ -1,0 +1,22 @@
+<html>
+   <head>
+		<script type="text/javascript">
+			function alphaBlink( ImId, Curr, Min, Max, Delay, Step ) { 
+				document.getElementById( ImId ).style.opacity = Curr / 100;
+				document.getElementById( ImId ).filters.alpha.opacity = Curr;
+
+				Curr += Step;
+                
+				if ( Curr <= Min || Curr >= Max ) {
+					Step = -Step;
+				}
+				
+				setTimeout( 'alphaBlink( "' + ImId +'", ' + Curr + ', ' + Min + ', ' + Max + ', ' + Delay + ', ' + Step + ' )', Delay );
+			}
+		</script>
+	</head>
+   <body onLoad = "alphaBlink('Foto', 0, 0, 100, 100, 5)">
+       <img id="Foto" src = "foto.jpg" style="opacity:1;filter:alpha(opacity=100)">
+       <img src = "foto.jpg">
+   </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<!DOCTYPE RIGA [
+	<!ELEMENT RIGA (STREET)*>
+	<!ELEMENT STREET (HOUSE)+>
+	<!ATTLIST STREET Name (Brivibas|Elizabetes) #REQUIRED> 
+	<!ELEMENT HOUSE (FLAT)+>
+	<!ATTLIST HOUSE No CDATA #REQUIRED>
+	<!ELEMENT FLAT (INHABITANT)+>
+	<!ATTLIST FLAT No CDATA #REQUIRED>
+	<!ELEMENT INHABITANT (#PCDATA)>
+	<!ATTLIST INHABITANT
+		Year CDATA #REQUIRED>
+]>
+<RIGA>
+   <STREET Name= "Brivibas">
+      <HOUSE No="1">
+         <FLAT No="1">
+            <INHABITANT Year="1970">Ivanovs Sergejs</INHABITANT>
+            <INHABITANT Year="1970">Ivanova Anna</INHABITANT>
+         </FLAT>
+         <FLAT No="2">
+            <INHABITANT Year="1972">Janis Strods</INHABITANT>
+            <INHABITANT Year="1972">Inna Strode</INHABITANT>
+            <INHABITANT Year="1974">Julija Strode</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+      <HOUSE No="2">
+         <FLAT No="1">
+            <INHABITANT Year="1974">Zemzars Uldis</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+   </STREET>
+   <STREET Name="Elizabetes">
+      <HOUSE No="1">
+         <FLAT No="1">
+            <INHABITANT Year="1985">Celms Juris</INHABITANT>
+         </FLAT>
+         <FLAT No="2">
+            <INHABITANT Year="1988">Dmitrijevs Igors</INHABITANT>
+            <INHABITANT Year="1988">Dmitrijeva Svetlana</INHABITANT>
+            <INHABITANT Year="1989">Dmitrijeva Olga</INHABITANT>
+            <INHABITANT Year="1989">Dmitrijevs Pjotrs</INHABITANT>
+         </FLAT>
+      </HOUSE> 
+   </STREET>
+</RIGA>

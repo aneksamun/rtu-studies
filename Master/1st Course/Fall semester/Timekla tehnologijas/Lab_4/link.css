@@ -1,0 +1,25 @@
+body
+{
+    background-image:url('backgr.jpg');
+    background-repeat:repeat-y;
+    padding-left: 120px;
+    background-attachment: fixed;
+}
+
+h1
+{
+    padding: 15px, 15px, 15px, 15px;
+    text-align: center;
+}
+
+h2
+{
+    border-bottom-style: double;
+    border-bottom-width: 3px;
+}
+
+p
+{
+    text-indent: 35px;
+    text-align: justify;
+}

@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <script type="text/javascript">
+         var Images = 
+            new Array("one.jpg", "two.jpg", "three.jpg", "four.jpg", 0)
+
+         function showSlides(ImId, TextId, Im, Dir) {
+			var len = Im.length - 1;
+			var pos = Im[len] + Dir;
+						
+			if (pos < 0) {
+				alert("FIRST photo!");
+				return;
+			}
+			else if (pos == Im.length - 1) {
+				alert ("LAST photo!");
+				return;
+			}
+			
+			var img = document.getElementById(ImId);
+			var header = document.getElementById(TextId);
+			
+			header.innerText = "Slide: " + Im[pos]
+			img.src = Im[pos];
+			Im[len] = pos;
+         } 
+      </script>
+   </head>
+   <body onload="showSlides('Foto', 'Slide', Images, 0)">
+      <table width="30%">
+         <script type="text/javascript">
+             document.write("<caption><h2 id='Slide'>Slide: <em>" + Images[0] + "</em></h2></caption>")
+         </script>
+         <tr align = "Center">
+            <td colspan="2">
+               <script type="text/javascript">
+                  document.write("<img id = 'Foto' src='" + Images[0] + "'>")
+               </script>
+            </td>
+         </tr>
+         <tr>
+            <td width="50%" align="Left">
+               <a href="javascript:showSlides('Foto', 'Slide', Images, -1)">
+                  Previous Picture
+               </a>
+            </td>
+            <td width="50%" align="Right">
+               <a href="javascript:showSlides('Foto', 'Slide', Images, 1)">
+                  Next Picture
+               </a>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Schema
+   xmlns="urn:schemas-microsoft-com:xml-data"
+   xmlns:dt="urn:schemas-microsoft-com:datatypes">
+    <ElementType name="RIGA" content="eltOnly" model="closed">
+        <element type="STREET" minOccurs="1" maxOccurs="*" />
+    </ElementType>
+    <ElementType name="STREET" content="eltOnly" model="closed">
+        <element type="HOUSE" minOccurs="1" maxOccurs="*" />
+        <AttributeType name="Name" 
+			dt:type="enumeration" dt:values="Brivibas Elizabetes" required="yes"/>
+        <attribute type="Name"/>
+    </ElementType>
+    <ElementType name="HOUSE" content="eltOnly" model="closed">
+        <element type="FLAT" minOccurs="1" maxOccurs="*" />
+        <AttributeType name="No" dt:type="int" required="yes"/>
+        <attribute type="No"/>
+    </ElementType>
+    <ElementType name="FLAT" content="eltOnly" model="closed">
+        <element type="INHABITANT" minOccurs="1" maxOccurs="*" />
+        <AttributeType name="No" dt:type="int" required="yes"/>
+        <attribute type="No"/>
+    </ElementType>
+    <ElementType name="INHABITANT" dt:type="string">
+        <AttributeType name="Year" dt:type="int" required="yes"/>
+        <attribute type="Year"/>
+    </ElementType>
+</Schema>

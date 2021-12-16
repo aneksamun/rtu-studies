@@ -1,0 +1,66 @@
+<html>
+   <head>
+      <script type = "text/javascript">
+         var img, obtainedFilter = "";
+         
+         function filter(Im, F) {
+            img = document.getElementById(Im);
+            
+            switch (F) {
+                case "shadow":
+                    color = window.prompt("Color:", "gray");
+                    direction = window.prompt("Direction:", "135");
+                    
+                    obtainedFilter = "shadow(color=" + color + 
+                        ", direction=" + direction + ")";
+                        
+                    break;
+                case "dropshadow":
+                    color = window.prompt("Color:", "gray");
+                    offsetX = window.prompt("Offset x:", "10");
+                    offsetY = window.prompt("Offset y:", "10");
+                    
+                    obtainedFilter = "dropshadow(color=" + color + 
+                        ", offx=" + offsetX + ", offy=" + offsetY + ")";
+                        
+                    break;
+                case "glow":
+                    color = window.prompt("Color:", "yellow");
+                    strength = window.prompt("Strength:", "20");
+                    
+                    obtainedFilter = "glow(color=" + color + 
+                        ", strength=" + strength + ")";
+                        
+                    break;
+                case "wave":
+                    strength = window.prompt("Strength:", "7");
+                    obtainedFilter = "wave(strength=" + strength + ")";
+                    break;
+                case "alpha":
+                    opacity = window.prompt("Opacity:", "30");
+                    obtainedFilter = "alpha(opacity="  + opacity + ")";
+                    break;
+                default:
+                    obtainedFilter = F;
+                    break;
+            }
+            
+            img.style.filter = obtainedFilter;
+         } 
+      </script>
+   </head>
+   <body>
+      <img id = "Foto" src ="foto.gif">
+      <br><br>
+      <select name="selFilters" id="selFilters" size="1" onchange="filter('Foto', selFilters.value)">
+        <option value="none" selected>Clear filter</option>
+        <option value="fliph">Fliph</option>
+        <option value="flipv">Flipv</option>
+        <option value="shadow">Shadow</option>
+        <option value="dropshadow">Drop Shadow</option>
+        <option value="glow">Glow</option>
+        <option value="wave">Wave</option>
+        <option value="alpha">Alpha</option>
+      </select>
+   </body>
+</html>
