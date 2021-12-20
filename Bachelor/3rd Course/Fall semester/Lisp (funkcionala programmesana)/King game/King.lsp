@@ -1,4 +1,4 @@
-(defun print-result(game players points looser)
+(defun print-result (game players points looser)
   (cond ((> game 0) 
     (format t "~%~a~%" "-------------------------------------------------------------------------")
     (format t "~a apaksspele ir beigusies. speletajiem tika pieskaitits sekojoss soda punktu~%" (num-to-game game))
@@ -9,32 +9,29 @@
   (display-list 1 players points)
   (format t "~%~%~a~%" "-------------------------------------------------------------------------") 
   (cond ((null looser) nil)
-    (t
-      (format t "~%~%~a~%" "=========================================================================")     
-      (format t "spele ir beigusies. speli ir zaudejis ~@(~a.~)~%" looser                   ) 
-      (format t "~a~%" "========================================================================="))
-))
+        (t
+          (format t "~%~%~a~%" "=========================================================================")     
+          (format t "spele ir beigusies. speli ir zaudejis ~@(~a.~)~%" looser                   ) 
+          (format t "~a~%" "========================================================================="))))
 
-(defun display-list(i lst l)
+(defun display-list (i lst l)
   (cond ((null lst) nil)
-  (t (format t "~& ~{~2d) ~@(~2@a:~) -~(~1@a~)~}" (list i (car lst) (car l)))
-    (display-list (+ i 1) (cdr lst) (cdr l)))
-  )
-)
+        (t (format t "~& ~{~2d) ~@(~2@a:~) -~(~1@a~)~}" (list i (car lst) (car l)))
+          (display-list (+ i 1) (cdr lst) (cdr l)))))
 
-(defun print-cards(player cards)
+(defun print-cards (player cards)
   (format t "~%~@(~a~):~%" player)
   (display-card cards 1)
   (format t "~%"))
 
-(defun display-card(lst i)
+(defun display-card (lst i)
   (cond ((null lst) nil)
-    ((< (cadar lst) 4) (format t "~& ~{~2d) ~(~a~) ~(~a~)~}" (list i (num-to-type (cadar lst)) (num-to-card (caar lst))))
-      (display-card (cdr lst) (+ i 1)))
-    (t (format t "~& ~{~2d) ~(~a~) ~(~a~)~}" (list i (num-to-card (caar lst)) (num-to-type (cadar lst))))
-      (display-card (cdr lst) (+ i 1)))))
+        ((< (cadar lst) 4) (format t "~& ~{~2d) ~(~a~) ~(~a~)~}" (list i (num-to-type (cadar lst)) (num-to-card (caar lst))))
+          (display-card (cdr lst) (+ i 1)))
+        (t (format t "~& ~{~2d) ~(~a~) ~(~a~)~}" (list i (num-to-card (caar lst)) (num-to-type (cadar lst))))
+          (display-card (cdr lst) (+ i 1)))))
 
-(defun print-rules(num)
+(defun print-rules (num)
   (cond ((equal num 0)
     (format t "~a~%" "-------------------------------------------------------------------------")
     (format t "~a~%" "  speles noteikumi:                                                      ")
@@ -88,7 +85,7 @@
       (format t "~a~%" "punkti (-16). nedrikst sakt speli ar sirds kartim, ja uz rokam ir citu   ")
       (format t "~a~%~%" "mastu kartis."))))
 
-(defun print-message(num player cards sods)
+(defun print-message (num player cards sods)
   (prog (input)
   (format t "~%" )
   (cond 
@@ -129,7 +126,7 @@
       (format t        "speletajs ~a ir panemis stiki. speletajam tika pieskaititi ~a soda punkti.~%" player sods)
       (format t "~a~%" "-------------------------------------------------------------------------")))))
 
-(defun print-error(num)
+(defun print-error (num)
   (cond ((= num 0)
           (format nil "~a" "spele var spelet tikai 4 speletaji!"))
         ((= num 1)
@@ -168,9 +165,9 @@
           (format t "~a~%" "kuru jums obligati ir jastaiga."                                            )
           (format t "~a~%" "-------------------------------------------------------------------------" ))))
 
-(prog (wrong-input bot smartbot table current-player psplayer loser-player current-taken current-turn points card-list mini-game-number first-player-number name-list temp)
+(prog (wrong-input bot smartbot table current-player ps-player loser-player current-taken current-turn points card-list mini-game-number first-player-number name-list temp)
 
-(defun output(old)
+(defun output (old)
   (cond ((equal old '(1)) (list nil))
     (t old)))
 
@@ -178,7 +175,7 @@
   (cond ((equal player-number 1) (car name-list))
     (t (get-name (- player-number 1) (cdr name-list))))
 
-(defun get-loser(taken first-card loser loser-card-val player)
+(defun get-loser (taken first-card loser loser-card-val player)
   (cond ((null (car taken)) loser)
     (t (cond ((and (equal (cdr (car taken)) (cdr first-card))(> (car (car taken)) loser-card-val )) (get-loser (cdr taken) first-card player (car (car taken)) (+ player 1)))
       (t (get-loser (cdr taken) first-card loser loser-card-val (+ player 1)))
@@ -188,26 +185,21 @@
 
 (defun set-points (point-list point-count temp new-points)
   (cond ((equal temp loser-player) (set-points (cdr point-list) point-count (+ temp 1) (append new-points (list (+ (car point-list) point-count)))))
-    (t (cond ((null (car point-list )) new-points)
-      (t (set-points (cdr point-list) point-count (+ temp 1) (append new-points (list (car point-list)))))
-    ))
-  )
-)
+        (t (cond ((null (car point-list )) new-points)
+           (t (set-points (cdr point-list) point-count (+ temp 1) (append new-points (list (car point-list)))))))))
 
 (defun count-players-cards (temp players-card-list)
   (cond ((null (car players-card-list)) temp)
-    (t (count-players-cards (+ temp 1) (cdr players-card-list)))))
+        (t (count-players-cards (+ temp 1) (cdr players-card-list)))))
 
 (defun max-table-card (table1 max-card)
-  (cond ((null (car table1))  max-card)
-    (t (cond ((and (equal (car(cdr(car table1))) (car(cdr(car table)) )) (> (car(car table1)) (car max-card))) (max-table-card (cdr table1) (car table1)))
-    (t (max-table-card (cdr table1) max-card))))
-  )
-)
+  (cond ((null (car table1)) max-card)
+        (t (cond ((and (equal (car(cdr(car table1))) (car(cdr(car table)) )) (> (car(car table1)) (car max-card))) (max-table-card (cdr table1) (car table1)))
+        (t (max-table-card (cdr table1) max-card))))))
 
 (defun get-number (spisok-nomerov nomer)
   (cond ((equal 1 nomer) (car spisok-nomerov))
-  (t (get-number (cdr spisok-nomerov) (- nomer 1)))))
+        (t (get-number (cdr spisok-nomerov) (- nomer 1)))))
 
 (defun min-players-cards (cards max-cards max-cards-nums num)
   (cond 
@@ -225,93 +217,77 @@
     ((equal (car (car cards)) (car (car max-cards))) (max-players-cards (cdr cards) (append max-cards (list (car cards))) (append max-cards-nums (list num)) (+ num 1)))
     (t (max-players-cards (cdr cards) max-cards max-cards-nums (+ num 1)))))
 
-(defun ihaverightcard (whatdowesearch minicardlist minfit minfitnum minnotfit minnotfitnum maxnotfit maxnotfitnum num)
-(cond ((null (car minicardlist)) (list minfitnum minnotfitnum maxnotfitnum));konec
-((equal (car (cdr (car minicardlist)))  (car (cdr whatdowesearch))) 
-  (cond
-   ((< (car (car minicardlist)) (car whatdowesearch)   )
-       (cond
-          ((> (car (car minicardlist)) minfit) 
-           (ihaverightcard whatdowesearch (cdr minicardlist) (car (car minicardlist)) num minnotfit minnotfitnum maxnotfit maxnotfitnum (+ num 1))
-          )
-          (t
-           (ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum minnotfit minnotfitnum maxnotfit maxnotfitnum (+ num 1))
-          )
-       )
-   )
-   (t
-       (cond
-          ((> (car (car minicardlist)) maxnotfit) 
-          (cond ((< (car (car minicardlist)) minnotfit) 
-          (ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum (car (car minicardlist)) num (car (car minicardlist)) num (+ num 1)) )
-          (t(ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum minnotfit minnotfitnum (car (car minicardlist)) num (+ num 1)))))
-          (t(cond
-          ((< (car (car minicardlist)) minnotfit) 
-          (ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum (car (car minicardlist)) num  maxnotfit maxnotfitnum (+ num 1)))
-          (t(ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum minnotfit minnotfitnum  maxnotfit maxnotfitnum (+ num 1)))))
-       )
-   )     
-  )
-)
-(t(ihaverightcard whatdowesearch (cdr minicardlist) minfit minfitnum minnotfit minnotfitnum maxnotfit maxnotfitnum (+ num 1))))
-)
+(defun i-have-right-card (what-do-we-search mini-card-list min-fit min-fit-num min-not-fit min-not-fit-num max-not-fit max-not-fit-num num)
+  (cond 
+    ((null (car mini-card-list)) (list min-fit-num min-not-fit-num max-not-fit-num))
+    ((equal (car (cdr (car mini-card-list))) (car (cdr what-do-we-search))) 
+      (cond
+        ((< (car (car mini-card-list)) (car what-do-we-search))
+          (cond
+            ((> (car (car mini-card-list)) min-fit) 
+              (i-have-right-card what-do-we-search (cdr mini-card-list) (car (car mini-card-list)) num min-not-fit min-not-fit-num max-not-fit max-not-fit-num (+ num 1))
+            )
+            (t (i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num min-not-fit min-not-fit-num max-not-fit max-not-fit-num (+ num 1)))))
+        (t (cond
+            ((> (car (car mini-card-list)) max-not-fit) 
+              (cond 
+                ((< (car (car mini-card-list)) min-not-fit) 
+                (i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num (car (car mini-card-list)) num (car (car mini-card-list)) num (+ num 1)))
+                (t (i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num min-not-fit min-not-fit-num (car (car mini-card-list)) num (+ num 1))))
+            )
+            (t (cond
+                  ((< (car (car mini-card-list)) min-not-fit) 
+                   (i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num (car (car mini-card-list)) num  max-not-fit max-not-fit-num (+ num 1)))
+                  (t(i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num min-not-fit min-not-fit-num  max-not-fit max-not-fit-num (+ num 1)))))))))
+    (t (i-have-right-card what-do-we-search (cdr mini-card-list) min-fit min-fit-num min-not-fit min-not-fit-num max-not-fit max-not-fit-num (+ num 1)))))
 
-(defun gopc ()
-(cond
-((and (or (equal currentplayer 1) (equal currentplayer 3))(not (equal smartbot 1)))
-(setq temp (+ (random 12 ) 1)) temp) 
-(t(cond((equal psplayer 1)
-(getnumber (minplayerscards (output(getoneplayerscards cardlist currentplayer)) '((100 100)) '(0) 1) (+ 1 (random (countplayerscards 0 (minplayerscards (output(getoneplayerscards cardlist currentplayer)) '((100 100)) '(0) 1)) )))
-)
-(t(cond 
-  ((not (equal '(100 100 100) (ihaverightcard (maxtablecard table '(0 0)) (output(getoneplayerscards cardlist currentplayer)) '0 '100 '100 '100  '0 '100 '1) ))
-    (setq temp (ihaverightcard (maxtablecard table '(0 0)) (output(getoneplayerscards cardlist currentplayer)) '0 '100 '100 '100  '0 '100 '1))
-               (cond
-                ((< (car temp) '100) (car temp))
-                (t(cond
-                  ((or (equal psplayer 2) (equal psplayer 2)) (car (cdr temp))   )
-                  (t (car(cdr(cdr temp)) )))
-                 )
+(defun go-pc ()
+  (cond
+    ((and (or (equal current-player 1) (equal current-player 3))(not (equal smartbot 1)))
+     (setq temp (+ (random 12 ) 1)) temp)
+    (t (cond
+        ((equal ps-player 1)
+          (get-number (min-players-cards (output (get-one-players-cards card-list current-player)) '((100 100)) '(0) 1) (+ 1 (random (count-players-cards 0 (min-players-cards (output (get-one-players-cards card-list current-player)) '((100 100)) '(0) 1))))))
+        (t (cond 
+            ((not (equal '(100 100 100) (i-have-right-card (max-table-card table '(0 0)) (output (get-one-players-cards card-list current-player)) '0 '100 '100 '100  '0 '100 '1)))
+              (setq temp (i-have-right-card (max-table-card table '(0 0)) (output (get-one-players-cards card-list current-player)) '0 '100 '100 '100  '0 '100 '1))
+                (cond
+                  ((< (car temp) '100) (car temp))
+                  (t (cond
+                    ((or (equal ps-player 2) (equal ps-player 2)) (car (cdr temp)))
+                    (t (car (cdr (cdr temp))))))))
+            (t (cond
+                ((not (and (equal mini-game-number 6)(> (checkkch (get-one-players-cards card-list current-player) 0) 0)))
+                  (setq temp (get-number (max-players-cards (output (get-one-players-cards card-list current-player)) '((0 0)) '(0) 1) (+ 1 (random (count-players-cards 0 (maxplayerscards (output (get-one-players-cards card-list current-player)) '((0 0)) '(0) 1))))))
                 )
-  )
-(t(cond
-((not (and (equal minigamenumber 6)(> (checkkch (getoneplayerscards cardlist currentplayer) 0) 0)))
-(setq temp (getnumber (maxplayerscards (output(getoneplayerscards cardlist currentplayer)) '((0 0)) '(0) 1) (+ 1 (random (countplayerscards 0 (maxplayerscards (output(getoneplayerscards cardlist currentplayer)) '((0 0)) '(0) 1)) ))))
-)(t(setq temp (getkchnum (getoneplayerscards cardlist currentplayer) 1)))) temp)))
-))
-)
-)
+                (t(setq temp (getkchnum (get-one-players-cards card-list current-player) 1)))) temp)))))))
 
 (defun getkchnum (cards nomer)
-(cond 
-((null (car cards)) '0)
-((equal (car cards) '(13 1) ) nomer)
-(t (getkchnum (cdr cards) (+ nomer 1)))
-)
-)
+  (cond 
+    ((null (car cards)) '0)
+    ((equal (car cards) '(13 1) ) nomer)
+    (t (getkchnum (cdr cards) (+ nomer 1)))))
 
-(defun readsel()
-(cond 
-((or (equal bot 1) (or (equal currentplayer 2) (equal currentplayer 4))) (gopc))
-((equal wronginput 1) (read))
-(t (printmessage 1 nil (countplayerscards 0 (getoneplayerscards cardlist currentplayer) ) nil))
-))
+(defun read-sel ()
+  (cond 
+    ((or (equal bot 1) (or (equal current-player 2) (equal current-player 4))) (go-pc))
+    ((equal wrong-input 1) (read))
+    (t (print-message 1 nil (count-players-cards 0 (get-one-players-cards card-list current-player)) nil))))
 
-(defun ordinaryturn(red)
-(cond 
-((equal psplayer 1) (firstturn red))
-(t(cond
-((>(checkordinarycard (watchcard (getoneplayerscards cardlist currentplayer) red) (getoneplayerscards cardlist currentplayer) ) 0) 
-(printerror (checkordinarycard (watchcard (getoneplayerscards cardlist currentplayer) red) (getoneplayerscards cardlist currentplayer) )  )
-(ordinaryturn (readsel )))
-((or(> red (countplayerscards 0 (getoneplayerscards cardlist currentplayer) )) (<= red 0))
-(printerror 1)
-(setq wronginput 1)
-(ordinaryturn (readsel )))
-(t red))))
-)
+(defun ordinary-turn (red)
+  (cond 
+    ((equal ps-player 1) (first-turn red))
+    (t(cond
+        ((> (check-ordinary-card (watch-card (get-one-players-cards card-list current-player) red) (get-one-players-cards card-list current-player)) 0)
+          (print-error (check-ordinary-card (watch-card (get-one-players-cards card-list current-player) red) (get-one-players-cards card-list current-player)))
+          (ordinary-turn (read-sel)))
+        ((or (> red (count-players-cards 0 (get-one-players-cards card-list current-player))) (<= red 0))
+          (print-error 1)
+          (setq wrong-input 1)
+          (ordinary-turn (read-sel)))
+        (t red)))))
 
-(defun first-turn(red)
+(defun first-turn (red)
   (cond
     ((> (check-first-card (watch-card (get-one-players-cards card-list current-player) red) (get-one-players-cards card-list current-player)) 0)   
       (print-error (check-first-card (watch-card (get-one-players-cards card-list current-player) red) (get-one-players-cards card-list current-player)))
@@ -337,36 +313,31 @@
   (t (make-loser (- first-player-number 1) (cycle-player-number loser-number)))))
 
 (defun cycle()
-(cond ((equal currentplayer 2))
-((equal currentplayer 4))
-(t (printmessage 0 (getname currentplayer namelist) (getoneplayerscards cardlist currentplayer) nil) )
-)
-(setq temp (throwcard (getoneplayerscards cardlist currentplayer)(ordinaryturn  (readsel )) () nil))
-(cardontable (car temp))
-(setq cardlist (updateplayer cardlist (cdr temp)  currentplayer  ()))
-(cond 
-((equal currentplayer 2)  
-(printmessage 2 nil table nil))
-((equal currentplayer 4)  
-(printmessage 3 nil table nil))
-(t (printmessage 4 nil table nil) ))
-(setq currentplayer (cycleplayernumber currentplayer))
-(setq psplayer (cycleplayernumber psplayer))
-(cond ((equal currentturn 4) 
-(setq currentturn 1) 
-(setq loserplayer  (makeloser firstplayernumber (getloser table (car table) '1 '0 '1) )) 
-(setq currentplayer loserplayer)
-(setq firstplayernumber loserplayer)
-(setq points (setpoints points (checkpoints table) '1 '()))
-(printmessage 5 (getname loserplayer  namelist) nil (checkpoints table))
-(setq currenttaken (+ currenttaken 1))
-(format t "~%" )
-(setq table '()))
-(t (setq currentturn (+ currentturn 1)) ))
-(cond 
-((< currenttaken 9) (cycle))
-(t))
-)
+  (cond ((equal current-player 2))
+        ((equal current-player 4))
+        (t (print-message 0 (get-name current-player namelist) (get-one-players-cards card-list current-player) nil)))
+  (setq temp (throw-card (get-one-players-cards card-list current-player)(ordinary-turn (read-sel)) () nil))
+  (cardontable (car temp))
+  (setq card-list (update-player card-list (cdr temp) current-player ()))
+  (cond 
+    ((equal current-player 2) (print-message 2 nil table nil))
+    ((equal current-player 4) (print-message 3 nil table nil))
+    (t (print-message 4 nil table nil)))
+  (setq current-player (cycle-player-number current-player))
+  (setq ps-player (cycle-player-number ps-player))
+  (cond ((equal current-turn 4) 
+        (setq current-turn 1) 
+        (setq loser-player (make-loser first-player-number (get-loser table (car table) '1 '0 '1)))
+        (setq current-player loser-player)
+        (setq first-player-number loser-player)
+        (setq points (set-points points (check-points table) '1 '()))
+        (print-message 5 (get-name loser-player name-list) nil (check-points table))
+        (setq current-taken (+ current-taken 1))
+        (format t "~%" )
+        (setq table '()))
+        (t (setq current-turn (+ current-turn 1))))
+  (cond ((< current-taken 9) (cycle))
+        (t)))
 
 (defun outc(player-number cards)
   (print-cards (get-name player-number name-list) (output (get-one-players-cards cards player-number)))
@@ -380,127 +351,99 @@
     ((equal (car player-cards) '(13 1)) 1)
     (t (gotkch-fun (cdr player-cards)))))
 
-(defun gotwrongcardsfun(playercards)
-(cond
-((null (car playercards)) 1)
-((equal (car (cdr (car playercards)) ) (currentmastjfun)) 0)
-(t (gotwrongcardsfun (cdr playercards))
+(defun got-wrong-cards-fun (player-cards)
+  (cond
+    ((null (car player-cards)) 1)
+    ((equal (car (cdr (car player-cards))) (current-mastj-fun)) 0)
+    (t (got-wrong-cardsfun (cdr player-cards)))))
 
-)
-)
-)
+(defun got-not-chervi-fun (playercards)
+  (cond
+    ((null (car player-cards)) 0)
+    ((> (car (cdr (car player-cards)) ) 1) 1)
+    (t (got-not-chervi-fun (cdr player-cards)))))
 
-(defun gotnotchervifun(playercards)
-(cond
-((null (car playercards)) 0)
-((> (car (cdr (car playercards)) ) 1) 1)
-(t (gotnotchervifun (cdr playercards))
+(defun check-first-card (card player-cards)
+  (cond
+    ((and (equal (got-not-chervi-fun player-cards) 1) (or (equal mini-game-number 2) (equal mini-game-number 6)))
+     (cond ((equal (car (cdr card)) 1) 6) (t 0)))
+    (t 0)))
 
-)
-)
-)
+(defun check-ordinary-card (card player-cards)
+  (cond 
+    ((and (not (equal card '(13 1))) (and (equal (gotkchfun player-cards) 1) (and (equal (gotwrongcardsfun player-cards) 1) (equal mini-game-number 6)))) 7)
+    (t(cond
+        ((and (not (equal (current-mastj-fun) (car (cdr card)))) (equal (gotwrongcardsfun player-cards) 0))   
+          (cond
+            ((equal (car (cdr (car table))) 1) 5)
+            ((equal (car (cdr (car table))) 2) 2)
+            ((equal (car (cdr (car table))) 3) 3)
+            ((equal (car (cdr (car table))) 4) 4)
+          )
+        )
+      (t 0)))))
 
-(defun checkfirstcard (card playercards)
-(cond
-((and (equal (gotnotchervifun playercards) 1) (or (equal minigamenumber 2) (equal minigamenumber 6))) 
-(cond
-((equal (car (cdr card)) 1) 6)
-(t 0)))
-(t 0))
-)
+(defun check-points (taken-cards)
+  (cond
+    ((equal mini-game-number 1) 2)
+    ((equal mini-game-number 2)
+      (*(check-chervi taken-cards '0) 2))
+    ((equal mini-game-number 3)
+      (*(check-valti taken-cards '0) 4))
+    ((equal mini-game-number 4)
+      (*(check-dami taken-cards '0) 4))
+    ((equal mini-game-number 5)
+      (cond ((> current-taken 6) 8) (t 0)))
+    ((equal mini-game-number 6)
+      (*(checkkch taken-cards '0) 16)) (t 0)))
 
-(defun checkordinarycard (card playercards)
-(cond 
-((and (not (equal card '(13 1))) (and (equal (gotkchfun playercards) 1) (and (equal (gotwrongcardsfun playercards ) 1) (equal minigamenumber 6))) )  7)
-(t(cond
-( (and (not(equal (currentmastjfun) (car (cdr card))) )  (equal (gotwrongcardsfun playercards) 0))    
-(cond
-((equal (car (cdr (car table))) 1) 5)
-((equal (car (cdr (car table))) 2) 2)
-((equal (car (cdr (car table))) 3) 3)
-((equal (car (cdr (car table))) 4) 4)
-))
-(t 0))))
-)
+(defun checkkch (taken-cards kchcount)
+  (cond
+    ((null (car taken-cards)) kchcount)
+    (t (cond ((equal (car taken-cards) '(13 1)) (checkkch (cdr taken-cards ) (+ kchcount 1)))
+       (t (checkkch (cdr taken-cards )  kchcount))))))
 
-(defun checkpoints (takencards)
-(cond
-((equal minigamenumber 1) 2)
-((equal minigamenumber 2)
-(*(checkchervi takencards '0) 2))
-((equal minigamenumber 3)
-(*(checkvalti takencards '0) 4))
-((equal minigamenumber 4)
-(*(checkdami takencards '0) 4))
-((equal minigamenumber 5)
-(cond ((> currenttaken 6) 8) (t 0)))
-((equal minigamenumber 6)
-(*(checkkch takencards '0) 16)) (t 0))
-)
+(defun check-valti (taken-cards valti-count)
+  (cond
+    ((null (car taken-cards)) valti-count)
+    (t (cond
+        ((equal (car (car taken-cards)) 11) 
+        (check-valti (cdr taken-cards) (+ valti-count 1)))
+        (t(check-valti (cdr taken-cards) valti-count))))))
 
-(defun checkkch(takencards kchcount)
-(cond
-((null (car takencards))  kchcount)
-(t (cond
-((equal  (car takencards) '(13 1)) 
-(checkkch (cdr takencards ) (+ kchcount 1)))
-(t (checkkch (cdr takencards )  kchcount ))))))
+(defun check-dami (taken-cards dami-count)
+  (cond
+    ((null (car taken-cards)) dami-count)
+    (t (cond
+        ((equal (car (car taken-cards)) 12) (check-dami (cdr taken-cards ) (+ dami-count 1)))
+        (t (check-dami (cdr taken-cards) dami-count))))))
 
-(defun checkvalti(takencards valticount)
-(cond
-((null (car takencards))  valticount)
-(t (cond
-((equal (car (car takencards)) 11) 
-(checkvalti (cdr takencards ) (+ valticount 1)))
-(t(checkvalti (cdr takencards )  valticount )))))
-)
+(defun check-chervi (taken-cards chervi-count)
+  (cond ((null (car taken-cards)) chervi-count)
+        (t (cond ((equal (car (cdr (car taken-cards))) 1) 
+                 (check-chervi (cdr taken-cards) (+ chervi-count 1)))
+                 (t (check-chervi (cdr taken-cards) chervi-count))))))
 
-(defun checkdami(takencards damicount)
-(cond
-((null (car takencards))  damicount)
-(t (cond
-((equal (car (car takencards)) 12) 
-(checkdami (cdr takencards ) (+ damicount 1)))
-(t (checkdami (cdr takencards )  damicount )))))
-)
+(defun cardontable(card) (setq table (append table (list card))) table)
 
-(defun checkchervi(takencards chervicount)
-(cond
-((null (car takencards))  chervicount)
-(t (cond
-((equal (car (cdr (car takencards))) 1) 
-(checkchervi (cdr takencards ) (+ chervicount 1)))
-(t (checkchervi (cdr takencards )  chervicount )))))
-)
+(defun cycle-player-number(player-number)
+  (cond ((equal player-number 4) 1)
+        (t (+ player-number 1))))
 
-(defun cardontable(card)
-(setq table (append table (list card))) table)
+(defun update-player (card-list mini-card-list player-number new-card-list)
+  (cond ((null  (car mini-card-list)) (setq mini-card-list '((1)))))
+  (cond ((null (car card-list)) new-card-list)
+        (t (cond ((equal player-number 1) (update-player (cdr card-list) mini-card-list (- player-number 1)  (append  new-card-list mini-card-list)))
+                 (t (update-player (cdr card-list) mini-card-list (- player-number 1)  (append new-card-list (list (car card-list)))))))))
 
-(defun cycleplayernumber(playernumber)
-(cond ((equal playernumber 4) 1)
-(t (+ playernumber 1)))
-)
+(defun watch-card (mini-card-list card-number)
+  (cond ((equal card-number 1) (car mini-card-list))
+        (t(watch-card (cdr mini-card-list) (- card-number 1)))))
 
-(defun updateplayer (cardlist minicardlist playernumber newcardlist)
-(cond ((null  (car minicardlist) ) (setq minicardlist '((1))))) 
-(cond((null (car cardlist)) newcardlist )
-(t (cond
-((equal playernumber 1) (updateplayer (cdr cardlist) minicardlist (- playernumber 1)  (append  newcardlist minicardlist)))
-(t (updateplayer (cdr cardlist) minicardlist (- playernumber 1)  (append newcardlist (list (car cardlist))))
-))))
-)
-
-(defun watchcard (minicardlist cardnumber)
-(cond ((equal cardnumber 1) (car minicardlist))
-(t (watchcard (cdr minicardlist) (- cardnumber 1)))
-))
-
-(defun throwcard (minicardlist cardnumber newcardlist card)
-(cond ((null (car minicardlist)) (append (list card)(list newcardlist)))
-(t (cond
-((equal cardnumber 1) (throwcard (cdr minicardlist) (- cardnumber 1) newcardlist (car minicardlist))) 
-(t  (throwcard (cdr minicardlist) (- cardnumber 1) (append newcardlist (list (car minicardlist))) card ) ))))
-)
+(defun throw-card (mini-card-list card-number new-card-list card)
+  (cond ((null (car mini-card-list)) (append (list card) (list new-card-list)))
+        (t(cond ((equal card-number 1) (throw-card (cdr mini-card-list) (- card-number 1) new-card-list (car mini-card-list)))
+                (t(throw-card (cdr mini-card-list) (- card-number 1) (append new-card-list (list (car mini-card-list))) card))))))
 
 (defun get-one-players-cards (card-list player-number)
   (cond
