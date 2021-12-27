@@ -1,0 +1,63 @@
+<?php /* Smarty version Smarty-3.0.7, created on 2011-05-05 08:34:06
+         compiled from "../templates\content_booker_invite.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:163514dc236cee12f92-09349806%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '2ea8b560410aae3873291e9669b703448ba7a685' => 
+    array (
+      0 => '../templates\\content_booker_invite.tpl',
+      1 => 1304573281,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '163514dc236cee12f92-09349806',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<style>
+<!--
+.actionBlock {
+	margin: 25px 50px 25px 0px;
+	text-align: right;
+}
+-->
+</style>
+<form name="booker_invite" action="<?php echo $_smarty_tpl->getVariable('formaction')->value;?>
+" method="POST">
+	<input type="hidden" name="page" id="page" value="<?php echo $_smarty_tpl->getVariable('nextpage')->value;?>
+"/>
+	
+	<?php if (count($_smarty_tpl->getVariable('data_lecturers')->value)==0){?>
+		<span>Neviens ieraksts netika atrasts.</span>
+	<?php }else{ ?>
+	<div class="right" align="center">
+		<table width="800" border="0" cellpadding="0" cellspacing="0">
+			<tr class="head" align="center" class="title">
+				<td>Vaditajs</td>
+				<td>Maksimalais studentu skaits</td>
+				<td>Izveleties</td>
+			</tr>
+			<?php  $_smarty_tpl->tpl_vars['i_lecturer'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('data_lecturers')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['i_lecturer']->key => $_smarty_tpl->tpl_vars['i_lecturer']->value){
+?>
+			<tr align="center">
+	    		<td><?php echo $_smarty_tpl->tpl_vars['i_lecturer']->value['name'];?>
+</td>
+	    		<td><?php echo $_smarty_tpl->tpl_vars['i_lecturer']->value['qoute'];?>
+</td>
+	    		<td><input name='chosenLecturers' type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['i_lecturer']->value['email'];?>
+"></td>
+			</tr>
+			<?php }} ?>
+		</table>
+	</div>
+	<div class="actionBlock">
+		<button type="submit">Aicinat vaditajus</button>
+	</div>
+	<?php }?>
+</form>

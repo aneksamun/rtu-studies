@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/bakatema/!svn/ver/113/trunk/templates
+END
+content_cath_home.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/bakatema/!svn/ver/98/trunk/templates/content_cath_home.tpl
+END
+content_booker_invite_action.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/bakatema/!svn/ver/104/trunk/templates/content_booker_invite_action.tpl
+END
+content_student_home.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/bakatema/!svn/ver/113/trunk/templates/content_student_home.tpl
+END
+header.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/bakatema/!svn/ver/98/trunk/templates/header.tpl
+END
+content_booker_invite.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bakatema/!svn/ver/101/trunk/templates/content_booker_invite.tpl
+END
+content_bach_lecturer_action.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/bakatema/!svn/ver/101/trunk/templates/content_bach_lecturer_action.tpl
+END
+footer.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/bakatema/!svn/ver/98/trunk/templates/footer.tpl
+END
+content_index.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/bakatema/!svn/ver/98/trunk/templates/content_index.tpl
+END
+content_about.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/bakatema/!svn/ver/107/trunk/templates/content_about.tpl
+END
+menu.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/bakatema/!svn/ver/98/trunk/templates/menu.tpl
+END
+content_bach_lecturer_home.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/bakatema/!svn/ver/98/trunk/templates/content_bach_lecturer_home.tpl
+END
+content_booker_order.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/bakatema/!svn/ver/105/trunk/templates/content_booker_order.tpl
+END
+content_cath_action.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/bakatema/!svn/ver/98/trunk/templates/content_cath_action.tpl
+END
+content_title_log.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bakatema/!svn/ver/113/trunk/templates/content_title_log.tpl
+END
+content_student_action.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/bakatema/!svn/ver/113/trunk/templates/content_student_action.tpl
+END
+main_page.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/bakatema/!svn/ver/98/trunk/templates/main_page.tpl
+END

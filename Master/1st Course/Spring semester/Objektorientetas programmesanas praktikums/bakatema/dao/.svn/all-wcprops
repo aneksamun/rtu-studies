@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/bakatema/!svn/ver/112/trunk/dao
+END
+student_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/bakatema/!svn/ver/98/trunk/dao/student_dao.php
+END
+notification_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/bakatema/!svn/ver/98/trunk/dao/notification_dao.php
+END
+academics_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/bakatema/!svn/ver/112/trunk/dao/academics_dao.php
+END
+theses_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/bakatema/!svn/ver/108/trunk/dao/theses_dao.php
+END
+thesis_title_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/bakatema/!svn/ver/104/trunk/dao/thesis_title_dao.php
+END
+superviser.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/bakatema/!svn/ver/98/trunk/dao/superviser.php
+END
+system_dao.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/bakatema/!svn/ver/98/trunk/dao/system_dao.php
+END
