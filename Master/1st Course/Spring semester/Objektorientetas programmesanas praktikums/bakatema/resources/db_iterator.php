@@ -3,25 +3,25 @@
 // DB result iterator
 class DbIterator implements Iterator
 {
-	// Result fetching modes
-	const FETCH_ARRAY 	= 0;
-	const FETCH_OBJECTS = 1;
-	const FETCH_ASSOC	= 2;
+    // Result fetching modes
+    const FETCH_ARRAY   = 0;
+    const FETCH_OBJECTS = 1;
+    const FETCH_ASSOC   = 2;
 
-	private $data;
-	private $type;
-	private $dataCount 	= 0;
-	private $row 		= false;
-	private $index 		= 0;
+    private $data;
+    private $type;
+    private $dataCount  = 0;
+    private $row        = false;
+    private $index      = 0;
 
-	public function __construct( $data, $fetchType = DbIterator::FETCH_ARRAY )
-	{
-		$this->data			= $data;
-		$this->dataCount 	= mysql_num_rows( $data );
-		$this->type 		= $fetchType;
-	}
-	
-	public function __destruct()
+    public function __construct( $data, $fetchType = DbIterator::FETCH_ARRAY )
+    {
+        $this->data         = $data;
+        $this->dataCount    = mysql_num_rows( $data );
+        $this->type         = $fetchType;
+    }
+    
+    public function __destruct()
     {
         if ( is_resource( $this->data ) ) 
         {
@@ -29,7 +29,7 @@ class DbIterator implements Iterator
         }
     }
     
-	private function fetch()
+    private function fetch()
     {
         if ( $this->dataCount > 0 ) 
         {

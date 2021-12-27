@@ -11,8 +11,8 @@ Init::prepareSession();
 
 if ( ServerUtils::checkRequestData( 'post-back', ServerUtils::DATA_SOURCE_POST ) )
 {	// action confirmed, adding user
-	SessionUtils::tryStoreUser();
-	ServerUtils::redirect( Config::getDefaultPage() );
+    SessionUtils::tryStoreUser();
+    ServerUtils::redirect( Config::getDefaultPage() );
 }
 
 ?>
@@ -29,47 +29,47 @@ if ( ServerUtils::checkRequestData( 'post-back', ServerUtils::DATA_SOURCE_POST )
 </head>
 
 <body>
-	<div class="main">
-		<div class="head">
-			<span class="logname"><? echo"Labdien, $userfm ";?>
-			</span>
-		</div>
-		<div class="header">
-			<div class="logo">
-				<h1>
-					<a href="#">BAKATEMA</a>
-				</h1>
-			</div>
-			<p></p>
-			<div class="clear"></div>
+    <div class="main">
+        <div class="head">
+            <span class="logname"><? echo"Labdien, $userfm ";?>
+            </span>
+        </div>
+        <div class="header">
+            <div class="logo">
+                <h1>
+                    <a href="#">BAKATEMA</a>
+                </h1>
+            </div>
+            <p></p>
+            <div class="clear"></div>
 
-			<div class="menu">
-				<ul>
-					<li class="current"><a href="index.php">Sākums</a></li>
-					<li><a href="?page=about">Par sistēmu</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="content">
-			<div class="right">
-				<div class="post">
-					<br/>
-					<form action="<?php echo ServerUtils::getCurrentUrl() ?>" method="post">
-						<input type="hidden" name="post-back" id="post-back"/>
-						<h1 class="title">Laipni lūdzam BAKATEMA sistemā!</h1>
-						<br/>
-						<h4>Lai apstiprinātu Jusu vēlmi izmantot sistēmu un sniegt tai 
-							Jusu datus, nospiediet "Turpināt".</h4>
-						<button type="submit">Turpināt</button>
-					</form>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+            <div class="menu">
+                <ul>
+                    <li class="current"><a href="index.php">Sākums</a></li>
+                    <li><a href="?page=about">Par sistēmu</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="right">
+                <div class="post">
+                    <br/>
+                    <form action="<?php echo ServerUtils::getCurrentUrl() ?>" method="post">
+                        <input type="hidden" name="post-back" id="post-back"/>
+                        <h1 class="title">Laipni lūdzam BAKATEMA sistemā!</h1>
+                        <br/>
+                        <h4>Lai apstiprinātu Jusu vēlmi izmantot sistēmu un sniegt tai 
+                            Jusu datus, nospiediet "Turpināt".</h4>
+                        <button type="submit">Turpināt</button>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
 
-		<div class="footer">
-			<p>Copyright by BAKATEMA @ 2011</p>
-		</div>
-	</div>
+        <div class="footer">
+            <p>Copyright by BAKATEMA @ 2011</p>
+        </div>
+    </div>
 </body>
 </html>

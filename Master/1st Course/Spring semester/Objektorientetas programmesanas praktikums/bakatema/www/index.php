@@ -10,16 +10,16 @@ Init::run();
 $page = ServerUtils::getRequestData( 'page', ServerUtils::DATA_SOURCE_GET_OR_POST );
 if ( !isset( $page ) )
 {
-	$page = SessionUtils::getRoleHomePage();
+    $page = SessionUtils::getRoleHomePage();
 }
 
 if ( $page == 'lect' )
 {
-	$usergr = SessionUtils::getUserGroup();
-	$usernm = SessionUtils::getUserFirstName();
-	$userlm = SessionUtils::getUserLastName();
-	$userfm = $usernm.' '.$userlm;
-	$userid = SessionUtils::getUserSystemId();
+    $usergr = SessionUtils::getUserGroup();
+    $usernm = SessionUtils::getUserFirstName();
+    $userlm = SessionUtils::getUserLastName();
+    $userfm = $usernm.' '.$userlm;
+    $userid = SessionUtils::getUserSystemId();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,49 +33,49 @@ if ( $page == 'lect' )
 </head>
 
 <body>
-	<div class="main">
-		<div class="head">
-			<span class="logname"><? echo"Labdien, $userfm ";?>
-			</span>
-		</div>
-		<div class="header">
-			<div class="logo">
-				<h1>
-					<a href="#">BAKATEMA</a>
-				</h1>
-			</div>
-			<p></p>
-			<div class="clear"></div>
+    <div class="main">
+        <div class="head">
+            <span class="logname"><? echo"Labdien, $userfm ";?>
+            </span>
+        </div>
+        <div class="header">
+            <div class="logo">
+                <h1>
+                    <a href="#">BAKATEMA</a>
+                </h1>
+            </div>
+            <p></p>
+            <div class="clear"></div>
 
-			<div class="menu">
-				<ul>
-					<li class="current"><a href="index.php">Sākums</a></li>
-					<li><a href="?page=about">Par sistēmu</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="content">
-			<div class="right">
-				<div class="post">
+            <div class="menu">
+                <ul>
+                    <li class="current"><a href="index.php">Sākums</a></li>
+                    <li><a href="?page=about">Par sistēmu</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="right">
+                <div class="post">
 <?php
-	if ($page == 'lect') include "modules/superviser/superviser.php";
+    if ($page == 'lect') include "modules/superviser/superviser.php";
 ?>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
 
-		<div class="footer">
-			<p>Copyright by BAKATEMA @ 2011</p>
-		</div>
-	</div>
+        <div class="footer">
+            <p>Copyright by BAKATEMA @ 2011</p>
+        </div>
+    </div>
 </body>
 </html>
 <?php
 } 
 else 
 {
-	$proc = PageFactory::createPage( $page );
-	$proc->execute();
+    $proc = PageFactory::createPage( $page );
+    $proc->execute();
 }
 ?>
