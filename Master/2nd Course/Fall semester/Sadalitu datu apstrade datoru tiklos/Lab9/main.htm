@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function clear() {
+                top.frames["Operation"].location.replace("operation.htm");
+                top.frames["Result"].location.replace("result.htm");
+            }
+        </script>
+    </head>
+    <body bgcolor="Cyan">
+        <h2>Operations: </h2>
+        <ul>
+            <li><a href="javascript:clear()">Clear</a>
+            <li><a href="DurationReview.aspx" target="Operation">Seance duration (.NET Stored Query)</a>
+            <li><a href="DurationReview2.aspx" target="Operation">Seance duration (.NET 2.0 Style)</a>
+        </ul>
+    </body>
+</html>

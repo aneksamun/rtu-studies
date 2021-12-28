@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function clear() {
+                top.frames["Operation"].location.replace("operation.htm");
+                top.frames["Result"].location.replace("result.htm");
+            }
+        </script>
+    </head>
+    <body bgcolor="Cyan">
+        <h2>Operations: </h2>
+        <ul>
+            <li><a href="javascript:clear()">Clear</a>
+            <li><a href="Users_Total_Times.asp" target="Result">Users & Total Times (VBScript)</a>
+            <li><a href="date_enter.htm" target="Operation">PC usage per concrete date</a>
+            <li><a href="insert.htm" target="Operation">Append audit log record</a>
+        </ul>
+   </body>
+</html>

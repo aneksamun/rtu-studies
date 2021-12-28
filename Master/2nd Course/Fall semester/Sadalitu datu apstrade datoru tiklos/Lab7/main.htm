@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function clear() {
+                top.frames["Operation"].location.replace("operation.htm");
+                top.frames["Result"].location.replace("result.htm");
+            }
+      </script>
+    </head>
+    <body bgcolor="Cyan">
+        <h2>Operations: </h2>
+        <ul>
+            <li><a href="javascript:clear()">Clear</a>
+            <li><a href="DateSummary.aspx" target="Operation">Display computer usage per date (ASP.NET)</a>
+        </ul>
+    </body>
+</html>
