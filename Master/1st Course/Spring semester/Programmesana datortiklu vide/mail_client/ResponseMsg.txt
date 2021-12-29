@@ -1,0 +1,7 @@
+Hi!
+
+Thanks, for testing demo mail client responser.
+Have a nice day.
+
+Simple Java Gmail client.
+
