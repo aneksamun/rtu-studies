@@ -35,8 +35,8 @@ public class Main {
         final String popHost = "pop.gmail.com";
         final String smtpHost = "smtp.gmail.com";
         final int smtpPort = 465;
-        final String user = "testmail.sergeyt@gmail.com";
-        final String password = "TestMail";
+        final String user = "";
+        final String password = "";
         
         System.out.println(".:Simple Java Gmail client:.\n");
         System.out.println("E-mail settings:");
