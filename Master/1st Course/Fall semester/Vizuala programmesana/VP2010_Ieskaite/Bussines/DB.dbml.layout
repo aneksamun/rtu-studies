@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DB">
+  <DataContextMoniker Name="/DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="96c82f15-90ab-4952-80fb-4a1583171ab2" absoluteBounds="3.125, 0.75, 1.75, 2.1554996744791666">
+      <DataClassMoniker Name="/DBDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12d634e6-d500-4310-86bd-d0aa92809d6a" absoluteBounds="3.14, 1.21, 1.7200000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11c6eacc-4cae-4a73-9c10-9b122974c49e" absoluteBounds="0.5, 0.75, 1.75, 2.1554996744791666">
+      <DataClassMoniker Name="/DBDataContext/Participant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7877fcd9-6da6-4813-9901-6107f2ad8b3b" absoluteBounds="0.515, 1.21, 1.7200000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 1.82774983723958); (2.25 : 1.82774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/Course/Course_Participant" />
+      <nodes>
+        <classShapeMoniker Id="96c82f15-90ab-4952-80fb-4a1583171ab2" />
+        <classShapeMoniker Id="11c6eacc-4cae-4a73-9c10-9b122974c49e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

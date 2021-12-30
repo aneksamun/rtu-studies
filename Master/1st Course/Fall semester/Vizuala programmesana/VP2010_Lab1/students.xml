@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <Name>Sergejs</Name>
+    <Surname>Terentjevs</Surname>
+    <Id>061RDB140</Id>
+    <Group>1</Group>
+    <Email>Sergejs.Terentjevs@gmail.com</Email>
+  </Student>
+  <Student>
+    <Name>Aleksandrs</Name>
+    <Surname>Lauskis</Surname>
+    <Id>061RDB144</Id>
+    <Group>1</Group>
+    <Email>Aleksandrs.Lauskis@inbox.lv</Email>
+  </Student>
+  <Student>
+    <Name>Iveta</Name>
+    <Surname>Jakona</Surname>
+    <Id>061RDB122</Id>
+    <Group>1</Group>
+    <Email>Iveta.Jakona@yandex.ru</Email>
+  </Student>
+  <Student>
+    <Name>Dmitrijs</Name>
+    <Surname>Jakovlevs</Surname>
+    <Id>061RDB133</Id>
+    <Group>1</Group>
+    <Email>Dmitrijs.Jakovlevs@inbox.lv</Email>
+  </Student>
+</ArrayOfStudent>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinAppUI", "UI\WinAppUI.csproj", "{0705BC43-3170-4A05-9484-2F44FC218491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussines", "Bussines\Bussines.csproj", "{98123518-303D-46C4-B136-56E7F627F5E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{60850FB7-2E77-44A5-81C6-6E7F0947C110}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0705BC43-3170-4A05-9484-2F44FC218491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0705BC43-3170-4A05-9484-2F44FC218491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0705BC43-3170-4A05-9484-2F44FC218491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0705BC43-3170-4A05-9484-2F44FC218491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98123518-303D-46C4-B136-56E7F627F5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98123518-303D-46C4-B136-56E7F627F5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98123518-303D-46C4-B136-56E7F627F5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98123518-303D-46C4-B136-56E7F627F5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60850FB7-2E77-44A5-81C6-6E7F0947C110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60850FB7-2E77-44A5-81C6-6E7F0947C110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60850FB7-2E77-44A5-81C6-6E7F0947C110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60850FB7-2E77-44A5-81C6-6E7F0947C110}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

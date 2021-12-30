@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="WebUI.Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Reģistrēšanās kursiem</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="header">
+        <table  border="0" width="100%">
+            <tr><td style="height: 20px">&nbsp;</td></tr>
+            <tr>
+                <th style="font-size: 16pt; font-style: italic; height: 44px; background-color:#AAE0DE">
+                    Reģistrēšanās kursiem
+                </th>
+            </tr>
+            <tr><td style="height: 30px">&nbsp;</td></tr>
+        </table>
+    </div>
+    <div id="Content">
+        <asp:ContentPlaceHolder ID="PageContent" runat="server" />
+    </div>
+</body>
+</html>
