@@ -1,0 +1,51 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:commands="clr-namespace:Calculator.Common"
+        Title="Calculator" WindowStartupLocation="CenterScreen" Background="White" Loaded="Window_Loaded" Icon="/Calculator;component/Images/calculator.ico" ResizeMode="CanMinimize" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="331" Width="294">
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" Executed="ExitMenuItem_Click" />
+        <CommandBinding Command="commands:CustomCommands.AboutCommand" Executed="AbouMenuItem_Click" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="Q" Modifiers="Control" Command="Close" />
+        <KeyBinding Key="A" Modifiers="Control+Shift" Command="commands:CustomCommands.AboutCommand" />
+    </Window.InputBindings>
+    <Grid>
+        <TextBox Height="48" Margin="11,39,0,0" Name="txtDisplay" VerticalAlignment="Top" FontSize="28" Text="0" TextAlignment="Right" IsEnabled="True" HorizontalAlignment="Left" Width="265" IsReadOnly="True" Background="WhiteSmoke" Foreground="#FF5C5C5C" />
+        <Menu Name="mnuMain" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Click="ExitMenuItem_Click" InputGestureText="Ctrl+Q">
+                    <MenuItem.Icon>
+                        <Image Source="/Calculator;component/Images/ExitButton.gif" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="AbouMenuItem_Click" InputGestureText="Ctrl+Shift+A">
+                    <MenuItem.Icon>
+                        <Image Source="/Calculator;component/Images/InfoButton.gif" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button Content="7" Height="30" HorizontalAlignment="Left" Margin="12,106,0,0" Name="btnOne" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="8" Height="30" HorizontalAlignment="Left" Margin="76,106,0,0" Name="btnTwo" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="9" Height="30" HorizontalAlignment="Left" Margin="140,106,0,0" Name="btnThree" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="4" Height="30" HorizontalAlignment="Left" Margin="12,142,0,0" Name="btnFour" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="5" Height="30" HorizontalAlignment="Left" Margin="76,142,0,0" Name="btnFive" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="6" Height="30" HorizontalAlignment="Left" Margin="140,142,0,0" Name="btnSix" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="1" Height="30" HorizontalAlignment="Left" Margin="11,178,0,0" Name="btnSeven" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="2" Height="30" HorizontalAlignment="Left" Margin="76,178,0,0" Name="btnEight" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="3" Height="30" HorizontalAlignment="Left" Margin="140,178,0,0" Name="btnNine" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="0" Height="30" HorizontalAlignment="Left" Margin="12,214,0,0" Name="btnZero" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" />
+        <Button Content="." Height="30" HorizontalAlignment="Left" Margin="76,214,0,0" Name="btnSeparator" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" Click="btnSeparator_Click" />
+        <Button Content="+/-" Height="30" HorizontalAlignment="Left" Margin="140,214,0,0" Name="btnSign" VerticalAlignment="Top" Width="58" Background="#FFD8CACA" Click="btnSign_Click" />
+        <Button Content="C" Height="30" HorizontalAlignment="Left" Margin="12,250,0,0" Name="btnClear" VerticalAlignment="Top" Width="58" Background="#F1FF745C" Click="btnClear_Click" />
+        <Button Content="=" Height="30" HorizontalAlignment="Left" Margin="76,250,0,0" Name="btnEquals" VerticalAlignment="Top" Width="122" Background="#FFA0F5AD" Click="btnEquals_Click" />
+        <Button Content="x" Height="30" HorizontalAlignment="Left" Margin="218,106,0,0" Name="btnMultiply" VerticalAlignment="Top" Width="58" Background="#FFF2B1B6" Click="btnMultiply_Click" />
+        <Button Content="/" Height="30" HorizontalAlignment="Left" Margin="218,142,0,0" Name="btnDivide" VerticalAlignment="Top" Width="58" Background="#FFF2B1B6" Click="btnDivide_Click" />
+        <Button Content="+" Height="66" HorizontalAlignment="Left" Margin="218,214,0,0" Name="btnAdd" VerticalAlignment="Top" Width="58" Background="#FFF2B1B6" Click="btnAdd_Click" />
+        <Button Content="-" Height="30" HorizontalAlignment="Left" Margin="218,178,0,0" Name="btnSubstract" VerticalAlignment="Top" Width="58" Background="#FFF2B1B6" Click="btnSubstract_Click" />
+    </Grid>
+</Window>
