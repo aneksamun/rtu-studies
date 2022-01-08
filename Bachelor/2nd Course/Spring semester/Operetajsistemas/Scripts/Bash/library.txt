@@ -1,0 +1,4 @@
+C++ C.Tomas ABC 2008 127
+Linux Linus Torvald ABC 2005 500
+Slackware P.Pavilon ABC 2003 333
+PHP V. Gusjkovs ABC 2008 900
