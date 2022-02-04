@@ -1,0 +1,1 @@
+dotais fails nesatur C pirmtekstu
