@@ -1,0 +1,3 @@
+javac -classpath .;[ORACLE_DB_HOME]\jdbc\lib\ojdbc14.jar;[ORACLE_DB_HOME]\md\lib\sdoutl.jar;[ORACLE_DB_HOME]\md\lib\sdoapi.jar talk_GML.java
+java -cp         .;[ORACLE_DB_HOME]\jdbc\lib\ojdbc14.jar;[ORACLE_DB_HOME]\md\lib\sdoutl.jar;[ORACLE_DB_HOME]\md\lib\sdoapi.jar talk_GML
+

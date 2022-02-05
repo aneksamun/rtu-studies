@@ -1,0 +1,3 @@
+javac -classpath .;[ORACLE_DB_HOME]\lib\xmlparserv2.jar;[ORACLE_DB_HOME]\jdbc\lib\ojdbc14.jar;[ORACLE_DB_HOME]\md\lib\sdoutl.jar;[ORACLE_DB_HOME]\md\lib\sdoapi.jar TestManyGeoms.java
+java -cp         .;[ORACLE_DB_HOME]\lib\xmlparserv2.jar;[ORACLE_DB_HOME]\jdbc\lib\ojdbc14.jar;[ORACLE_DB_HOME]\md\lib\sdoutl.jar;[ORACLE_DB_HOME]\md\lib\sdoapi.jar TestManyGeoms
+
